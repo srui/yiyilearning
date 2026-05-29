@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>经济学大冒险 · 小E学院</title>
+<style>
+  :root { --bg:#fefce8; --card:#fff; --text:#1a1a2e; --muted:#636e72; --accent:#f59e0b; --blue:#3b82f6; --green:#10b981; --red:#ef4444; --purple:#8b5cf6; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: -apple-system,"PingFang SC","Noto Sans SC","Microsoft YaHei",sans-serif; background:var(--bg); color:var(--text); line-height:2; font-size:17px; }
+
+  .hero { background:linear-gradient(135deg,#fbbf24,#f59e0b,#ea580c); color:#fff; text-align:center; padding:50px 20px 40px; }
+  .hero h1 { font-size:2.2em; text-shadow:2px 2px 4px rgba(0,0,0,.15); }
+  .hero .subtitle { font-size:1.15em; margin-top:8px; opacity:.95; }
+  .hero .intro { font-size:.95em; margin-top:16px; max-width:500px; margin-left:auto; margin-right:auto; opacity:.9; line-height:1.8; }
+
+  .wrap { max-width:720px; margin:0 auto; padding:24px 16px 60px; }
+
+  .chapter-nav { display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:14px; margin-top:30px; }
+  .chapter-card { background:var(--card); border-radius:16px; padding:18px 20px; box-shadow:0 2px 12px rgba(0,0,0,.06); text-decoration:none; color:var(--text); transition:all .25s; border:3px solid transparent; }
+  .chapter-card:hover { transform:translateY(-4px); box-shadow:0 6px 24px rgba(0,0,0,.12); }
+  .chapter-card .ch-num { font-size:.8em; font-weight:700; padding:2px 10px; border-radius:8px; color:#fff; display:inline-block; margin-bottom:6px; }
+  .chapter-card h3 { font-size:1.05em; margin-bottom:4px; }
+  .chapter-card .hint { font-size:.85em; color:var(--muted); }
+
+  .ch1 .ch-num { background:var(--accent); }
+  .ch2 .ch-num { background:var(--blue); }
+  .ch3 .ch-num { background:var(--green); }
+  .ch4 .ch-num { background:var(--red); }
+  .ch5 .ch-num { background:var(--purple); }
+  .ch6 .ch-num { background:#0ea5e9; }
+  .ch7 .ch-num { background:#ec4899; }
+  .ch8 .ch-num { background:#14b8a6; }
+
+  .ch1:hover { border-color:var(--accent); }
+  .ch2:hover { border-color:var(--blue); }
+  .ch3:hover { border-color:var(--green); }
+  .ch4:hover { border-color:var(--red); }
+  .ch5:hover { border-color:var(--purple); }
+  .ch6:hover { border-color:#0ea5e9; }
+  .ch7:hover { border-color:#ec4899; }
+  .ch8:hover { border-color:#14b8a6; }
+
+  .to-reader { background:var(--card); border-radius:16px; padding:24px 28px; margin-top:24px; box-shadow:0 2px 10px rgba(0,0,0,.04); }
+  .to-reader h2 { font-size:1.1em; margin-bottom:8px; }
+  .to-reader p { font-size:.93em; color:var(--muted); margin-bottom:6px; }
+
+  .footer { text-align:center; padding:20px; color:var(--muted); font-size:.85em; border-top:1px solid rgba(0,0,0,.08); }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>经济学大冒险</h1>
+  <div class="subtitle">一本小朋友自己读的经济学故事书</div>
+  <div class="intro">
+    你好呀！我叫小豆，今年10岁。<br>
+    有一天，我发现了一个秘密——<br>
+    这个世界有一个"隐藏的规则"在运转。<br>
+    它叫<strong>经济学</strong>。<br>
+    跟我一起，开始冒险吧！
+  </div>
+</div>
+
+<div class="wrap">
+
+<div class="to-reader">
+  <h2>写给小读者的话</h2>
+  <p>这本书讲的是一个叫<strong>小豆</strong>的小朋友，在生活中发现经济学的故事。</p>
+  <p>每一章都是一次小冒险。你不需要大人在旁边，自己就能读懂。</p>
+  <p>遇到黄色框框里的"想一想"，停下来想几秒钟再往下读——答案就在你脑子里！</p>
+  <p>准备好了吗？从第一章开始吧！</p>
+</div>
+
+<div class="chapter-nav">
+  <a class="chapter-card ch1" href="第1章_为什么不能全都要.html">
+    <div class="ch-num">第1章</div>
+    <h3>为什么不能全都要？</h3>
+    <div class="hint">小豆进了超市，发现一个惊天大秘密……</div>
+  </a>
+  <a class="chapter-card ch2" href="第2章_神奇的钱.html">
+    <div class="ch-num">第2章</div>
+    <h3>神奇的钱</h3>
+    <div class="hint">小豆穿越到了没有钱的古代世界！</div>
+  </a>
+  <a class="chapter-card ch3" href="第3章_你放弃了什么.html">
+    <div class="ch-num">第3章</div>
+    <h3>你放弃了什么？</h3>
+    <div class="hint">每一个选择的背后，都藏着一个你看不见的东西……</div>
+  </a>
+  <a class="chapter-card ch4" href="第4章_时间魔法师.html">
+    <div class="ch-num">第4章</div>
+    <h3>时间魔法师</h3>
+    <div class="hint">等一等，你能得到两颗棉花糖？</div>
+  </a>
+  <a class="chapter-card ch5" href="第5章_看不见的大手.html">
+    <div class="ch-num">第5章</div>
+    <h3>看不见的大手</h3>
+    <div class="hint">谁在偷偷"管着"整个世界？</div>
+  </a>
+  <a class="chapter-card ch6" href="第6章_钱的奇妙旅行.html">
+    <div class="ch-num">第6章</div>
+    <h3>钱的奇妙旅行</h3>
+    <div class="hint">你的100块钱存进银行后，去哪了？</div>
+  </a>
+  <a class="chapter-card ch7" href="第7章_超级消费者.html">
+    <div class="ch-num">第7章</div>
+    <h3>超级消费者</h3>
+    <div class="hint">广告是怎么偷偷"操控"你的大脑的？</div>
+  </a>
+  <a class="chapter-card ch8" href="第8章_你的超能力.html">
+    <div class="ch-num">第8章</div>
+    <h3>你的超能力</h3>
+    <div class="hint">经济学是一种看世界的超能力！</div>
+  </a>
+</div>
+
+</div>
+
+<div class="footer">经济学大冒险 · 小朋友自己读的经济学故事书</div>
+
+</body>
+</html>

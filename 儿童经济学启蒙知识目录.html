@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>知识目录 · 小E学院</title>
+<style>
+  :root {
+    --c1: #FF6B6B; --c2: #FFA502; --c3: #2ED573; --c4: #1E90FF; --c5: #A855F7;
+    --bg: #FAFBFC; --card: #FFFFFF; --text: #2D3436; --muted: #636E72;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+    background: var(--bg); color: var(--text); line-height: 1.7;
+  }
+
+  /* Hero */
+  .hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white; text-align: center; padding: 60px 20px 50px;
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+    background-size: 30px 30px;
+  }
+  .hero h1 { font-size: 2.2em; margin-bottom: 12px; position: relative; }
+  .hero p { font-size: 1.1em; opacity: 0.9; max-width: 600px; margin: 0 auto; position: relative; }
+  .hero .ages {
+    display: inline-block; margin-top: 16px; background: rgba(255,255,255,0.2);
+    padding: 6px 20px; border-radius: 20px; font-size: 0.95em; position: relative;
+  }
+
+  /* Nav pills */
+  .nav {
+    display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;
+    padding: 24px 20px; background: var(--card);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06); position: sticky; top: 0; z-index: 100;
+  }
+  .nav a {
+    text-decoration: none; padding: 8px 18px; border-radius: 20px;
+    font-size: 0.9em; font-weight: 600; color: white; transition: transform 0.2s;
+  }
+  .nav a:hover { transform: scale(1.08); }
+  .nav a:nth-child(1) { background: var(--c1); }
+  .nav a:nth-child(2) { background: var(--c2); }
+  .nav a:nth-child(3) { background: var(--c3); }
+  .nav a:nth-child(4) { background: var(--c4); }
+  .nav a:nth-child(5) { background: var(--c5); }
+  .nav a:nth-child(6) { background: linear-gradient(135deg, #636e72, #2d3436); }
+  .nav a:nth-child(7) { background: linear-gradient(135deg, #e17055, #d63031); }
+  .nav a:nth-child(8) { background: linear-gradient(135deg, #00b894, #00cec9); }
+
+  .container { max-width: 900px; margin: 0 auto; padding: 30px 20px 60px; }
+
+  /* Stage */
+  .stage { margin-bottom: 50px; scroll-margin-top: 80px; }
+  .stage-header {
+    display: flex; align-items: center; gap: 16px; margin-bottom: 24px;
+    padding-bottom: 16px; border-bottom: 3px solid;
+  }
+  .stage-num {
+    width: 56px; height: 56px; border-radius: 50%; display: flex;
+    align-items: center; justify-content: center; color: white;
+    font-size: 1.5em; font-weight: 800; flex-shrink: 0;
+  }
+  .stage-header h2 { font-size: 1.5em; }
+  .stage-header .age-badge {
+    font-size: 0.75em; padding: 4px 12px; border-radius: 12px;
+    color: white; font-weight: 600; white-space: nowrap;
+  }
+  .stage-header .subtitle { color: var(--muted); font-size: 0.9em; margin-top: 4px; }
+
+  .stage:nth-child(1) .stage-header { border-color: var(--c1); }
+  .stage:nth-child(1) .stage-num, .stage:nth-child(1) .age-badge { background: var(--c1); }
+  .stage:nth-child(2) .stage-header { border-color: var(--c2); }
+  .stage:nth-child(2) .stage-num, .stage:nth-child(2) .age-badge { background: var(--c2); }
+  .stage:nth-child(3) .stage-header { border-color: var(--c3); }
+  .stage:nth-child(3) .stage-num, .stage:nth-child(3) .age-badge { background: var(--c3); }
+  .stage:nth-child(4) .stage-header { border-color: var(--c4); }
+  .stage:nth-child(4) .stage-num, .stage:nth-child(4) .age-badge { background: var(--c4); }
+  .stage:nth-child(5) .stage-header { border-color: var(--c5); }
+  .stage:nth-child(5) .stage-num, .stage:nth-child(5) .age-badge { background: var(--c5); }
+
+  /* Topic card */
+  .topic {
+    background: var(--card); border-radius: 16px; padding: 24px;
+    margin-bottom: 16px; box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    transition: box-shadow 0.3s;
+  }
+  .topic:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+  .topic h3 { font-size: 1.15em; margin-bottom: 12px; }
+  .topic ul { padding-left: 20px; }
+  .topic li { margin-bottom: 6px; color: #444; }
+  .topic li::marker { color: #aaa; }
+  .key-insight {
+    display: flex; align-items: flex-start; gap: 8px; margin-top: 14px;
+    padding: 12px 16px; border-radius: 10px; background: #FFF9E6;
+    border-left: 4px solid #FFC312; font-size: 0.92em;
+  }
+  .key-insight::before { content: '💡'; font-size: 1.1em; flex-shrink: 0; }
+
+  /* Resource box */
+  .resources {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    border-radius: 14px; padding: 20px 24px; margin-top: 20px;
+  }
+  .resources h4 { font-size: 0.95em; color: var(--muted); margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px; }
+  .resources ul { padding-left: 20px; }
+  .resources li { margin-bottom: 5px; font-size: 0.95em; }
+
+  /* Appendix */
+  .appendix { scroll-margin-top: 80px; margin-bottom: 50px; }
+  .appendix h2 {
+    font-size: 1.4em; margin-bottom: 20px; padding-bottom: 10px;
+    border-bottom: 3px solid #ddd;
+  }
+
+  .mankiu-table {
+    width: 100%; border-collapse: collapse; background: var(--card);
+    border-radius: 14px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  }
+  .mankiu-table th {
+    background: linear-gradient(135deg, #636e72, #2d3436); color: white;
+    padding: 14px 18px; text-align: left; font-size: 0.95em;
+  }
+  .mankiu-table td { padding: 12px 18px; border-bottom: 1px solid #eee; font-size: 0.93em; }
+  .mankiu-table tr:last-child td { border-bottom: none; }
+  .mankiu-table tr:hover td { background: #f8f9fa; }
+  .mankiu-table td:first-child { font-weight: 600; white-space: nowrap; }
+
+  .book-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 14px;
+  }
+  .book-card {
+    background: var(--card); border-radius: 14px; padding: 18px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05); transition: transform 0.2s;
+  }
+  .book-card:hover { transform: translateY(-3px); }
+  .book-card .title { font-weight: 700; font-size: 1em; margin-bottom: 6px; }
+  .book-card .age { display: inline-block; background: #dfe6e9; padding: 2px 10px; border-radius: 10px; font-size: 0.8em; margin-bottom: 8px; }
+  .book-card .desc { font-size: 0.88em; color: var(--muted); }
+
+  .link-list { list-style: none; padding: 0; }
+  .link-list li {
+    background: var(--card); border-radius: 12px; padding: 16px 20px;
+    margin-bottom: 10px; box-shadow: 0 1px 8px rgba(0,0,0,0.04);
+  }
+  .link-list a { color: var(--c4); text-decoration: none; font-weight: 600; }
+  .link-list a:hover { text-decoration: underline; }
+  .link-list .desc { font-size: 0.88em; color: var(--muted); margin-top: 4px; }
+
+  .footer {
+    text-align: center; padding: 30px 20px; color: var(--muted);
+    font-size: 0.88em; border-top: 1px solid #eee;
+  }
+
+  @media (max-width: 600px) {
+    .hero h1 { font-size: 1.6em; }
+    .nav { gap: 6px; padding: 16px 12px; }
+    .nav a { padding: 6px 12px; font-size: 0.8em; }
+    .stage-header { flex-wrap: wrap; }
+    .book-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Hero -->
+<div class="hero">
+  <h1>儿童经济学启蒙知识目录</h1>
+  <p>通过经济学思维帮助孩子认识自己、认识社会、认识世界，培养理性决策能力和全局观</p>
+  <div class="ages">适用年龄：3 - 12 岁，按阶段递进</div>
+</div>
+
+<!-- Nav -->
+<div class="nav">
+  <a href="#stage1">3-6岁 选择</a>
+  <a href="#stage2">5-8岁 交换</a>
+  <a href="#stage3">7-10岁 成本</a>
+  <a href="#stage4">9-12岁 市场</a>
+  <a href="#stage5">10岁+ 风险</a>
+  <a href="#mankiu">十大原理</a>
+  <a href="#books">推荐书单</a>
+  <a href="#online">在线资源</a>
+</div>
+
+<div class="container">
+
+<!-- Stage 1 -->
+<div class="stage" id="stage1">
+  <div class="stage-header">
+    <div class="stage-num">1</div>
+    <div>
+      <h2>认识"选择"</h2>
+      <div class="subtitle">理解"想要"和"需要"是不同的，资源有限，必须做出选择</div>
+    </div>
+    <div class="age-badge">3-6 岁</div>
+  </div>
+
+  <div class="topic">
+    <h3>1.1 稀缺性 —— 我们不能什么都拥有</h3>
+    <ul>
+      <li>生活中的稀缺：玩具不能全买、时间只有24小时、蛋糕只有一块</li>
+      <li>游戏：给孩子10颗糖果，让他分配给不同玩偶，体验"不够分"的感受</li>
+    </ul>
+    <div class="key-insight">世界上没有无限的东西，所以我们要学会选择</div>
+  </div>
+
+  <div class="topic">
+    <h3>1.2 选择与取舍 —— 做了这个就不能做那个</h3>
+    <ul>
+      <li>故事引导：去超市只能选一样零食，你会选哪个？</li>
+      <li>练习：列出"今天最想做的三件事"，但只能选一件做</li>
+    </ul>
+    <div class="key-insight">每一次选择都意味着放弃其他选项</div>
+  </div>
+
+  <div class="topic">
+    <h3>1.3 需要与想要 —— 哪些是"必须的"，哪些是"想要的"</h3>
+    <ul>
+      <li>分类游戏：水、食物、衣服 vs 玩具、零食、动画片</li>
+    </ul>
+    <div class="key-insight">分清"需要"和"想要"，是理性消费的第一步</div>
+  </div>
+
+  <div class="resources">
+    <h4>推荐资源</h4>
+    <ul>
+      <li>绘本《小糖果，大世界》—— 从一颗糖理解交易与货币</li>
+      <li>绘本《会讲故事的经济学》系列</li>
+      <li>亲子活动：超市购物预算游戏（给10元，自主选择）</li>
+    </ul>
+  </div>
+</div>
+
+<!-- Stage 2 -->
+<div class="stage" id="stage2">
+  <div class="stage-header">
+    <div class="stage-num">2</div>
+    <div>
+      <h2>认识"交换"</h2>
+      <div class="subtitle">理解人与人之间如何通过交换互相帮助，货币是交换的工具</div>
+    </div>
+    <div class="age-badge">5-8 岁</div>
+  </div>
+
+  <div class="topic">
+    <h3>2.1 分工与合作 —— 每个人做擅长的事</h3>
+    <ul>
+      <li>故事：一个人种粮食、一个人织布，交换之后大家都过得更好</li>
+      <li>生活中的分工：妈妈做饭、爸爸修理、孩子整理——家里每个人都在贡献</li>
+    </ul>
+    <div class="key-insight">合作和分工让大家都能得到更多</div>
+  </div>
+
+  <div class="topic">
+    <h3>2.2 货币的由来 —— 从以物易物到钱</h3>
+    <ul>
+      <li>历史：古人怎么交换？贝壳、铜钱、纸币的故事</li>
+      <li>为什么需要钱？—— 方便交换、衡量价值</li>
+    </ul>
+    <div class="key-insight">钱是工具，帮助我们更方便地交换</div>
+  </div>
+
+  <div class="topic">
+    <h3>2.3 价格是什么 —— 为什么有的东西贵有的便宜</h3>
+    <ul>
+      <li>观察：一瓶水和一颗钻石，哪个更贵？为什么？</li>
+      <li>简单理解供需：大家都想要的东西会变贵</li>
+    </ul>
+    <div class="key-insight">价格由"有多少"和"多少人想要"共同决定</div>
+  </div>
+
+  <div class="resources">
+    <h4>推荐资源</h4>
+    <ul>
+      <li>《小狗钱钱》（博多·舍费尔）—— 经典财商启蒙故事</li>
+      <li>《国富论》从小学习经济学（广西师范大学出版社）</li>
+      <li>亲子活动：模拟小市场，用"代币"交换物品</li>
+    </ul>
+  </div>
+</div>
+
+<!-- Stage 3 -->
+<div class="stage" id="stage3">
+  <div class="stage-header">
+    <div class="stage-num">3</div>
+    <div>
+      <h2>认识"成本"</h2>
+      <div class="subtitle">理解每一个决定都有代价，学会权衡利弊</div>
+    </div>
+    <div class="age-badge">7-10 岁</div>
+  </div>
+
+  <div class="topic">
+    <h3>3.1 机会成本 —— 你放弃了什么</h3>
+    <ul>
+      <li>核心概念：选择A的时候，你就放弃了B，B就是你的"机会成本"</li>
+      <li>周末上午去踢球就不能去图书馆，图书馆就是踢球的代价</li>
+      <li>把零花钱买了玩具就不能买书</li>
+    </ul>
+    <div class="key-insight">聪明的选择不是选"最好的"，而是选"放弃最少的"</div>
+  </div>
+
+  <div class="topic">
+    <h3>3.2 沉没成本 —— 过去的花费不能决定未来的选择</h3>
+    <ul>
+      <li>生活案例：电影看了半小时发现不好看，是继续看还是离开？</li>
+    </ul>
+    <div class="key-insight">已经花掉的时间和钱回不来了，不要因为"已经花了"就继续做错的事</div>
+  </div>
+
+  <div class="topic">
+    <h3>3.3 储蓄与延迟满足 —— 等一等，会得到更好的</h3>
+    <ul>
+      <li>棉花糖实验：能等15分钟的孩子，后来表现更好</li>
+      <li>零花钱管理：分成"花""存""分享"三个罐子</li>
+    </ul>
+    <div class="key-insight">为了更大的目标，有时候需要忍耐和等待</div>
+  </div>
+
+  <div class="resources">
+    <h4>推荐资源</h4>
+    <ul>
+      <li>《十岁开始的经济学》（泉美智子，日本）</li>
+      <li>《写给孩子的经济学》（董新兴）</li>
+      <li>亲子活动：零花钱三分法管理（消费 / 储蓄 / 分享）</li>
+    </ul>
+  </div>
+</div>
+
+<!-- Stage 4 -->
+<div class="stage" id="stage4">
+  <div class="stage-header">
+    <div class="stage-num">4</div>
+    <div>
+      <h2>认识"市场"</h2>
+      <div class="subtitle">理解社会如何运转，企业和个人如何在市场中互动</div>
+    </div>
+    <div class="age-badge">9-12 岁</div>
+  </div>
+
+  <div class="topic">
+    <h3>4.1 供给与需求 —— 看不见的手</h3>
+    <ul>
+      <li>案例分析：为什么下雨天雨伞会涨价？为什么丰收的水果反而便宜？</li>
+      <li>实验：模拟开一家柠檬水摊，调整价格观察"顾客"变化</li>
+    </ul>
+    <div class="key-insight">价格不是某个人定的，是大家共同"商量"出来的</div>
+  </div>
+
+  <div class="topic">
+    <h3>4.2 竞争与创新 —— 为什么商家要努力做得更好</h3>
+    <ul>
+      <li>观察：为什么有那么多不同品牌的手机？</li>
+      <li>竞争的好处：让东西越来越好、越来越便宜</li>
+      <li>创新的力量：从马车到汽车到手机——解决老问题的新方法</li>
+    </ul>
+    <div class="key-insight">竞争推动进步，保护创新需要规则</div>
+  </div>
+
+  <div class="topic">
+    <h3>4.3 贸易 —— 国家和国家也在交换</h3>
+    <ul>
+      <li>为什么我们用外国的东西？为什么外国人也用中国的东西？</li>
+      <li>比较优势：每个人/国家做自己最擅长的事，然后交换，大家都受益</li>
+    </ul>
+    <div class="key-insight">贸易不是零和游戏，合作可以让大家都过得更好</div>
+  </div>
+
+  <div class="topic">
+    <h3>4.4 税收与公共物品 —— 我们共享的东西</h3>
+    <ul>
+      <li>道路、学校、公园、警察——谁出钱？</li>
+      <li>税收的意义：大家各出一点，共同建设大家都能用的东西</li>
+    </ul>
+    <div class="key-insight">好的社会需要每个人贡献力量</div>
+  </div>
+
+  <div class="resources">
+    <h4>推荐资源</h4>
+    <ul>
+      <li>《小岛经济学》（彼得·希夫）—— 用小岛故事讲解宏观经济</li>
+      <li>《穷爸爸富爸爸（青少版）》（罗伯特·清崎）</li>
+      <li>《小学二年级就能读懂的经济学》</li>
+      <li>亲子活动：设计一个"家庭小型经济体"</li>
+    </ul>
+  </div>
+</div>
+
+<!-- Stage 5 -->
+<div class="stage" id="stage5">
+  <div class="stage-header">
+    <div class="stage-num">5</div>
+    <div>
+      <h2>认识"风险与未来"</h2>
+      <div class="subtitle">理解不确定性，学会管理风险，规划未来</div>
+    </div>
+    <div class="age-badge">10-12 岁+</div>
+  </div>
+
+  <div class="topic">
+    <h3>5.1 风险与保险 —— 未来是不确定的</h3>
+    <ul>
+      <li>为什么买保险？—— 用确定的小损失避免不确定的大损失</li>
+      <li>生活中的风险：出门可能下雨（带伞）、运动可能受伤（戴护具）</li>
+    </ul>
+    <div class="key-insight">不要害怕风险，但要学会为风险做准备</div>
+  </div>
+
+  <div class="topic">
+    <h3>5.2 投资与复利 —— 让钱帮你工作</h3>
+    <ul>
+      <li>复利的力量：1元每天翻倍，30天后超过10亿</li>
+      <li>投资的本质：把钱放到能创造更多价值的地方</li>
+    </ul>
+    <div class="key-insight">时间是最强大的力量，越早开始越好</div>
+  </div>
+
+  <div class="topic">
+    <h3>5.3 博弈论基础 —— 我的选择和你的选择互相影响</h3>
+    <ul>
+      <li>囚徒困境：为什么"都合作"是最好的，但"都背叛"更容易发生</li>
+      <li>生活中的博弈：排队、让座、同学之间的合作与竞争</li>
+    </ul>
+    <div class="key-insight">很多时候你的最佳选择取决于别人的选择，合作往往是更好的答案</div>
+  </div>
+
+  <div class="topic">
+    <h3>5.4 通识思维 —— 经济学是一种看世界的方式</h3>
+    <ul>
+      <li>经济学不只是关于钱，是关于"如何做选择"</li>
+      <li>用经济学思维看生活：为什么学校门口的小店生意好？为什么有时候越贵的东西越有人买？</li>
+    </ul>
+    <div class="key-insight">理解世界运转的规律，才能更好地参与这个世界</div>
+  </div>
+
+  <div class="resources">
+    <h4>推荐资源</h4>
+    <ul>
+      <li>《魔鬼经济学（青少版）》（列维特 & 都伯纳）</li>
+      <li>《蓝筹孩子》（大卫·W·比安奇）</li>
+      <li>《少年经济学》（孙路弘）</li>
+      <li>可汗学院经济学基础课程（免费在线）</li>
+      <li>亲子活动：模拟投资游戏、家庭记账本</li>
+    </ul>
+  </div>
+</div>
+
+<!-- Appendix: Mankiw -->
+<div class="appendix" id="mankiu">
+  <h2>曼昆十大经济学原理（儿童简化版）</h2>
+  <table class="mankiu-table">
+    <thead>
+      <tr><th style="width:45%">原理</th><th>儿童版解释</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>1. 人们面临权衡取舍</td><td>想要这个就得放弃那个</td></tr>
+      <tr><td>2. 某东西的成本是为了得到它所放弃的东西</td><td>机会成本——你放弃了什么？</td></tr>
+      <tr><td>3. 理性人考虑边际量</td><td>多做一点值不值？</td></tr>
+      <tr><td>4. 人们会对激励做出反应</td><td>有奖励就有动力</td></tr>
+      <tr><td>5. 贸易可以使每个人状况更好</td><td>交换让大家都受益</td></tr>
+      <tr><td>6. 市场通常是组织经济活动的好方法</td><td>大家自由交易，比一个人安排更好</td></tr>
+      <tr><td>7. 政府有时可以改善市场结果</td><td>有时候需要裁判来维持公平</td></tr>
+      <tr><td>8. 一国的生活水平取决于生产的能力</td><td>能做出好东西，生活就好</td></tr>
+      <tr><td>9. 当政府印发过多货币时，物价上升</td><td>钱印太多，钱就不值钱了</td></tr>
+      <tr><td>10. 社会面临通胀与失业的短期权衡</td><td>有些问题没有完美答案</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Appendix: Books -->
+<div class="appendix" id="books">
+  <h2>推荐书单汇总</h2>
+  <div class="book-grid">
+    <div class="book-card">
+      <div class="title">小糖果，大世界</div>
+      <div class="age">3-6 岁</div>
+      <div class="desc">货币、交易基础概念</div>
+    </div>
+    <div class="book-card">
+      <div class="title">小狗钱钱</div>
+      <div class="age">5-10 岁</div>
+      <div class="desc">储蓄、理财启蒙</div>
+    </div>
+    <div class="book-card">
+      <div class="title">会讲故事的经济学</div>
+      <div class="age">4-8 岁</div>
+      <div class="desc">商业价值观、经济思维</div>
+    </div>
+    <div class="book-card">
+      <div class="title">《国富论》从小学习经济学</div>
+      <div class="age">6-10 岁</div>
+      <div class="desc">经济学趣味故事</div>
+    </div>
+    <div class="book-card">
+      <div class="title">十岁开始的经济学</div>
+      <div class="age">8-12 岁</div>
+      <div class="desc">供需、价格、竞争</div>
+    </div>
+    <div class="book-card">
+      <div class="title">写给孩子的经济学</div>
+      <div class="age">7-12 岁</div>
+      <div class="desc">系统经济学入门</div>
+    </div>
+    <div class="book-card">
+      <div class="title">小岛经济学</div>
+      <div class="age">9-12 岁</div>
+      <div class="desc">宏观经济原理</div>
+    </div>
+    <div class="book-card">
+      <div class="title">穷爸爸富爸爸（青少版）</div>
+      <div class="age">9-12 岁</div>
+      <div class="desc">资产负债、被动收入</div>
+    </div>
+    <div class="book-card">
+      <div class="title">蓝筹孩子</div>
+      <div class="age">10 岁+</div>
+      <div class="desc">投资、股票、基金</div>
+    </div>
+    <div class="book-card">
+      <div class="title">魔鬼经济学（青少版）</div>
+      <div class="age">10 岁+</div>
+      <div class="desc">经济学视角看世界</div>
+    </div>
+    <div class="book-card">
+      <div class="title">少年经济学</div>
+      <div class="age">10 岁+</div>
+      <div class="desc">经济思维与逻辑</div>
+    </div>
+  </div>
+</div>
+
+<!-- Appendix: Online -->
+<div class="appendix" id="online">
+  <h2>在线资源</h2>
+  <ul class="link-list">
+    <li>
+      <a href="https://zh.khanacademy.org/economics-finance-domain" target="_blank">可汗学院 - 经济学基础</a>
+      <div class="desc">免费经济学课程（有中文版）</div>
+    </li>
+    <li>
+      <a href="https://www.fdic.gov/consumer-resource-center/money-smart-young-people" target="_blank">FDIC Money Smart for Young People</a>
+      <div class="desc">美国联邦存款保险公司免费少儿金融教育</div>
+    </li>
+    <li>
+      <a href="https://www.councilforeconed.org/programs/" target="_blank">Council for Economic Education</a>
+      <div class="desc">经济与金融教育项目</div>
+    </li>
+    <li>
+      <a href="https://smartpathlearning.com/" target="_blank">$martPath</a>
+      <div class="desc">K-8 互动经济学学习平台</div>
+    </li>
+  </ul>
+</div>
+
+</div><!-- /container -->
+
+<div class="footer">
+  本目录旨在为家长提供一个循序渐进的经济学启蒙框架，不必追求面面俱到，重点是培养孩子的思维方式和认知能力。<br>
+  每个孩子的发展节奏不同，请根据实际情况灵活调整。
+</div>
+
+</body>
+</html>

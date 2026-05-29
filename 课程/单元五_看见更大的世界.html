@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>单元五：看见更大的世界 · 小E学院</title>
+<style>
+  :root { --accent:#A855F7; --bg:#FAFBFC; --card:#fff; --text:#2D3436; --muted:#636E72; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: -apple-system,"PingFang SC","Noto Sans SC","Microsoft YaHei",sans-serif; background:var(--bg); color:var(--text); line-height:1.8; }
+  .hero { background:linear-gradient(135deg,#A855F7,#7c3aed); color:#fff; text-align:center; padding:50px 20px 40px; }
+  .hero h1 { font-size:2em; margin-bottom:8px; }
+  .hero .sub { opacity:.9; font-size:1.05em; }
+  .hero .meta { margin-top:14px; display:flex; justify-content:center; gap:16px; flex-wrap:wrap; }
+  .hero .meta span { background:rgba(255,255,255,.2); padding:4px 14px; border-radius:16px; font-size:.88em; }
+  .wrap { max-width:860px; margin:0 auto; padding:24px 16px 60px; }
+  .lesson-nav { display:flex; gap:10px; margin-bottom:30px; flex-wrap:wrap; }
+  .lesson-nav a { text-decoration:none; padding:10px 20px; border-radius:12px; background:var(--card); box-shadow:0 2px 8px rgba(0,0,0,.06); font-weight:600; color:var(--text); transition:all .2s; border:2px solid transparent; }
+  .lesson-nav a:hover { border-color:var(--accent); transform:translateY(-2px); }
+  .lesson { scroll-margin-top:20px; margin-bottom:50px; }
+  .lesson-head { display:flex; align-items:center; gap:14px; margin-bottom:20px; }
+  .lesson-num { width:48px; height:48px; border-radius:50%; background:var(--accent); color:#fff; display:flex; align-items:center; justify-content:center; font-size:1.3em; font-weight:800; flex-shrink:0; }
+  .lesson-head h2 { font-size:1.35em; }
+  .lesson-head .tag { font-size:.8em; background:#f0f0f0; padding:3px 10px; border-radius:10px; color:var(--muted); }
+  .block { background:var(--card); border-radius:16px; padding:22px 24px; margin-bottom:16px; box-shadow:0 2px 10px rgba(0,0,0,.04); }
+  .block-title { font-weight:700; font-size:.92em; text-transform:uppercase; letter-spacing:1px; margin-bottom:12px; display:flex; align-items:center; gap:8px; }
+  .block-title .icon { font-size:1.2em; }
+  .story { background:linear-gradient(135deg,#faf5ff,#f3e8ff); }
+  .concept { background:linear-gradient(135deg,#f0f9ff,#e0f2fe); }
+  .discuss { background:linear-gradient(135deg,#fefce8,#fef3c7); }
+  .activity { background:linear-gradient(135deg,#f0fdf4,#dcfce7); }
+  .takeaway { background:linear-gradient(135deg,#fef3c7,#fde68a); text-align:center; padding:20px 30px; }
+  .takeaway .quote { font-size:1.15em; font-weight:700; color:#92400e; }
+  .parent-tip { background:linear-gradient(135deg,#f8f9fa,#e9ecef); border-left:4px solid #adb5bd; padding:14px 18px; border-radius:0 12px 12px 0; margin-bottom:16px; font-size:.9em; color:var(--muted); }
+  .parent-tip strong { color:var(--text); }
+  p { margin-bottom:10px; } ul { padding-left:20px; margin-bottom:10px; } li { margin-bottom:6px; }
+  .highlight { background:#FFF9E6; padding:2px 6px; border-radius:4px; font-weight:600; }
+  .answer-toggle { background:#e2e8f0; border:none; padding:6px 14px; border-radius:8px; cursor:pointer; font-size:.88em; margin-top:6px; }
+  .answer-toggle:hover { background:#cbd5e1; }
+  .answer-hidden { display:none; background:#f1f5f9; padding:12px 16px; border-radius:10px; margin-top:8px; font-size:.93em; }
+  .answer-hidden.show { display:block; }
+  .footer { text-align:center; padding:24px; color:var(--muted); font-size:.85em; border-top:1px solid #eee; }
+  .footer a { color:var(--accent); text-decoration:none; }
+  table { border-collapse:collapse; } td,th { padding:8px; border:1px solid #e2e8f0; }
+  .final-box { background:linear-gradient(135deg,#667eea,#764ba2); color:#fff; border-radius:20px; padding:40px 30px; text-align:center; margin-top:30px; }
+  .final-box h2 { font-size:1.6em; margin-bottom:12px; }
+  .final-box p { opacity:.9; margin-bottom:8px; }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>单元五：看见更大的世界</h1>
+  <div class="sub">理解风险、时间与博弈——用经济学思维看更大的世界</div>
+  <div class="meta"><span>3 节课</span><span>适合 9-10 岁</span><span>每课 20-30 分钟</span></div>
+</div>
+
+<div class="wrap">
+<div class="lesson-nav">
+  <a href="#lesson13">第13课 风险与保险</a>
+  <a href="#lesson14">第14课 复利的力量</a>
+  <a href="#lesson15">第15课 博弈论入门</a>
+</div>
+
+<!-- 第13课 -->
+<div class="lesson" id="lesson13">
+  <div class="lesson-head">
+    <div class="lesson-num">13</div>
+    <div><h2>万一出事了怎么办？</h2><span class="tag">核心概念：风险与保险</span></div>
+  </div>
+  <div class="parent-tip"><strong>家长提示：</strong>风险意识是孩子需要建立的重要认知。这节课不要求孩子理解保险的复杂机制，重点是理解"为不确定的未来做准备"这个核心思想。</div>
+
+  <div class="block">
+    <div class="block-title"><span class="icon">🤔</span> 开场提问（3分钟）</div>
+    <ul>
+      <li>"你出门的时候，有没有带过伞？为什么带？一定会下雨吗？"</li>
+      <li>"你骑自行车戴头盔吗？为什么戴？一定会摔倒吗？"</li>
+      <li>"你有没有想过，万一家里人生病了，看病要花很多钱，怎么办？"</li>
+    </ul>
+  </div>
+
+  <div class="block story">
+    <div class="block-title"><span class="icon">📖</span> 情景故事（5-8分钟）</div>
+    <p><strong>《村里的大水灾》</strong></p>
+    <p>河边有个村庄，每隔几年会发一次大水。</p>
+    <p>村里有两户人家：</p>
+    <p><strong>张家：</strong>觉得"大水不一定来吧"，不做什么准备。</p>
+    <p><strong>李家：</strong>每年花500元加高河堤、存应急物资。</p>
+    <p>有一年，大水真的来了！</p>
+    <ul>
+      <li>张家的房子被淹了，损失了5万元，还借了一大笔钱修房子</li>
+      <li>李家的河堤挡住了水，几乎没损失</li>
+    </ul>
+    <p>张家之前省了几年"白花的"500元（每年），但一次大水就亏了5万。</p>
+    <p>李家虽然每年花500元（10年花了5000元），但避免了5万元的巨大损失。</p>
+    <p style="margin-top:10px;">这就是<strong>保险</strong>的思想——<span class="highlight">用确定的小花费，避免不确定的大损失</span>。</p>
+  </div>
+
+  <div class="block concept">
+    <div class="block-title"><span class="icon">💡</span> 概念讲解（5-8分钟）</div>
+    <p><strong>什么是风险？</strong></p>
+    <p><span class="highlight">风险 = 未来可能发生的、不好的、但不确定的事情</span></p>
+    <ul>
+      <li>出门可能下雨</li>
+      <li>运动可能受伤</li>
+      <li>家人生病可能需要很多医疗费</li>
+      <li>地震、火灾等自然灾害</li>
+    </ul>
+
+    <p style="margin-top:10px;"><strong>怎么应对风险？三种方式：</strong></p>
+    <table style="width:100%;margin:10px 0;">
+      <tr style="background:#faf5ff;"><th>方式</th><th>做法</th><th>例子</th></tr>
+      <tr><td><strong>避免</strong></td><td>不做有风险的事</td><td>怕溺水就不游泳（但会错过乐趣）</td></tr>
+      <tr><td><strong>降低</strong></td><td>减少风险发生的机会</td><td>游泳前热身、戴头盔、遵守交通规则</td></tr>
+      <tr><td><strong>转移</strong></td><td>把风险的后果转给别人（保险公司）</td><td>买保险，出了事保险公司赔钱</td></tr>
+    </table>
+
+    <p style="margin-top:10px;"><strong>保险是怎么工作的？</strong></p>
+    <p>假设一个村子有100户人家，每年平均有2户会遭遇火灾，每户损失5万元。</p>
+    <ul>
+      <li>如果每户每年交1000元"保险费"→ 总共10万元</li>
+      <li>2户出事 → 保险公司赔每户5万 = 10万</li>
+      <li>刚好够！</li>
+    </ul>
+    <p>对没出事的98户来说，1000元"白花了"——但他们买到了<strong>安心</strong>。</p>
+    <p>对出事的2户来说，只花了1000元就拿到了5万赔偿——<strong>太值了</strong>。</p>
+    <p>没有人知道自己会是那2户，所以所有人都愿意交这个钱。这就是保险的智慧。</p>
+
+    <p style="margin-top:10px;"><strong>生活中哪些是"保险"思维？</strong></p>
+    <ul>
+      <li>存应急的钱（以防万一）</li>
+      <li>备份重要文件（以防丢失）</li>
+      <li>学习急救知识（以防有人受伤）</li>
+    </ul>
+  </div>
+
+  <div class="block discuss">
+    <div class="block-title"><span class="icon">💬</span> 亲子讨论（5分钟）</div>
+    <p><strong>讨论1：</strong>你做过哪些"以防万一"的事情？</p>
+    <p style="margin-top:12px;"><strong>讨论2：</strong>保险是不是"白花钱"？你怎么看？</p>
+    <button class="answer-toggle" onclick="toggle(this)">参考思路</button>
+    <div class="answer-hidden">保险费不是"白花"——你买到的是安心和对极端风险的保护。就像买雨伞不是白花钱，虽然不一定每天下雨。</div>
+    <p style="margin-top:12px;"><strong>讨论3：</strong>有没有风险是"值得冒的"？比如？</p>
+    <button class="answer-toggle" onclick="toggle(this)">参考思路</button>
+    <div class="answer-hidden">当然！参加比赛可能输（风险），但能学到东西。尝试新食物可能不好吃（风险），但可能发现新爱好。不是所有风险都要避免——学会分辨"值得冒的风险"和"不该冒的风险"。</div>
+  </div>
+
+  <div class="block activity">
+    <div class="block-title"><span class="icon">🎯</span> 动手挑战（5分钟）</div>
+    <p><strong>挑战：家庭风险清单</strong></p>
+    <p>和爸爸/妈妈一起，列出家里可能面临的5个风险：</p>
+    <table style="width:100%;margin-top:8px;">
+      <tr style="background:#faf5ff;"><th>风险</th><th>可能性（高/中/低）</th><th>后果（严重/一般）</th><th>怎么应对？</th></tr>
+      <tr><td>例如：家人生病</td><td>中</td><td>严重</td><td>医疗保险+健康生活</td></tr>
+      <tr><td>？</td><td>？</td><td>？</td><td>？</td></tr>
+      <tr><td>？</td><td>？</td><td>？</td><td>？</td></tr>
+    </table>
+  </div>
+
+  <div class="block takeaway">
+    <div class="block-title"><span class="icon">⭐</span> 一句话带走</div>
+    <p class="quote">"不要害怕风险，但要学会为风险做准备。<br>用确定的小代价，保护自己免受不确定的大损失。"</p>
+  </div>
+</div>
+
+<!-- 第14课 -->
+<div class="lesson" id="lesson14">
+  <div class="lesson-head">
+    <div class="lesson-num">14</div>
+    <div><h2>让时间帮你赚钱</h2><span class="tag">核心概念：复利的力量</span></div>
+  </div>
+  <div class="parent-tip"><strong>家长提示：</strong>复利是爱因斯坦说的"世界第八大奇迹"。这节课用具体数字让孩子感受时间的力量，核心信息是"越早开始越好"。</div>
+
+  <div class="block">
+    <div class="block-title"><span class="icon">🤔</span> 开场提问（3分钟）</div>
+    <p>先问一个有趣的问题：</p>
+    <p><strong>"如果有一张神奇的纸，厚度0.1毫米，可以对折42次。猜猜对折42次之后有多厚？"</strong></p>
+    <ul>
+      <li>一本字典那么厚？</li>
+      <li>一栋楼那么高？</li>
+      <li>比地球到月亮还远？</li>
+    </ul>
+    <button class="answer-toggle" onclick="toggle(this)">揭晓答案</button>
+    <div class="answer-hidden">答案是：<strong>比地球到月亮的距离还远得多</strong>！0.1毫米 × 2⁴² ≈ 44万公里（月球距离地球约38万公里）。这就是"翻倍"的力量！</div>
+  </div>
+
+  <div class="block story">
+    <div class="block-title"><span class="icon">📖</span> 情景故事（5-8分钟）</div>
+    <p><strong>《两个朋友的存款比赛》</strong></p>
+    <p>小明和小红都是10岁。有一天他们各自有1000元压岁钱。</p>
+    <p><strong>小明</strong>觉得1000块太少，没什么好存的，先花掉吧。等长大再存钱也不迟。</p>
+    <p><strong>小红</strong>把1000元存到了银行，年利率5%（为了方便计算）。</p>
+    <p>看看10年后（他们20岁时）：</p>
+    <table style="width:100%;margin:10px 0;">
+      <tr style="background:#faf5ff;"><th>年龄</th><th>小红的存款</th><th>说明</th></tr>
+      <tr><td>10岁</td><td>1000元</td><td>存入1000元</td></tr>
+      <tr><td>11岁</td><td>1050元</td><td>1000 × 1.05</td></tr>
+      <tr><td>12岁</td><td>1102元</td><td>1050 × 1.05</td></tr>
+      <tr><td>15岁</td><td>1276元</td><td>利息也在产生利息了</td></tr>
+      <tr><td>20岁</td><td>1629元</td><td>10年涨了63%！</td></tr>
+      <tr><td>30岁</td><td>2653元</td><td>20年，变成了2.65倍</td></tr>
+      <tr><td>60岁</td><td>11467元</td><td>50年，超过11倍！</td></tr>
+    </table>
+    <p>注意看——小红没往里面加过一分钱，但钱自己在"长大"！</p>
+    <p>这就是<strong>复利</strong>——利息产生利息，利滚利。</p>
+    <p>而小明呢？那1000元早就花掉了，20岁时存款为0。</p>
+  </div>
+
+  <div class="block concept">
+    <div class="block-title"><span class="icon">💡</span> 概念讲解（5-8分钟）</div>
+    <p><strong>什么是复利？</strong></p>
+    <p><span class="highlight">复利 = 利息也能产生利息，让钱"利滚利"地增长</span></p>
+
+    <p style="margin-top:10px;"><strong>单利 vs 复利：</strong></p>
+    <table style="width:100%;margin:10px 0;">
+      <tr style="background:#faf5ff;"><th></th><th>单利（只有本金生息）</th><th>复利（利滚利）</th></tr>
+      <tr><td>存1000元，年利率5%</td><td></td><td></td></tr>
+      <tr><td>10年后</td><td>1500元</td><td>1629元</td></tr>
+      <tr><td>20年后</td><td>2000元</td><td>2653元</td></tr>
+      <tr><td>50年后</td><td>3500元</td><td>11467元</td></tr>
+    </table>
+    <p>时间越长，差距越大！</p>
+
+    <p style="margin-top:10px;"><strong>复利不只在银行：</strong></p>
+    <ul>
+      <li><strong>知识</strong>也是复利——学得越多，理解新知识越快</li>
+      <li><strong>友谊</strong>也是复利——朋友介绍朋友，朋友圈越来越大</li>
+      <li><strong>习惯</strong>也是复利——每天进步一点点，一年后判若两人</li>
+      <li><strong>健康</strong>也是复利——每天锻炼，身体越来越好</li>
+    </ul>
+
+    <p style="margin-top:10px;"><strong>最重要的一个道理：</strong></p>
+    <p>复利最大的朋友是<strong>时间</strong>，最大的敌人是<strong>拖延</strong>。</p>
+    <p>10岁存1000元和20岁存1000元，到60岁差距巨大。</p>
+    <p><span class="highlight">越早开始，时间帮你的越多</span>。不只是存钱——学习、锻炼、培养好习惯，都是越早越好。</p>
+  </div>
+
+  <div class="block discuss">
+    <div class="block-title"><span class="icon">💬</span> 亲子讨论（5分钟）</div>
+    <p><strong>讨论1：</strong>你生活中有"复利效应"的例子吗？（不一定是钱）</p>
+    <button class="answer-toggle" onclick="toggle(this)">参考思路</button>
+    <div class="answer-hidden">每天背5个单词，一年下来1800多个——词汇量增加让阅读变容易，读得越多词汇量又增加。学乐器也是：基本功越扎实，学新曲子越快。</div>
+    <p style="margin-top:12px;"><strong>讨论2：</strong>为什么很多人知道存钱重要，但还是存不下钱？</p>
+    <p style="margin-top:12px;"><strong>讨论3：</strong>你觉得现在有什么事情是"越早开始越好"的？</p>
+  </div>
+
+  <div class="block activity">
+    <div class="block-title"><span class="icon">🎯</span> 动手挑战（5分钟）</div>
+    <p><strong>挑战：复利计算器</strong></p>
+    <p>假设你每个月存50元，年利率5%，用计算器（或纸笔）算一算：</p>
+    <ul>
+      <li>1年后你有多少钱？（12 × 50 = 600，加上利息约615元）</li>
+      <li>5年后呢？（大约3400元）</li>
+      <li>10年后呢？（大约7700元）</li>
+    </ul>
+    <p>你实际存了 50 × 12 × 10 = 6000元，但最后有7700元——<strong>多出来的1700元是时间送给你的礼物！</strong></p>
+  </div>
+
+  <div class="block takeaway">
+    <div class="block-title"><span class="icon">⭐</span> 一句话带走</div>
+    <p class="quote">"复利是世界第八大奇迹。<br>越早开始存钱、学习、培养好习惯，时间就越会成为你的朋友。"</p>
+  </div>
+</div>
+
+<!-- 第15课 -->
+<div class="lesson" id="lesson15">
+  <div class="lesson-head">
+    <div class="lesson-num">15</div>
+    <div><h2>你的选择影响别人</h2><span class="tag">核心概念：博弈论入门</span></div>
+  </div>
+  <div class="parent-tip"><strong>家长提示：</strong>博弈论看似高深，但核心思想孩子完全可以理解——"我的选择会影响别人，别人的选择也会影响我"。这最后一课也是最重要的思维训练之一。</div>
+
+  <div class="block">
+    <div class="block-title"><span class="icon">🤔</span> 开场提问（3分钟）</div>
+    <ul>
+      <li>"如果你和同桌一起打扫教室，你偷懒不扫，会怎样？"</li>
+      <li>"如果大家都不排队，会发生什么？"</li>
+      <li>"为什么有时候'对大家都好'的事情，反而很难做到？"</li>
+    </ul>
+  </div>
+
+  <div class="block story">
+    <div class="block-title"><span class="icon">📖</span> 情景故事（5-8分钟）</div>
+    <p><strong>《草地悲剧》</strong></p>
+    <p>有一个村庄，村中间有一大片公共草地，所有村民都可以在上面放羊。</p>
+    <p>草地最多能养50只羊。村子有10户人家，每户养5只羊，刚刚好——<strong>大家都有的吃，草地也不会被破坏</strong>。</p>
+    <p>有一天，张三想："如果我多养1只羊，我就多赚一份钱。只多1只，草地不会有什么影响吧？"</p>
+    <p>于是他养了6只。</p>
+    <p>李四看到张三多养了，也想："他多养了我也可以多养！"</p>
+    <p>于是李四也养了6只。</p>
+    <p>王五看到……也多养了……</p>
+    <p>最后每家都养了7只、8只、10只……</p>
+    <p>结果——<strong>草地被吃光了！所有羊都饿死了，所有村民都亏了</strong>。</p>
+    <p style="margin-top:10px;">每个人做的都是"对自己最好"的选择，但所有人的选择加在一起，却变成了<strong>对所有人都最坏的结果</strong>。</p>
+    <p>这就是博弈论里一个非常重要的概念。</p>
+  </div>
+
+  <div class="block concept">
+    <div class="block-title"><span class="icon">💡</span> 概念讲解（5-8分钟）</div>
+    <p><strong>什么是博弈论？</strong></p>
+    <p><span class="highlight">博弈论 = 研究你的选择和别人的选择怎么互相影响的学问</span></p>
+    <p>在很多情况下，你不能只考虑自己——因为<strong>你的结果取决于别人的选择</strong>。</p>
+
+    <p style="margin-top:10px;"><strong>经典案例：囚徒困境</strong></p>
+    <p>警察抓了两个小偷（A和B），分别关在两个房间审问。他们不能沟通。</p>
+    <ul>
+      <li>如果两个人都不承认 → 各判1年</li>
+      <li>如果一个人承认、另一个不承认 → 承认的释放，不承认的判10年</li>
+      <li>如果两个人都承认 → 各判5年</li>
+    </ul>
+    <table style="width:100%;margin:10px 0;">
+      <tr style="background:#faf5ff;"><th></th><th>B不承认</th><th>B承认</th></tr>
+      <tr><td><strong>A不承认</strong></td><td>各判1年 ✅✅</td><td>A判10年，B释放 ❌</td></tr>
+      <tr><td><strong>A承认</strong></td><td>A释放，B判10年 ❌</td><td>各判5年 😐😐</td></tr>
+    </table>
+    <p>从整体看，两个人都不承认最好（各1年）。</p>
+    <p>但从个人看，不管对方怎么做，自己承认都"更划算"——<strong>所以两个人都会承认，结果各判5年</strong>。</p>
+    <p>个人最优选择 → 集体最差结果。这就是"困境"。</p>
+
+    <p style="margin-top:10px;"><strong>怎么打破困境？</strong></p>
+    <ul>
+      <li><strong>沟通</strong>——如果两人能说话，就可以约定都不承认</li>
+      <li><strong>信任</strong>——相信对方会遵守约定</li>
+      <li><strong>规则</strong>——如果有"告密者会被报复"的规则，就不会承认</li>
+      <li><strong>长远考虑</strong>——如果未来还要合作，就不会背叛</li>
+    </ul>
+
+    <p style="margin-top:10px;"><strong>生活中的博弈：</strong></p>
+    <ul>
+      <li>为什么大家要排队？（如果不排队 → 挤成一团 → 所有人都慢）</li>
+      <li>为什么国家之间要签环保协议？（如果不签 → 都排放 → 地球完蛋）</li>
+      <li>为什么同学之间不该作弊？（如果都作弊 → 分数没意义 → 大家都亏）</li>
+    </ul>
+    <p>所以<span class="highlight">合作、信任、规则</span>是打破困境的关键。</p>
+  </div>
+
+  <div class="block discuss">
+    <div class="block-title"><span class="icon">💬</span> 亲子讨论（5分钟）</div>
+    <p><strong>讨论1：</strong>你能想到生活中有什么"囚徒困境"的例子吗？</p>
+    <button class="answer-toggle" onclick="toggle(this)">参考思路</button>
+    <div class="answer-hidden">军备竞赛（国家之间都在造武器，谁都怕落后，结果花了大量钱造武器而不是改善民生）；电影院前排的人站起来看，后面的人也不得不站起来，最后所有人都站着看，谁都没更舒服。</div>
+    <p style="margin-top:12px;"><strong>讨论2：</strong>你觉得"信任"在合作中重要吗？如果有人不守信用会怎样？</p>
+    <p style="margin-top:12px;"><strong>讨论3：</strong>学完了15节课，你觉得经济学最重要的一个道理是什么？</p>
+  </div>
+
+  <div class="block activity">
+    <div class="block-title"><span class="icon">🎯</span> 动手挑战（5分钟）</div>
+    <p><strong>挑战：博弈游戏——合作还是背叛？</strong></p>
+    <p>和爸爸/妈妈玩这个游戏：</p>
+    <ul>
+      <li>两人各有一张卡片，写上"合作"或"背叛"</li>
+      <li>同时翻开卡片：</li>
+    </ul>
+    <table style="width:100%;margin:10px 0;">
+      <tr style="background:#faf5ff;"><th></th><th>对方合作</th><th>对方背叛</th></tr>
+      <tr><td><strong>你合作</strong></td><td>各得3分 ✅✅</td><td>你得0分，对方得5分 ❌</td></tr>
+      <tr><td><strong>你背叛</strong></td><td>你得5分，对方得0分 ❌</td><td>各得1分 😐😐</td></tr>
+    </table>
+    <p>玩5轮，看看最后分数如何。然后讨论：什么策略得分最高？</p>
+    <p style="margin-top:8px;color:var(--muted);font-size:.9em;">提示：最著名的策略叫"以牙还牙"——第一轮合作，之后模仿对方上一轮的做法。它既鼓励合作，又惩罚背叛。</p>
+  </div>
+
+  <div class="block takeaway">
+    <div class="block-title"><span class="icon">⭐</span> 一句话带走</div>
+    <p class="quote">"你的选择会影响别人，别人的选择也会影响你。<br>很多时候，合作和信任才是对所有人都最好的答案。"</p>
+  </div>
+</div>
+
+<!-- 课程总结 -->
+<div class="final-box">
+  <h2>恭喜你完成了全部15课！</h2>
+  <p>回顾一下我们学到的15个核心道理：</p>
+  <p style="text-align:left; max-width:500px; margin:20px auto; font-size:.95em;">
+    1. 资源有限，我们必须选择<br>
+    2. 每个选择都有机会成本<br>
+    3. 分清需要和想要<br>
+    4. 钱是方便交换的工具<br>
+    5. 价格由供给和需求决定<br>
+    6. 分工让大家更高效<br>
+    7. 别被沉没成本绑架<br>
+    8. 延迟满足带来更大回报<br>
+    9. 零花钱需要管理<br>
+    10. 市场是"看不见的手"<br>
+    11. 竞争推动进步<br>
+    12. 好社会需要公共物品和税收<br>
+    13. 为风险做准备<br>
+    14. 时间和复利是最强力量<br>
+    15. 合作往往比单打独斗更好
+  </p>
+  <p style="margin-top:20px; font-size:1.1em;"><strong>经济学不只是关于钱，<br>它是一种看世界的方式。</strong></p>
+  <p style="margin-top:8px;">用这些思维去观察生活，<br>你会发现世界比你想象的更有趣！</p>
+</div>
+
+</div>
+
+<div class="footer">
+  <p>单元五完成！全部课程结束！</p>
+  <p style="margin-top:6px;"><a href="单元一_选择的艺术.html">单元一</a> ｜ <a href="单元二_交换的秘密.html">单元二</a> ｜ <a href="单元三_聪明的决定.html">单元三</a> ｜ <a href="单元四_社会如何运转.html">单元四</a> ｜ 单元五</p>
+  <p style="margin-top:6px;">回到目录：<a href="../儿童经济学启蒙知识目录.html">儿童经济学启蒙知识目录</a></p>
+</div>
+
+<script>
+function toggle(btn) {
+  const div = btn.nextElementSibling;
+  div.classList.toggle('show');
+  btn.textContent = div.classList.contains('show') ? '收起' : '参考思路';
+}
+</script>
+</body>
+</html>

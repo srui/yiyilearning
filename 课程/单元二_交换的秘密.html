@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>单元二：交换的秘密 · 小E学院</title>
+<style>
+  :root { --accent:#FFA502; --bg:#FAFBFC; --card:#fff; --text:#2D3436; --muted:#636E72; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: -apple-system,"PingFang SC","Noto Sans SC","Microsoft YaHei",sans-serif; background:var(--bg); color:var(--text); line-height:1.8; }
+  .hero { background:linear-gradient(135deg,#FFA502,#e67e22); color:#fff; text-align:center; padding:50px 20px 40px; }
+  .hero h1 { font-size:2em; margin-bottom:8px; }
+  .hero .sub { opacity:.9; font-size:1.05em; }
+  .hero .meta { margin-top:14px; display:flex; justify-content:center; gap:16px; flex-wrap:wrap; }
+  .hero .meta span { background:rgba(255,255,255,.2); padding:4px 14px; border-radius:16px; font-size:.88em; }
+  .wrap { max-width:860px; margin:0 auto; padding:24px 16px 60px; }
+  .lesson-nav { display:flex; gap:10px; margin-bottom:30px; flex-wrap:wrap; }
+  .lesson-nav a { text-decoration:none; padding:10px 20px; border-radius:12px; background:var(--card); box-shadow:0 2px 8px rgba(0,0,0,.06); font-weight:600; color:var(--text); transition:all .2s; border:2px solid transparent; }
+  .lesson-nav a:hover { border-color:var(--accent); transform:translateY(-2px); }
+  .lesson { scroll-margin-top:20px; margin-bottom:50px; }
+  .lesson-head { display:flex; align-items:center; gap:14px; margin-bottom:20px; }
+  .lesson-num { width:48px; height:48px; border-radius:50%; background:var(--accent); color:#fff; display:flex; align-items:center; justify-content:center; font-size:1.3em; font-weight:800; flex-shrink:0; }
+  .lesson-head h2 { font-size:1.35em; }
+  .lesson-head .tag { font-size:.8em; background:#f0f0f0; padding:3px 10px; border-radius:10px; color:var(--muted); }
+  .block { background:var(--card); border-radius:16px; padding:22px 24px; margin-bottom:16px; box-shadow:0 2px 10px rgba(0,0,0,.04); }
+  .block-title { font-weight:700; font-size:.92em; text-transform:uppercase; letter-spacing:1px; margin-bottom:12px; display:flex; align-items:center; gap:8px; }
+  .block-title .icon { font-size:1.2em; }
+  .story { background:linear-gradient(135deg,#fffbeb,#fef3c7); }
+  .concept { background:linear-gradient(135deg,#f0f9ff,#e0f2fe); }
+  .discuss { background:linear-gradient(135deg,#fefce8,#fef3c7); }
+  .activity { background:linear-gradient(135deg,#f0fdf4,#dcfce7); }
+  .takeaway { background:linear-gradient(135deg,#faf5ff,#f3e8ff); text-align:center; padding:20px 30px; }
+  .takeaway .quote { font-size:1.15em; font-weight:700; color:#7c3aed; }
+  .parent-tip { background:linear-gradient(135deg,#f8f9fa,#e9ecef); border-left:4px solid #adb5bd; padding:14px 18px; border-radius:0 12px 12px 0; margin-bottom:16px; font-size:.9em; color:var(--muted); }
+  .parent-tip strong { color:var(--text); }
+  p { margin-bottom:10px; }
+  ul { padding-left:20px; margin-bottom:10px; }
+  li { margin-bottom:6px; }
+  .highlight { background:#FFF9E6; padding:2px 6px; border-radius:4px; font-weight:600; }
+  .answer-toggle { background:#e2e8f0; border:none; padding:6px 14px; border-radius:8px; cursor:pointer; font-size:.88em; margin-top:6px; }
+  .answer-toggle:hover { background:#cbd5e1; }
+  .answer-hidden { display:none; background:#f1f5f9; padding:12px 16px; border-radius:10px; margin-top:8px; font-size:.93em; }
+  .answer-hidden.show { display:block; }
+  .footer { text-align:center; padding:24px; color:var(--muted); font-size:.85em; border-top:1px solid #eee; }
+  .footer a { color:var(--accent); text-decoration:none; }
+  table { border-collapse:collapse; } td,th { padding:8px; border:1px solid #e2e8f0; }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>单元二：交换的秘密</h1>
+  <div class="sub">人与人之间如何通过交换和分工让大家都过得更好</div>
+  <div class="meta">
+    <span>3 节课</span>
+    <span>适合 9-10 岁</span>
+    <span>每课 20-30 分钟</span>
+  </div>
+</div>
+
+<div class="wrap">
+
+<div class="lesson-nav">
+  <a href="#lesson4">第4课 货币的故事</a>
+  <a href="#lesson5">第5课 价格与供需</a>
+  <a href="#lesson6">第6课 分工与比较优势</a>
+</div>
+
+<!-- ==================== 第4课 ==================== -->
+<div class="lesson" id="lesson4">
+  <div class="lesson-head">
+    <div class="lesson-num">4</div>
+    <div>
+      <h2>从贝壳到纸币——货币的故事</h2>
+      <span class="tag">核心概念：货币的起源与功能</span>
+    </div>
+  </div>
+
+  <div class="parent-tip">
+    <strong>家长提示：</strong>这节课通过"穿越"的方式让孩子理解货币为什么被发明出来。可以准备一些小道具（贝壳、硬币、纸币）增加趣味性。
+  </div>
+
+  <div class="block">
+    <div class="block-title"><span class="icon">🤔</span> 开场提问（3分钟）</div>
+    <p>先问孩子一个问题：</p>
+    <ul>
+      <li>"你觉得，如果世界上没有钱，我们怎么买东西？"</li>
+      <li>"为什么一张纸（钞票）能换来一个面包？纸又不是面包做的。"</li>
+    </ul>
+    <p>让孩子大胆猜测，不用纠正。</p>
+  </div>
+
+  <div class="block story">
+    <div class="block-title"><span class="icon">📖</span> 情景故事（5-8分钟）</div>
+    <p><strong>《穿越到没有钱的时代》</strong></p>
+    <p>想象你穿越到了5000年前的一个小村庄。这里没有商店、没有手机支付、没有钱包——<strong>根本没有钱</strong>。</p>
+    <p>你是一个种苹果的农民，今年苹果大丰收，你想换一些东西：</p>
+    <ul>
+      <li>你想要一件衣服 → 要找织布的人换</li>
+      <li>你想要一把斧头 → 要找铁匠换</li>
+      <li>你想要一条鱼 → 要找渔民换</li>
+    </ul>
+    <p>你去找织布的人："我用苹果换你的衣服！"</p>
+    <p>织布的人说："我不想要苹果，我想要鱼。"</p>
+    <p>你去找渔民："我用苹果换你的鱼！"</p>
+    <p>渔民说："我不想要苹果，我想要斧头。"</p>
+    <p>你去找铁匠："我用苹果换你的斧头！"</p>
+    <p>铁匠说："我不想要苹果，我想要衣服。"</p>
+    <p>绕了一大圈，你啥也没换成！😱</p>
+    <p style="margin-top:10px;">这就是"以物易物"最大的问题——<strong>双方必须刚好都想要对方的东西</strong>，太难了！</p>
+  </div>
+
+  <div class="block concept">
+    <div class="block-title"><span class="icon">💡</span> 概念讲解（5-8分钟）</div>
+    <p><strong>人类是怎么解决这个问题的？</strong></p>
+    <p>聪明的人们找到了一个办法：<span class="highlight">找一个大家都愿意接受的东西当"中间人"</span>。</p>
+
+    <p><strong>货币的进化史：</strong></p>
+    <table style="width:100%;margin:10px 0;">
+      <tr style="background:#fffbeb;"><th style="text-align:left;">时代</th><th style="text-align:left;">用什么当钱</th><th style="text-align:left;">为什么</th></tr>
+      <tr><td>远古</td><td>🐚 贝壳</td><td>漂亮、稀少、方便携带</td></tr>
+      <tr><td>古代</td><td>🥉 铜/银/金</td><td>不会坏、可以分割、稀缺</td></tr>
+      <tr><td>宋代（中国）</td><td>📄 交子（最早的纸币）</td><td>比金属轻便太多</td></tr>
+      <tr><td>现代</td><td>💳 电子支付</td><td>连纸都不用了</td></tr>
+    </table>
+
+    <p><strong>钱必须具备的条件：</strong></p>
+    <ul>
+      <li><strong>大家都认</strong>——你拿一张自己画的纸去买东西，别人不认</li>
+      <li><strong>不会坏</strong>——如果用水果当钱，放几天就烂了</li>
+      <li><strong>能分割</strong>——买一颗糖不需要一整块金砖</li>
+      <li><strong>数量有限</strong>——如果树叶能当钱，那人人都是亿万富翁（但钱就不值钱了）</li>
+    </ul>
+
+    <p style="margin-top:10px;"><strong>钱的三大功能：</strong></p>
+    <ul>
+      <li><strong>交换工具</strong>——不用再"以物易物"，用钱就能买任何东西</li>
+      <li><strong>衡量价值</strong>——一个面包5元、一本书30元，让我们能比较东西的贵贱</li>
+      <li><strong>储存价值</strong>——今天赚的钱可以存到明天用（如果用冰棍当钱就存不了）</li>
+    </ul>
+  </div>
+
+  <div class="block discuss">
+    <div class="block-title"><span class="icon">💬</span> 亲子讨论（5分钟）</div>
+    <p><strong>讨论1：</strong>如果你来发明一种新的"钱"，你会用什么？为什么？</p>
+    <button class="answer-toggle" onclick="toggle(this)">参考思路</button>
+    <div class="answer-hidden">想象力题，没有标准答案。引导孩子思考"大家认不认""会不会坏""容不容易造假"。</div>
+
+    <p style="margin-top:12px;"><strong>讨论2：</strong>为什么现在很多人用手机支付，不带现金了？纸币会被淘汰吗？</p>
+
+    <p style="margin-top:12px;"><strong>讨论3：</strong>为什么国家要严格控制印钞票的量？（联系第1课的稀缺性）</p>
+    <button class="answer-toggle" onclick="toggle(this)">参考思路</button>
+    <div class="answer-hidden">钱本身不创造财富。如果随便印钱，钱太多了，就不稀缺了，就不值钱了。这就是通货膨胀——后面会学到。</div>
+  </div>
+
+  <div class="block activity">
+    <div class="block-title"><span class="icon">🎯</span> 动手挑战（5分钟）</div>
+    <p><strong>挑战：设计你的货币</strong></p>
+    <p>在纸上设计一种属于你自己的"货币"：</p>
+    <ul>
+      <li>给它起个名字</li>
+      <li>画出来——面值是多少？长什么样？</li>
+      <li>写上：为什么别人愿意接受你的货币？</li>
+      <li>思考：怎么防止别人伪造？</li>
+    </ul>
+  </div>
+
+  <div class="block takeaway">
+    <div class="block-title"><span class="icon">⭐</span> 一句话带走</div>
+    <p class="quote">"钱不是魔法，它只是大家共同约定用来方便交换的工具。<br>从贝壳到纸币到手机支付，形式在变，本质不变。"</p>
+  </div>
+</div>
+
+<!-- ==================== 第5课 ==================== -->
+<div class="lesson" id="lesson5">
+  <div class="lesson-head">
+    <div class="lesson-num">5</div>
+    <div>
+      <h2>为什么苹果手机那么贵？</h2>
+      <span class="tag">核心概念：价格、供给与需求</span>
+    </div>
+  </div>
+
+  <div class="parent-tip">
+    <strong>家长提示：</strong>供需关系是经济学的核心。这节课用孩子熟悉的商品来讲，让孩子"感受"到价格是怎么形成的，而不是死记概念。
+  </div>
+
+  <div class="block">
+    <div class="block-title"><span class="icon">🤔</span> 开场提问（3分钟）</div>
+    <p>先问几个对比问题：</p>
+    <ul>
+      <li>"一瓶水多少钱？一瓶钻石多少钱？为什么差距这么大？"</li>
+      <li>"夏天的西瓜和冬天的西瓜，哪个贵？为什么？"</li>
+      <li>"学校门口的小店里，为什么有些零食贵有些便宜？"</li>
+    </ul>
+  </div>
+
+  <div class="block story">
+    <div class="block-title"><span class="icon">📖</span> 情景故事（5-8分钟）</div>
+    <p><strong>《小强的柠檬水摊》</strong></p>
+    <p>暑假，小强在小区门口摆了个柠檬水摊。一杯柠檬水卖3元。</p>
+    <p><strong>第一天</strong>：天气不太热，来买的人不多，到了晚上还剩了好多。小强想：<em>"是不是太贵了？"</em> 第二天降到2元，买的人多了一些。</p>
+    <p><strong>第三天</strong>：超级大热天！温度40度！小区里所有的人都想喝冰柠檬水。小强的摊前排起了长队。有人愿意出5元、甚至8元买一杯！</p>
+    <p>小强发现一个规律：</p>
+    <ul>
+      <li>天气越热（<strong>想喝的人越多</strong>），价格可以越高</li>
+      <li>他做柠檬水的速度有限（<strong>供应有限</strong>），买不到的人愿意出更高的价</li>
+    </ul>
+    <p>到了第四天，小区里又出现了3个柠檬水摊！小强的顾客被分走了一半。他不得不再次降价……</p>
+    <p style="margin-top:10px;font-weight:600;">这就是价格背后的秘密！</p>
+  </div>
+
+  <div class="block concept">
+    <div class="block-title"><span class="icon">💡</span> 概念讲解（5-8分钟）</div>
+    <p><strong>什么决定了价格？</strong></p>
+    <p>价格由两个力量共同决定：<span class="highlight">供给（有多少）</span> 和 <span class="highlight">需求（多少人想要）</span>。</p>
+
+    <table style="width:100%;margin:10px 0;">
+      <tr style="background:#fffbeb;"><th>情况</th><th>价格变化</th><th>生活例子</th></tr>
+      <tr><td>想要的人多，东西少</td><td>📈 涨价</td><td>限量版球鞋、节假日的机票</td></tr>
+      <tr><td>想要的人少，东西多</td><td>📉 降价</td><td>快过期的食品、换季衣服</td></tr>
+      <tr><td>想要的人多，东西也多</td><td>价格适中</td><td>普通矿泉水、铅笔</td></tr>
+      <tr><td>想要的人少，东西也少</td><td>价格适中</td><td>小众爱好的器材</td></tr>
+    </table>
+
+    <p><strong>为什么苹果手机贵？</strong></p>
+    <ul>
+      <li><strong>需求大</strong>：全球几亿人想买iPhone</li>
+      <li><strong>供给有控制</strong>：只有苹果公司能生产，芯片、技术都是独家的</li>
+      <li><strong>品牌价值</strong>：很多人觉得用iPhone是身份的象征（这增加了需求）</li>
+    </ul>
+
+    <p style="margin-top:10px;"><strong>一个重要规律：</strong></p>
+    <p>当某个东西特别赚钱，就会有更多人去生产它（供给增加）→ 价格下降。</p>
+    <p>当某个东西价格太低，生产的人就少了（供给减少）→ 价格回升。</p>
+    <p>就像柠檬水摊——小强赚钱了，别人也来摆摊，竞争让价格回归合理。</p>
+    <p>这就是经济学家说的<span class="highlight">"看不见的手"</span>——没有人规定价格，但它自己会找到平衡。</p>
+  </div>
+
+  <div class="block discuss">
+    <div class="block-title"><span class="icon">💬</span> 亲子讨论（5分钟）</div>
+    <p><strong>讨论1：</strong>为什么下雨天地铁口的雨伞会涨价？这公平吗？</p>
+    <button class="answer-toggle" onclick="toggle(this)">参考思路</button>
+    <div class="answer-hidden">需求突然增加，供给不变 → 价格上涨。这是市场规律，但涨太多就是"趁火打劫"了。有些地方会限制这种涨价行为。</div>
+
+    <p style="margin-top:12px;"><strong>讨论2：</strong>为什么有些东西免费？（比如公园、图书馆）</p>
+    <button class="answer-toggle" onclick="toggle(this)">参考思路</button>
+    <div class="answer-hidden">有些东西政府用税收来提供，让大家免费使用，因为这些东西对所有人都有好处（后面第12课会详细讲）。</div>
+
+    <p style="margin-top:12px;"><strong>讨论3：</strong>如果你是商家，你会怎么定价格？</p>
+  </div>
+
+  <div class="block activity">
+    <div class="block-title"><span class="icon">🎯</span> 动手挑战（5分钟）</div>
+    <p><strong>挑战：小小定价师</strong></p>
+    <p>假设你在学校义卖会上卖自己做的手工饼干，考虑以下问题后定一个价格：</p>
+    <ul>
+      <li>你做饼干花了多少钱？（材料成本）</li>
+      <li>你花了多长时间？（时间成本）</li>
+      <li>班上有多少人？他们愿意出多少钱买？</li>
+      <li>有没有别人也卖饼干？（竞争）</li>
+    </ul>
+    <p>把你的定价和理由写下来。</p>
+  </div>
+
+  <div class="block takeaway">
+    <div class="block-title"><span class="icon">⭐</span> 一句话带走</div>
+    <p class="quote">"价格不是某个人随便定的，它由供给和需求共同决定。<br>想要的人越多、东西越少，价格就越高。"</p>
+  </div>
+</div>
+
+<!-- ==================== 第6课 ==================== -->
+<div class="lesson" id="lesson6">
+  <div class="lesson-head">
+    <div class="lesson-num">6</div>
+    <div>
+      <h2>为什么世界上有分工？</h2>
+      <span class="tag">核心概念：分工、比较优势</span>
+    </div>
+  </div>
+
+  <div class="parent-tip">
+    <strong>家长提示：</strong>"比较优势"是经济学中稍难的概念，用具体数字来讲会更清楚。关键是让孩子理解：即使你每件事都做得比别人好，也不应该什么都自己做。
+  </div>
+
+  <div class="block">
+    <div class="block-title"><span class="icon">🤔</span> 开场提问（3分钟）</div>
+    <ul>
+      <li>"你有没有想过，为什么你的老师只教一门课，而不是什么都教？"</li>
+      <li>"为什么你妈妈/爸爸不在家里种粮食、织布、造汽车？"</li>
+      <li>"如果每个人都自己做所有的事情，生活会怎样？"</li>
+    </ul>
+  </div>
+
+  <div class="block story">
+    <div class="block-title"><span class="icon">📖</span> 情景故事（5-8分钟）</div>
+    <p><strong>《两个小岛的奇遇》</strong></p>
+    <p>大海上有两个小岛：<strong>苹果岛</strong> 和 <strong>橘子岛</strong>。</p>
+    <p>苹果岛上的人特别会种苹果，一天能种100个。他们也能种橘子，但不太擅长，一天只能种20个。</p>
+    <p>橘子岛上正好相反：一天能种100个橘子，但只能种20个苹果。</p>
+    <p><strong>如果每个岛都自己种两种水果：</strong></p>
+    <ul>
+      <li>苹果岛：100个苹果 + 20个橘子 = 120个水果</li>
+      <li>橘子岛：20个苹果 + 100个橘子 = 120个水果</li>
+      <li>两个岛总共：<strong>240个水果</strong></li>
+    </ul>
+    <p><strong>如果各做各最擅长的事，然后交换呢？</strong></p>
+    <ul>
+      <li>苹果岛专注种苹果：种200个苹果</li>
+      <li>橘子岛专注种橘子：种200个橘子</li>
+      <li>然后苹果岛用60个苹果换橘子岛的60个橘子</li>
+      <li>结果：苹果岛有140个苹果+60个橘子，橘子岛有140个橘子+60个苹果</li>
+    </ul>
+    <p>每个岛的水果都比之前<strong>多了20个</strong>！总共<strong>400个水果</strong>！</p>
+    <p>这就是分工和交换的魔力——<strong>做自己最擅长的事，然后交换，大家都变好了</strong>！</p>
+  </div>
+
+  <div class="block concept">
+    <div class="block-title"><span class="icon">💡</span> 概念讲解（5-8分钟）</div>
+    <p><strong>分工是什么？</strong></p>
+    <p><span class="highlight">分工 = 每个人专门做一件事，而不是什么都做</span></p>
+    <p>一个汽车厂里，有人专门装轮子、有人专门装发动机、有人专门喷漆……如果让一个人造整辆车，可能要一年；流水线分工后，一天就能造几百辆。</p>
+
+    <p style="margin-top:10px;"><strong>比较优势——一个反直觉的道理</strong></p>
+    <p>假设你数学全班第一，画画也全班第一。你应该同时做数学作业和画海报吗？</p>
+    <p>不一定！你的同桌数学一般但画画还行。如果你专注数学（你优势最大的领域），让同桌画海报（他不算太差的领域），你们两个人的总产出会更高。</p>
+    <p>这就是比较优势：<span class="highlight">不要看你"什么最强"，而要看你"相对最强的那个"</span>，把其他事交给别人做。</p>
+
+    <p style="margin-top:10px;"><strong>生活中的分工和比较优势：</strong></p>
+    <ul>
+      <li>妈妈擅长做饭、爸爸擅长修理 → 合理分工，家里效率更高</li>
+      <li>中国擅长制造、美国擅长芯片设计 → 国际贸易的基础</li>
+      <li>你擅长数学、同桌擅长英语 → 互相辅导，比各自死磕效率高</li>
+    </ul>
+  </div>
+
+  <div class="block discuss">
+    <div class="block-title"><span class="icon">💬</span> 亲子讨论（5分钟）</div>
+    <p><strong>讨论1：</strong>在我们家，每个人分别擅长什么？有没有可以更好地分工的地方？</p>
+
+    <p style="margin-top:12px;"><strong>讨论2：</strong>为什么中国能成为"世界工厂"？这是比较优势吗？</p>
+    <button class="answer-toggle" onclick="toggle(this)">参考思路</button>
+    <div class="answer-hidden">中国有大量勤劳的工人、完善的供应链、较低的生产成本——这是中国在制造业上的比较优势。但随着发展，中国在科技、创新方面的比较优势也在增强。</div>
+
+    <p style="margin-top:12px;"><strong>讨论3：</strong>你有比较优势吗？你最擅长什么？</p>
+  </div>
+
+  <div class="block activity">
+    <div class="block-title"><span class="icon">🎯</span> 动手挑战（5分钟）</div>
+    <p><strong>挑战：家庭分工优化师</strong></p>
+    <p>写下列出家里每周需要做的5件事（做饭、打扫、辅导作业等），然后：</p>
+    <ul>
+      <li>评估家里每个人（爸爸、妈妈、你、兄弟姐妹）对每件事的擅长程度（1-5分）</li>
+      <li>设计一个分工方案，让每个人做他/她"相对最擅长"的事</li>
+      <li>拿给家人看看，问他们觉得怎么样！</li>
+    </ul>
+  </div>
+
+  <div class="block takeaway">
+    <div class="block-title"><span class="icon">⭐</span> 一句话带走</div>
+    <p class="quote">"每个人都做自己最擅长的事，然后通过交换互相帮助——<br>这就是分工和比较优势的力量，它让所有人都变得更好。"</p>
+  </div>
+</div>
+
+</div>
+
+<div class="footer">
+  <p>单元二完成！上一单元：<a href="单元一_选择的艺术.html">单元一：选择的艺术</a> ｜ 下一单元：<a href="单元三_聪明的决定.html">单元三：聪明的决定</a></p>
+</div>
+
+<script>
+function toggle(btn) {
+  const div = btn.nextElementSibling;
+  div.classList.toggle('show');
+  btn.textContent = div.classList.contains('show') ? '收起' : '参考思路';
+}
+</script>
+</body>
+</html>

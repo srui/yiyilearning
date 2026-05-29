@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>单元六：钱的旅行 · 小E学院</title>
+<style>
+  :root { --accent:#e17055; --bg:#FAFBFC; --card:#fff; --text:#2D3436; --muted:#636E72; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: -apple-system,"PingFang SC","Noto Sans SC","Microsoft YaHei",sans-serif; background:var(--bg); color:var(--text); line-height:1.8; }
+  .hero { background:linear-gradient(135deg,#e17055,#d63031); color:#fff; text-align:center; padding:50px 20px 40px; }
+  .hero h1 { font-size:2em; margin-bottom:8px; }
+  .hero .sub { opacity:.9; font-size:1.05em; }
+  .hero .meta { margin-top:14px; display:flex; justify-content:center; gap:16px; flex-wrap:wrap; }
+  .hero .meta span { background:rgba(255,255,255,.2); padding:4px 14px; border-radius:16px; font-size:.88em; }
+  .wrap { max-width:860px; margin:0 auto; padding:24px 16px 60px; }
+  .lesson-nav { display:flex; gap:10px; margin-bottom:30px; flex-wrap:wrap; }
+  .lesson-nav a { text-decoration:none; padding:10px 20px; border-radius:12px; background:var(--card); box-shadow:0 2px 8px rgba(0,0,0,.06); font-weight:600; color:var(--text); transition:all .2s; border:2px solid transparent; }
+  .lesson-nav a:hover { border-color:var(--accent); transform:translateY(-2px); }
+  .lesson { scroll-margin-top:20px; margin-bottom:50px; }
+  .lesson-head { display:flex; align-items:center; gap:14px; margin-bottom:20px; }
+  .lesson-num { width:48px; height:48px; border-radius:50%; background:var(--accent); color:#fff; display:flex; align-items:center; justify-content:center; font-size:1.3em; font-weight:800; flex-shrink:0; }
+  .lesson-head h2 { font-size:1.35em; }
+  .lesson-head .tag { font-size:.8em; background:#f0f0f0; padding:3px 10px; border-radius:10px; color:var(--muted); }
+  .block { background:var(--card); border-radius:16px; padding:22px 24px; margin-bottom:16px; box-shadow:0 2px 10px rgba(0,0,0,.04); }
+  .block-title { font-weight:700; font-size:.92em; text-transform:uppercase; letter-spacing:1px; margin-bottom:12px; display:flex; align-items:center; gap:8px; }
+  .block-title .icon { font-size:1.2em; }
+  .story { background:linear-gradient(135deg,#fff5f5,#fee2e2); }
+  .concept { background:linear-gradient(135deg,#f0f9ff,#e0f2fe); }
+  .discuss { background:linear-gradient(135deg,#fefce8,#fef3c7); }
+  .activity { background:linear-gradient(135deg,#f0fdf4,#dcfce7); }
+  .takeaway { background:linear-gradient(135deg,#faf5ff,#f3e8ff); text-align:center; padding:20px 30px; }
+  .takeaway .quote { font-size:1.15em; font-weight:700; color:#7c3aed; }
+  .parent-tip { background:linear-gradient(135deg,#f8f9fa,#e9ecef); border-left:4px solid #adb5bd; padding:14px 18px; border-radius:0 12px 12px 0; margin-bottom:16px; font-size:.9em; color:var(--muted); }
+  .parent-tip strong { color:var(--text); }
+  p { margin-bottom:10px; } ul { padding-left:20px; margin-bottom:10px; } li { margin-bottom:6px; }
+  .highlight { background:#FFF9E6; padding:2px 6px; border-radius:4px; font-weight:600; }
+  .answer-toggle { background:#e2e8f0; border:none; padding:6px 14px; border-radius:8px; cursor:pointer; font-size:.88em; margin-top:6px; }
+  .answer-toggle:hover { background:#cbd5e1; }
+  .answer-hidden { display:none; background:#f1f5f9; padding:12px 16px; border-radius:10px; margin-top:8px; font-size:.93em; }
+  .answer-hidden.show { display:block; }
+  .footer { text-align:center; padding:24px; color:var(--muted); font-size:.85em; border-top:1px solid #eee; }
+  .footer a { color:var(--accent); text-decoration:none; }
+  table { border-collapse:collapse; } td,th { padding:8px; border:1px solid #e2e8f0; }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>单元六：钱的旅行</h1>
+  <div class="sub">理解银行、通货膨胀和国际贸易——钱在世界上是怎么流动的</div>
+  <div class="meta"><span>3 节课</span><span>适合 9-10 岁</span><span>每课 20-30 分钟</span></div>
+</div>
+
+<div class="wrap">
+<div class="lesson-nav">
+  <a href="#lesson16">第16课 银行是什么</a>
+  <a href="#lesson17">第17课 钱为什么不值钱了</a>
+  <a href="#lesson18">第18课 全世界在做生意</a>
+</div>
+
+<!-- 第16课 -->
+<div class="lesson" id="lesson16">
+  <div class="lesson-head">
+    <div class="lesson-num">16</div>
+    <div><h2>银行是什么？你的钱去了哪里？</h2><span class="tag">核心概念：银行、存款、贷款</span></div>
+  </div>
+  <div class="parent-tip"><strong>家长提示：</strong>很多孩子以为钱存进银行就是"锁在保险箱里"。这节课的关键是让孩子理解银行是怎么"转动"钱的——吸收存款、发放贷款，让钱流动起来创造价值。</div>
+
+  <div class="block">
+    <div class="block-title"><span class="icon">🤔</span> 开场提问（3分钟）</div>
+    <ul>
+      <li>"你把钱存进银行之后，钱去哪了？是不是就放在那里不动了？"</li>
+      <li>"银行凭什么给你利息？它又不是慈善机构，它赚什么？"</li>
+      <li>"为什么银行的大楼总是特别漂亮、特别高？"</li>
+    </ul>
+  </div>
+
+  <div class="block story">
+    <div class="block-title"><span class="icon">📖</span> 情景故事（5-8分钟）</div>
+    <p><strong>《小村里的大金库》</strong></p>
+    <p>在一个村子里，大家赚到钱就藏在家里。但问题是：</p>
+    <ul>
+      <li>农民老张想开面包店，但没有启动资金买烤箱</li>
+      <li>教师小李存了很多钱，但放在家里又怕丢，也没有增加</li>
+      <li>铁匠老王需要借钱买材料，但不知道找谁借</li>
+    </ul>
+    <p>有一天，一个聪明人小赵说："我来建一个'大金库'！"</p>
+    <ul>
+      <li>他把村民的闲钱收集起来，<strong>保证安全</strong>，还付一点<strong>利息</strong>作为感谢</li>
+      <li>他把这些钱<strong>借给</strong>需要钱开店、买材料的人，收一点<strong>贷款利息</strong></li>
+      <li>贷款利息 > 存款利息，<strong>中间的差额就是小赵的利润</strong></li>
+    </ul>
+    <p>结果：</p>
+    <ul>
+      <li>存钱的人——钱安全了，还有利息赚 ✅</li>
+      <li>借钱的人——有钱做生意了 ✅</li>
+      <li>小赵——赚到了差价 ✅</li>
+      <li>村子——面包店开业了，大家都买到了面包 ✅</li>
+    </ul>
+    <p><strong>小赵的"大金库"，就是银行。</strong></p>
+  </div>
+
+  <div class="block concept">
+    <div class="block-title"><span class="icon">💡</span> 概念讲解（5-8分钟）</div>
+    <p><strong>银行是做什么的？</strong></p>
+    <p><span class="highlight">银行是一个"钱的搬运工"——把钱从暂时不用的人手里，搬到需要用钱的人手里</span>。</p>
+
+    <p style="margin-top:10px;"><strong>银行的三门生意：</strong></p>
+    <table style="width:100%;margin:10px 0;">
+      <tr style="background:#fff5f5;"><th>业务</th><th>做什么</th><th>举例</th></tr>
+      <tr><td><strong>吸收存款</strong></td><td>帮你保管钱，还付你利息</td><td>你存1000元，一年后变成1020元</td></tr>
+      <tr><td><strong>发放贷款</strong></td><td>把钱借给需要的人，收更高利息</td><td>借给企业100万，一年后收回105万</td></tr>
+      <tr><td><strong>中间服务</strong></td><td>转账、汇款、换外汇等</td><td>跨行转账手续费</td></tr>
+    </table>
+
+    <p><strong>银行怎么赚钱？</strong></p>
+    <ul>
+      <li>贷款利率（5%）> 存款利率（2%）→ 差额（3%）就是银行的收入</li>
+      <li>你存1000元，银行给你20元利息</li>
+      <li>银行把你的1000元借给企业，收50元利息</li>
+      <li>银行赚了30元</li>
+    </ul>
+
+    <p style="margin-top:10px;"><strong>那银行能把所有存款都借出去吗？</strong></p>
+    <p>不能！因为你随时可能来取钱。所以银行必须<strong>留一部分钱备用</strong>（叫"准备金"）。</p>
+    <p>如果所有人都同时来取钱——银行的钱不够——这就叫<strong>"挤兑"</strong>，银行会倒闭！所以存钱要选安全的银行。</p>
+
+    <p style="margin-top:10px;"><strong>除了银行还有哪些金融机构？</strong></p>
+    <ul>
+      <li><strong>证券公司</strong>——帮你买卖股票</li>
+      <li><strong>保险公司</strong>——帮你管理风险（还记得第13课吗？）</li>
+      <li><strong>基金公司</strong>——帮很多人一起投资，分散风险</li>
+    </ul>
+  </div>
+
+  <div class="block discuss">
+    <div class="block-title"><span class="icon">💬</span> 亲子讨论（5分钟）</div>
+    <p><strong>讨论1：</strong>如果你有1000元，你会放在家里还是存银行？为什么？</p>
+    <p style="margin-top:12px;"><strong>讨论2：</strong>为什么借钱要付利息？如果不收利息会怎样？</p>
+    <button class="answer-toggle" onclick="toggle(this)">参考思路</button>
+    <div class="answer-hidden">利息是"借用别人钱的代价"。如果不收利息，谁都可以随便借钱不还的风险就大了。利息也补偿了出借人"这段时间不能用这笔钱"的损失（还记得机会成本吗？）。</div>
+    <p style="margin-top:12px;"><strong>讨论3：</strong>你觉得以后还会有银行大楼吗？还是全变成手机上的App了？</p>
+  </div>
+
+  <div class="block activity">
+    <div class="block-title"><span class="icon">🎯</span> 动手挑战（5分钟）</div>
+    <p><strong>挑战：开一家"迷你银行"</strong></p>
+    <p>假设你开了一家银行，有以下客户：</p>
+    <ul>
+      <li>小红存了500元（你承诺给3%年利息）</li>
+      <li>小刚存了300元（你承诺给3%年利息）</li>
+      <li>老王来借600元开店（你收8%年利息）</li>
+    </ul>
+    <p>算一算：</p>
+    <ol>
+      <li>你一年要付多少存款利息？（500+300）× 3% = ？</li>
+      <li>你一年收多少贷款利息？600 × 8% = ？</li>
+      <li>你一年赚了多少？</li>
+      <li>你还剩多少"准备金"（没借出去的钱）？够不够应对小红和小刚同时来取钱？</li>
+    </ol>
+  </div>
+
+  <div class="block takeaway">
+    <div class="block-title"><span class="icon">⭐</span> 一句话带走</div>
+    <p class="quote">"银行不只是存钱的地方，它是'钱的搬运工'——<br>把闲置的钱搬到需要的地方去，让钱流动起来创造价值。"</p>
+  </div>
+</div>
+
+<!-- 第17课 -->
+<div class="lesson" id="lesson17">
+  <div class="lesson-head">
+    <div class="lesson-num">17</div>
+    <div><h2>钱为什么不值钱了？</h2><span class="tag">核心概念：通货膨胀</span></div>
+  </div>
+  <div class="parent-tip"><strong>家长提示：</strong>用孩子能感受到的价格变化来讲通胀最有效——问问他们小时候（或爸爸妈妈小时候）东西多少钱，现在多少钱。这节课也解释了为什么"把钱全部藏在家里"不是好主意。</div>
+
+  <div class="block">
+    <div class="block-title"><span class="icon">🤔</span> 开场提问（3分钟）</div>
+    <ul>
+      <li>"你知道爸爸/妈妈小时候一根冰棍多少钱吗？现在呢？"</li>
+      <li>"为什么以前5毛钱能买到的东西，现在要5块钱？"</li>
+      <li>"是不是所有东西都在涨价？有没有降价的东西？"</li>
+    </ul>
+  </div>
+
+  <div class="block story">
+    <div class="block-title"><span class="icon">📖</span> 情景故事（5-8分钟）</div>
+    <p><strong>《时间旅行者小杰》</strong></p>
+    <p>小杰有一个超能力：穿越时空。</p>
+    <p>他拿着100块钱，先穿越到了<strong>1990年</strong>：</p>
+    <ul>
+      <li>一碗牛肉面：2元 → 100块能吃50碗！</li>
+      <li>一支铅笔：0.1元 → 100块能买1000支！</li>
+      <li>一台电视：2000元 → 买不起……</li>
+    </ul>
+    <p>然后他穿越到了<strong>2025年</strong>（现在）：</p>
+    <ul>
+      <li>一碗牛肉面：20元 → 100块只能吃5碗</li>
+      <li>一支铅笔：2元 → 100块只能买50支</li>
+      <li>一台电视：3000元 → 还是买不起……但现在的电视比1990年的好100倍</li>
+    </ul>
+    <p>小杰发现：<strong>同样是100块，能买到的东西越来越少了</strong>。</p>
+    <p>钱还是那个钱，但它的"购买力"下降了。</p>
+    <p>这就是——<strong>通货膨胀</strong>。</p>
+  </div>
+
+  <div class="block concept">
+    <div class="block-title"><span class="icon">💡</span> 概念讲解（5-8分钟）</div>
+    <p><strong>什么是通货膨胀？</strong></p>
+    <p><span class="highlight">通货膨胀 = 钱越来越多，导致钱的"购买力"下降，物价普遍上涨</span></p>
+
+    <p style="margin-top:10px;"><strong>为什么会发生通胀？</strong></p>
+    <p>想象一个比喻：</p>
+    <p>一个教室里有20个同学和10个苹果。每个苹果"值"2个同学的购买力。</p>
+    <p>如果突然给每个同学发了10倍的钱——每个人都很"有钱"了。</p>
+    <p>但苹果还是只有10个！大家争着买，苹果就涨价了。</p>
+    <p><strong>钱多了，但东西没变多 → 钱就不值钱了。</strong></p>
+
+    <p style="margin-top:10px;"><strong>通胀的原因：</strong></p>
+    <table style="width:100%;margin:10px 0;">
+      <tr style="background:#fff5f5;"><th>原因</th><th>解释</th><th>例子</th></tr>
+      <tr><td>钱印太多</td><td>货币供应量增加太快</td><td>津巴布韦曾印了100万亿面值的钞票</td></tr>
+      <tr><td>需求增加</td><td>大家都想买，东西就那么多</td><td>疫情后大家都想旅游，机票涨价</td></tr>
+      <tr><td>成本上升</td><td>原材料涨价，产品跟着涨</td><td>石油涨价 → 运费涨 → 所有东西都涨</td></tr>
+    </table>
+
+    <p style="margin-top:10px;"><strong>通胀是坏事吗？</strong></p>
+    <p>温和的通胀（每年2-3%）其实是<strong>正常的、甚至是好事</strong>：</p>
+    <ul>
+      <li>如果物价一直不变或下降 → 人们会等"更便宜"再买 → 经济停滞</li>
+      <li>温和通胀鼓励人们消费和投资 → 经济活跃</li>
+    </ul>
+    <p>但<strong>恶性通胀</strong>（每年几十甚至几百%）就是灾难：</p>
+    <ul>
+      <li>今天的钱明天就不值钱了 → 大家赶紧花掉 → 更通胀</li>
+      <li>存了一辈子的钱突然变成废纸</li>
+    </ul>
+
+    <p style="margin-top:10px;"><strong>怎么应对通胀？</strong></p>
+    <ul>
+      <li>不要把所有钱藏在家里（越放越不值钱）</li>
+      <li>存银行、买理财、投资——让钱增长的速度超过通胀</li>
+      <li>学习技能、提升自己——能力不会贬值</li>
+    </ul>
+  </div>
+
+  <div class="block discuss">
+    <div class="block-title"><span class="icon">💬</span> 亲子讨论（5分钟）</div>
+    <p><strong>讨论1：</strong>你注意到什么东西涨价了？什么东西反而变便宜了？</p>
+    <button class="answer-toggle" onclick="toggle(this)">参考思路</button>
+    <div class="answer-hidden">电子产品（手机、电脑）随着技术进步反而越来越便宜、性能越来越好。而人工服务（理发、家政）一直涨价。有些东西如房子、教育、医疗涨得特别快。</div>
+    <p style="margin-top:12px;"><strong>讨论2：</strong>如果通胀让钱越来越不值钱，那为什么要存钱呢？</p>
+    <p style="margin-top:12px;"><strong>讨论3：</strong>你听过大人抱怨"物价涨了工资没涨"吗？这就是通胀对普通人的影响。</p>
+  </div>
+
+  <div class="block activity">
+    <div class="block-title"><span class="icon">🎯</span> 动手挑战（5分钟）</div>
+    <p><strong>挑战：物价侦探</strong></p>
+    <p>问问爸爸/妈妈/爷爷奶奶，选3样日常用品，记录不同年代的价格：</p>
+    <table style="width:100%;margin-top:8px;">
+      <tr style="background:#fff5f5;"><th>物品</th><th>爷爷/奶奶小时候</th><th>爸爸/妈妈小时候</th><th>现在</th></tr>
+      <tr><td>一碗面</td><td>？元</td><td>？元</td><td>？元</td></tr>
+      <tr><td>一支雪糕</td><td>？元</td><td>？元</td><td>？元</td></tr>
+      <tr><td>一张电影票</td><td>？元</td><td>？元</td><td>？元</td></tr>
+    </table>
+    <p>算一算每样东西涨了多少倍？为什么有些涨得多有些涨得少？</p>
+  </div>
+
+  <div class="block takeaway">
+    <div class="block-title"><span class="icon">⭐</span> 一句话带走</div>
+    <p class="quote">"钱放在那里不动，购买力会慢慢缩水。<br>让钱'工作'起来，跑赢通胀，才能保住你的财富。"</p>
+  </div>
+</div>
+
+<!-- 第18课 -->
+<div class="lesson" id="lesson18">
+  <div class="lesson-head">
+    <div class="lesson-num">18</div>
+    <div><h2>全世界在做生意</h2><span class="tag">核心概念：国际贸易、汇率</span></div>
+  </div>
+  <div class="parent-tip"><strong>家长提示：</strong>这节课让孩子理解"全球化"。看看孩子身边有多少东西是外国来的，有多少中国制造的东西在外国卖。可以拿出几件物品看"Made in"标签。</div>
+
+  <div class="block">
+    <div class="block-title"><span class="icon">🤔</span> 开场提问（3分钟）</div>
+    <p>让孩子拿起身边几样东西看看标签，然后问：</p>
+    <ul>
+      <li>"你的鞋子/文具/衣服，是在哪个国家生产的？"</li>
+      <li>"为什么我们用的东西来自全世界各地？"</li>
+      <li>"如果把中国和外国的贸易全断了，生活会怎样？"</li>
+    </ul>
+  </div>
+
+  <div class="block story">
+    <div class="block-title"><span class="icon">📖</span> 情景故事（5-8分钟）</div>
+    <p><strong>《一支铅笔的环球之旅》</strong></p>
+    <p>你手里有一支普通的铅笔。看起来很简单，对吧？</p>
+    <p>但这支铅笔的"身世"比你想象的复杂得多：</p>
+    <ul>
+      <li>🌲 <strong>木材</strong>可能来自南美洲的雨林</li>
+      <li>🖊️ <strong>石墨笔芯</strong>的原料可能来自中国的矿山</li>
+      <li>🟡 <strong>黄色油漆</strong>的颜料可能来自印度的化工厂</li>
+      <li>⚙️ <strong>金属箍</strong>的矿石可能来自澳大利亚</li>
+      <li>🇸🇱 <strong>橡皮擦</strong>的橡胶可能来自东南亚的种植园</li>
+    </ul>
+    <p>所有这些材料从世界各地运到一个工厂，组装成一支铅笔，再运到你附近的商店。</p>
+    <p>一支几毛钱的铅笔，背后是<strong>全球几十个国家、成千上万人的合作</strong>。</p>
+    <p>如果每个国家都只用自己的资源做铅笔——木材少的国家的铅笔会又贵又差。</p>
+    <p>这就是为什么需要<strong>国际贸易</strong>。</p>
+  </div>
+
+  <div class="block concept">
+    <div class="block-title"><span class="icon">💡</span> 概念讲解（5-8分钟）</div>
+    <p><strong>什么是国际贸易？</strong></p>
+    <p><span class="highlight">国际贸易 = 国家和国家之间互相买卖商品和服务</span></p>
+
+    <p style="margin-top:10px;"><strong>为什么需要国际贸易？</strong></p>
+    <ul>
+      <li><strong>资源不同</strong>——中东有石油、巴西有咖啡、中国有稀土</li>
+      <li><strong>擅长不同</strong>——日本擅长汽车、美国擅长芯片、法国擅长奢侈品</li>
+      <li><strong>成本不同</strong>——同样一件衣服，在中国生产比在美国便宜得多</li>
+    </ul>
+    <p>还记得第6课的"比较优势"吗？每个国家做自己最擅长的事，然后交换，大家都受益。</p>
+
+    <p style="margin-top:10px;"><strong>但国际贸易有个问题：各国的钱不一样！</strong></p>
+    <p>中国用人民币（¥），美国用美元（$），日本用日元（¥），欧洲用欧元（€）。</p>
+    <p>一个中国人想买美国手机，拿人民币人家不收啊！</p>
+    <p>所以需要<strong>汇率</strong>——一种货币换成另一种货币的"价格"。</p>
+    <table style="width:100%;margin:10px 0;">
+      <tr style="background:#fff5f5;"><th>货币</th><th>大概汇率</th><th>意思</th></tr>
+      <tr><td>1美元</td><td>≈ 7.2人民币</td><td>拿7.2元人民币能换1美元</td></tr>
+      <tr><td>1欧元</td><td>≈ 7.8人民币</td><td>拿7.8元人民币能换1欧元</td></tr>
+      <tr><td>100日元</td><td>≈ 4.8人民币</td><td>拿4.8元人民币能换100日元</td></tr>
+    </table>
+
+    <p style="margin-top:10px;"><strong>汇率会变：</strong></p>
+    <ul>
+      <li>人民币升值 → 出国旅游便宜了，但出口商品变贵了（外国人不买了）</li>
+      <li>人民币贬值 → 出口商品便宜了（外国人买得多），但进口东西贵了</li>
+    </ul>
+
+    <p style="margin-top:10px;"><strong>中国在国际贸易中的角色：</strong></p>
+    <ul>
+      <li>"世界工厂"——全球很多产品在中国制造</li>
+      <li>出口大国——卖给全世界手机、服装、家电</li>
+      <li>进口大国——也从全世界买石油、芯片、粮食</li>
+    </ul>
+  </div>
+
+  <div class="block discuss">
+    <div class="block-title"><span class="icon">💬</span> 亲子讨论（5分钟）</div>
+    <p><strong>讨论1：</strong>"买国货好"还是"买全世界的好"？</p>
+    <button class="answer-toggle" onclick="toggle(this)">参考思路</button>
+    <div class="answer-hidden">没有绝对答案。国际贸易让大家都能买到性价比最高的东西。但某些关键领域（如芯片、粮食）如果完全依赖外国，有被"卡脖子"的风险。所以需要在开放和自主之间找平衡。</div>
+    <p style="margin-top:12px;"><strong>讨论2：</strong>如果你去日本旅游，一瓶水100日元，贵吗？</p>
+    <p style="margin-top:12px;"><strong>讨论3：</strong>你觉得未来国际贸易会越来越多还是越来越少？为什么？</p>
+  </div>
+
+  <div class="block activity">
+    <div class="block-title"><span class="icon">🎯</span> 动手挑战（5分钟）</div>
+    <p><strong>挑战：全球化大调查</strong></p>
+    <p>在家里找10样东西，看看它们分别来自哪个国家：</p>
+    <table style="width:100%;margin-top:8px;">
+      <tr style="background:#fff5f5;"><th>物品</th><th>Made in（哪个国家）</th></tr>
+      <tr><td>你的运动鞋</td><td>？</td></tr>
+      <tr><td>家里的电视/电脑</td><td>？</td></tr>
+      <tr><td>冰箱里的一种水果</td><td>？</td></tr>
+      <tr><td>你的一本书</td><td>？</td></tr>
+      <tr><td>？</td><td>？</td></tr>
+    </table>
+    <p>数一数：10样东西来自多少个不同的国家？全球化离你有多近？</p>
+  </div>
+
+  <div class="block takeaway">
+    <div class="block-title"><span class="icon">⭐</span> 一句话带走</div>
+    <p class="quote">"你身边的每样东西，可能都经过了半个地球的旅行才到你手中。<br>国际贸易让全世界变成了一个'大村庄'。"</p>
+  </div>
+</div>
+
+</div>
+
+<div class="footer">
+  <p>单元六完成！上一单元：<a href="单元五_看见更大的世界.html">单元五：看见更大的世界</a> ｜ 下一单元：<a href="单元七_聪明的消费者.html">单元七：聪明的消费者</a></p>
+</div>
+
+<script>
+function toggle(btn) {
+  const div = btn.nextElementSibling;
+  div.classList.toggle('show');
+  btn.textContent = div.classList.contains('show') ? '收起' : '参考思路';
+}
+</script>
+</body>
+</html>

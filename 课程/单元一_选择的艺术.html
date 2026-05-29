@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>单元一：选择的艺术 · 小E学院</title>
+<style>
+  :root { --c1: #FF6B6B; --c2: #FFA502; --c3: #2ED573; --c4: #1E90FF; --c5: #A855F7;
+    --bg: #FAFBFC; --card: #fff; --text: #2D3436; --muted: #636E72; --accent: #FF6B6B; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: -apple-system,"PingFang SC","Noto Sans SC","Microsoft YaHei",sans-serif; background:var(--bg); color:var(--text); line-height:1.8; }
+
+  .hero { background: linear-gradient(135deg,#FF6B6B,#ee5a24); color:#fff; text-align:center; padding:50px 20px 40px; }
+  .hero h1 { font-size:2em; margin-bottom:8px; }
+  .hero .sub { opacity:.9; font-size:1.05em; }
+  .hero .meta { margin-top:14px; display:flex; justify-content:center; gap:16px; flex-wrap:wrap; }
+  .hero .meta span { background:rgba(255,255,255,.2); padding:4px 14px; border-radius:16px; font-size:.88em; }
+
+  .wrap { max-width:860px; margin:0 auto; padding:24px 16px 60px; }
+
+  /* Lesson nav */
+  .lesson-nav { display:flex; gap:10px; margin-bottom:30px; flex-wrap:wrap; }
+  .lesson-nav a { text-decoration:none; padding:10px 20px; border-radius:12px; background:var(--card); box-shadow:0 2px 8px rgba(0,0,0,.06); font-weight:600; color:var(--text); transition:all .2s; border:2px solid transparent; }
+  .lesson-nav a:hover, .lesson-nav a.active { border-color:var(--accent); transform:translateY(-2px); box-shadow:0 4px 14px rgba(0,0,0,.1); }
+  .lesson-nav .home { background:linear-gradient(135deg,#636e72,#2d3436); color:#fff; }
+
+  /* Lesson block */
+  .lesson { scroll-margin-top:20px; margin-bottom:50px; }
+  .lesson-head { display:flex; align-items:center; gap:14px; margin-bottom:20px; }
+  .lesson-num { width:48px; height:48px; border-radius:50%; background:var(--accent); color:#fff; display:flex; align-items:center; justify-content:center; font-size:1.3em; font-weight:800; flex-shrink:0; }
+  .lesson-head h2 { font-size:1.35em; }
+  .lesson-head .tag { font-size:.8em; background:#f0f0f0; padding:3px 10px; border-radius:10px; color:var(--muted); }
+
+  /* Section blocks */
+  .block { background:var(--card); border-radius:16px; padding:22px 24px; margin-bottom:16px; box-shadow:0 2px 10px rgba(0,0,0,.04); }
+  .block-title { font-weight:700; font-size:.92em; text-transform:uppercase; letter-spacing:1px; margin-bottom:12px; display:flex; align-items:center; gap:8px; }
+  .block-title .icon { font-size:1.2em; }
+
+  .story { background:linear-gradient(135deg,#fff5f5,#ffe8e8); }
+  .concept { background:linear-gradient(135deg,#f0f9ff,#e0f2fe); }
+  .discuss { background:linear-gradient(135deg,#fefce8,#fef3c7); }
+  .activity { background:linear-gradient(135deg,#f0fdf4,#dcfce7); }
+  .takeaway { background:linear-gradient(135deg,#faf5ff,#f3e8ff); text-align:center; padding:20px 30px; }
+  .takeaway .quote { font-size:1.15em; font-weight:700; color:#7c3aed; }
+
+  .parent-tip { background:linear-gradient(135deg,#f8f9fa,#e9ecef); border-left:4px solid #adb5bd; padding:14px 18px; border-radius:0 12px 12px 0; margin-bottom:16px; font-size:.9em; color:var(--muted); }
+  .parent-tip strong { color:var(--text); }
+
+  p { margin-bottom:10px; }
+  ul { padding-left:20px; margin-bottom:10px; }
+  li { margin-bottom:6px; }
+  .highlight { background:#FFF9E6; padding:2px 6px; border-radius:4px; font-weight:600; }
+  .answer-toggle { background:#e2e8f0; border:none; padding:6px 14px; border-radius:8px; cursor:pointer; font-size:.88em; margin-top:6px; }
+  .answer-toggle:hover { background:#cbd5e1; }
+  .answer-hidden { display:none; background:#f1f5f9; padding:12px 16px; border-radius:10px; margin-top:8px; font-size:.93em; }
+  .answer-hidden.show { display:block; }
+
+  .footer { text-align:center; padding:24px; color:var(--muted); font-size:.85em; border-top:1px solid #eee; }
+  .footer a { color:var(--accent); text-decoration:none; }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>单元一：选择的艺术</h1>
+  <div class="sub">经济学最核心的思想——资源有限，所以我们必须做选择</div>
+  <div class="meta">
+    <span>3 节课</span>
+    <span>适合 9-10 岁</span>
+    <span>每课 20-30 分钟</span>
+  </div>
+</div>
+
+<div class="wrap">
+
+<div class="lesson-nav">
+  <a href="#lesson1" class="active">第1课 稀缺性</a>
+  <a href="#lesson2">第2课 机会成本</a>
+  <a href="#lesson3">第3课 需要与想要</a>
+</div>
+
+<!-- ==================== 第1课 ==================== -->
+<div class="lesson" id="lesson1">
+  <div class="lesson-head">
+    <div class="lesson-num">1</div>
+    <div>
+      <h2>为什么不能全都要？</h2>
+      <span class="tag">核心概念：稀缺性（Scarcity）</span>
+    </div>
+  </div>
+
+  <div class="parent-tip">
+    <strong>家长提示：</strong>这节课的目标是让孩子理解"资源有限"这个最基础的经济学事实。不用急着讲概念名称，让孩子先感受"不够分"的体验。
+  </div>
+
+  <!-- 开场提问 -->
+  <div class="block">
+    <div class="block-title"><span class="icon">🤔</span> 开场提问（3分钟）</div>
+    <p>问问孩子：</p>
+    <ul>
+      <li>"如果你有100块钱，进了超市，能把你所有想买的东西都买走吗？"</li>
+      <li>"一天只有24小时，你想做的事情都能做完吗？"</li>
+      <li>"如果全班同学都想坐第一排，能所有人都坐第一排吗？"</li>
+    </ul>
+    <p>让孩子自由回答，不用纠正，听听他们的想法。</p>
+  </div>
+
+  <!-- 情景故事 -->
+  <div class="block story">
+    <div class="block-title"><span class="icon">📖</span> 情景故事（5-8分钟）</div>
+    <p><strong>《小明和神奇商店》</strong></p>
+    <p>有一天，小明发现了一家神奇的商店，里面什么都有——最新的游戏机、全套漫画书、巨大的乐高城堡、还有吃不完的冰淇淋。</p>
+    <p>小明高兴极了，大喊："我全都要！"</p>
+    <p>店主笑着说："当然可以！不过，这家商店有个规矩——每个人只有 <strong>10个金币</strong>。"</p>
+    <p>小明看了看价格：</p>
+    <ul>
+      <li>游戏机 —— 6个金币</li>
+      <li>全套漫画 —— 5个金币</li>
+      <li>乐高城堡 —— 8个金币</li>
+      <li>冰淇淋 —— 2个金币</li>
+    </ul>
+    <p>小明发现，10个金币根本不够全买。他只能想办法选择。</p>
+    <p>最后他买了游戏机（6金币）+ 冰淇淋（2金币）+ 冰淇淋（2金币），花光了10个金币。</p>
+    <p>但他心里一直想着那套漫画书……</p>
+    <p style="margin-top:14px;font-weight:600;">问问孩子：如果你是小明，你会怎么选？为什么？</p>
+  </div>
+
+  <!-- 概念讲解 -->
+  <div class="block concept">
+    <div class="block-title"><span class="icon">💡</span> 概念讲解（5-8分钟）</div>
+    <p>刚才的故事里，小明遇到了一个非常重要的经济学概念——<strong>稀缺性</strong>。</p>
+
+    <p><strong>什么是稀缺性？</strong></p>
+    <p>简单来说就是：<span class="highlight">我们想要的东西，总是比我们能得到的更多</span>。</p>
+    <p>这不仅仅是指钱。很多东西都是"稀缺"的：</p>
+    <ul>
+      <li><strong>时间</strong>是稀缺的——一天只有24小时，你想踢球、看书、打游戏、和朋友玩，根本做不完</li>
+      <li><strong>土地</strong>是稀缺的——城市里的地就这么大，不能无限盖房子</li>
+      <li><strong>老师的注意力</strong>是稀缺的——一个班40个同学，老师不能同时回答所有人的问题</li>
+      <li><strong>好成绩的排名</strong>是稀缺的——前10名就10个位置</li>
+    </ul>
+
+    <p style="margin-top:10px;"><strong>为什么稀缺性很重要？</strong></p>
+    <p>因为稀缺性，所以我们必须<strong>做选择</strong>。而经济学，其实就是一门研究"如何做选择"的学问。</p>
+    <p>经济学之父亚当·斯密说过：世界上没有一个国家富裕到能给每个人所有想要的东西。即便是亿万富翁，时间也是有限的。</p>
+
+    <p style="margin-top:10px;"><strong>生活中的稀缺性</strong></p>
+    <ul>
+      <li>学校食堂的座位有限——下课铃一响，大家都在跑</li>
+      <li>暑假作业时间有限——想玩还想写完作业，必须安排好</li>
+      <li>地球上的石油有限——所以我们要节约能源</li>
+    </ul>
+  </div>
+
+  <!-- 亲子讨论 -->
+  <div class="block discuss">
+    <div class="block-title"><span class="icon">💬</span> 亲子讨论（5分钟）</div>
+    <p><strong>讨论1：</strong>你能想到生活中还有什么东西是"稀缺"的吗？</p>
+    <button class="answer-toggle" onclick="toggle(this)">参考思路</button>
+    <div class="answer-hidden">停车位、节假日旅游的机票、名师的课外班名额、干净的空气和水、好朋友的时间……</div>
+
+    <p style="margin-top:12px;"><strong>讨论2：</strong>如果世界上所有东西都不稀缺（想要什么有什么），生活会怎样？</p>
+    <button class="answer-toggle" onclick="toggle(this)">参考思路</button>
+    <div class="answer-hidden">听起来很棒，但如果没有稀缺性，就没有人需要努力工作、学习和创新。钻石不稀缺就不珍贵了。稀缺性其实推动着人类进步。</div>
+
+    <p style="margin-top:12px;"><strong>讨论3：</strong>当你发现东西不够的时候，你通常会怎么决定？</p>
+  </div>
+
+  <!-- 动手挑战 -->
+  <div class="block activity">
+    <div class="block-title"><span class="icon">🎯</span> 动手挑战（5分钟）</div>
+    <p><strong>挑战：愿望清单大作战</strong></p>
+    <p>准备一张纸和一支笔，让孩子完成以下任务：</p>
+    <ol>
+      <li>写下你最想做的<strong>10件事</strong>（或想买的10样东西）</li>
+      <li>现在假设你只有时间（或钱）做其中<strong>3件</strong>，圈出你会选的3件</li>
+      <li>看看被划掉的7件——你的感受是什么？</li>
+    </ol>
+    <p style="margin-top:8px;color:var(--muted);font-size:.9em;">这个练习让孩子亲身体验"稀缺"和"选择"的关系。</p>
+  </div>
+
+  <!-- 一句话带走 -->
+  <div class="block takeaway">
+    <div class="block-title"><span class="icon">⭐</span> 一句话带走</div>
+    <p class="quote">"我们想要的东西总是比能得到的更多——这就是稀缺性。<br>因为稀缺，所以我们必须学会选择。"</p>
+  </div>
+</div>
+
+<!-- ==================== 第2课 ==================== -->
+<div class="lesson" id="lesson2">
+  <div class="lesson-head">
+    <div class="lesson-num">2</div>
+    <div>
+      <h2>你放弃了什么？</h2>
+      <span class="tag">核心概念：机会成本（Opportunity Cost）</span>
+    </div>
+  </div>
+
+  <div class="parent-tip">
+    <strong>家长提示：</strong>本课是整个课程中最重要的概念之一。确保孩子能用自己的话复述"机会成本"的意思。可以多举几个生活中的例子。
+  </div>
+
+  <div class="block">
+    <div class="block-title"><span class="icon">🤔</span> 开场提问（3分钟）</div>
+    <p>回忆上节课——小明用10个金币买了游戏机和冰淇淋，他放弃了什么？</p>
+    <p>今天我们来深入聊聊：<strong>每次做选择的时候，你其实都在"放弃"什么？</strong></p>
+    <ul>
+      <li>"如果你周六上午去踢球，你就不能做什么了？"</li>
+      <li>"如果你把零花钱全买了零食，你就不能买什么了？"</li>
+    </ul>
+  </div>
+
+  <div class="block story">
+    <div class="block-title"><span class="icon">📖</span> 情景故事（5-8分钟）</div>
+    <p><strong>《小红的周六难题》</strong></p>
+    <p>小红最喜欢的周六到了。上午10点到12点，有两个活动：</p>
+    <ul>
+      <li>🎯 A：好朋友的生日派对，有蛋糕、游戏、还有她最喜欢的同学</li>
+      <li>🎨 B：市里举办的画画比赛，她准备了两个月，有奖品</li>
+    </ul>
+    <p>两个活动时间完全重叠了。小红只能选一个。</p>
+    <p>她想了好久，最后选择了去生日派对。</p>
+    <p>在派对上她玩得很开心。但是当她在朋友圈看到画画比赛的照片时，心里还是有点难过——她准备了两个月，却没能参加。</p>
+    <p style="margin-top:10px;"><strong>问题：</strong>小红选择了生日派对，她付出的"代价"是什么？</p>
+    <p>不是钱——她没花钱。她付出的是<strong>参加画画比赛的机会</strong>。</p>
+    <p>这就是经济学的第二个大概念。</p>
+  </div>
+
+  <div class="block concept">
+    <div class="block-title"><span class="icon">💡</span> 概念讲解（5-8分钟）</div>
+    <p><strong>什么是机会成本？</strong></p>
+    <p><span class="highlight">机会成本就是你做了一个选择后，放弃的那个"最好的其他选项"</span>。</p>
+    <ul>
+      <li>小红选择了生日派对 → 机会成本 = 参加画画比赛</li>
+      <li>你用30分钟看了电视 → 机会成本 = 本来可以用这30分钟做的事（做作业、看书、锻炼）</li>
+      <li>你花了50元买一本书 → 机会成本 = 这50元本来可以买的最好的一样东西</li>
+    </ul>
+
+    <p style="margin-top:10px;"><strong>为什么机会成本这么重要？</strong></p>
+    <p>因为<span class="highlight">做选择不能只看"得到了什么"，还要看"放弃了什么"</span>。</p>
+    <p>很多人做决定的时候只想着"得到"——买了手机我就能打游戏了！但忘了想"放弃"——买了手机，就不能买那套书了。</p>
+
+    <p style="margin-top:10px;"><strong>聪明人怎么做选择？</strong></p>
+    <p>比较"得到的"和"放弃的"：</p>
+    <ul>
+      <li>如果得到的 > 放弃的 → 好选择！</li>
+      <li>如果得到的 < 放弃的 → 再想想吧！</li>
+    </ul>
+    <p>小红在生日派对上很开心（得到的），但如果画画比赛对她真的很重要（放弃的更大），那也许她该选比赛。</p>
+
+    <p style="margin-top:10px;"><strong>生活中的机会成本</strong></p>
+    <ul>
+      <li><strong>写作业 vs 打游戏</strong>：选择打游戏的快乐 vs 放弃了早点写完作业的轻松</li>
+      <li><strong>存钱 vs 花钱</strong>：选择现在花钱的快乐 vs 放弃了以后买更好东西的机会</li>
+      <li><strong>选择学钢琴 vs 学画画</strong>：时间只有那么多，学了钢琴就少了画画的时间</li>
+    </ul>
+  </div>
+
+  <div class="block discuss">
+    <div class="block-title"><span class="icon">💬</span> 亲子讨论（5分钟）</div>
+    <p><strong>讨论1：</strong>你今天做的最后一个选择是什么？你放弃了什么？</p>
+
+    <p style="margin-top:12px;"><strong>讨论2：</strong>如果你有1小时的自由时间，你会选择做什么？机会成本是什么？</p>
+
+    <p style="margin-top:12px;"><strong>讨论3（进阶）：</strong>上不上课外班？如果选择上，机会成本是什么？如果选择不上呢？</p>
+    <button class="answer-toggle" onclick="toggle(this)">参考思路</button>
+    <div class="answer-hidden">上课外班的机会成本 = 自由玩耍的时间；不上课外班的机会成本 = 可能学到的新技能。两边的"成本"都要考虑，然后比较哪个选择更值得。</div>
+  </div>
+
+  <div class="block activity">
+    <div class="block-title"><span class="icon">🎯</span> 动手挑战（5分钟）</div>
+    <p><strong>挑战：机会成本清单</strong></p>
+    <p>在纸上画一个表格：</p>
+    <table style="width:100%;border-collapse:collapse;margin-top:8px;">
+      <tr style="background:#f0f9fe;"><th style="padding:8px;border:1px solid #e2e8f0;text-align:left;">我的选择</th><th style="padding:8px;border:1px solid #e2e8f0;text-align:left;">得到了什么</th><th style="padding:8px;border:1px solid #e2e8f0;text-align:left;">放弃了什么（机会成本）</th></tr>
+      <tr><td style="padding:8px;border:1px solid #e2e8f0;">放学后先打游戏</td><td style="padding:8px;border:1px solid #e2e8f0;">开心、放松</td><td style="padding:8px;border:1px solid #e2e8f0;">？</td></tr>
+      <tr><td style="padding:8px;border:1px solid #e2e8f0;">？</td><td style="padding:8px;border:1px solid #e2e8f0;">？</td><td style="padding:8px;border:1px solid #e2e8f0;">？</td></tr>
+      <tr><td style="padding:8px;border:1px solid #e2e8f0;">？</td><td style="padding:8px;border:1px solid #e2e8f0;">？</td><td style="padding:8px;border:1px solid #e2e8f0;">？</td></tr>
+    </table>
+    <p style="margin-top:8px;">让孩子填满3行，每行写一个真实的选择。</p>
+  </div>
+
+  <div class="block takeaway">
+    <div class="block-title"><span class="icon">⭐</span> 一句话带走</div>
+    <p class="quote">"每一个选择都有代价——你放弃的最好的那个选项，就是你的机会成本。<br>聪明的选择，是让'得到的'大于'放弃的'。"</p>
+  </div>
+</div>
+
+<!-- ==================== 第3课 ==================== -->
+<div class="lesson" id="lesson3">
+  <div class="lesson-head">
+    <div class="lesson-num">3</div>
+    <div>
+      <h2>需要还是想要？</h2>
+      <span class="tag">核心概念：区分需要与想要</span>
+    </div>
+  </div>
+
+  <div class="parent-tip">
+    <strong>家长提示：</strong>这节课帮助孩子建立消费观的核心——分清"需要"和"想要"。学完这课后，可以在日常生活中经常用"这是需要还是想要？"来引导孩子思考。
+  </div>
+
+  <div class="block">
+    <div class="block-title"><span class="icon">🤔</span> 开场提问（3分钟）</div>
+    <p>拿出一张纸，让孩子快速回答——以下哪些是你"必须有的"，哪些是"有了更好的"？</p>
+    <ul>
+      <li>吃饭 🍚</li>
+      <li>最新款球鞋 👟</li>
+      <li>喝的水 💧</li>
+      <li>游戏皮肤 🎮</li>
+      <li>冬天的棉袄 🧥</li>
+      <li>盲盒玩具 🎁</li>
+      <li>铅笔和本子 ✏️</li>
+      <li>名牌书包 🎒</li>
+    </ul>
+  </div>
+
+  <div class="block story">
+    <div class="block-title"><span class="icon">📖</span> 情景故事（5-8分钟）</div>
+    <p><strong>《小刚的100元》</strong></p>
+    <p>小刚过生日，姥姥给了他100元。他高兴极了，拉着妈妈去商场。</p>
+    <p>在商场里，小刚看到：</p>
+    <ul>
+      <li>一双超酷的限量版球鞋——180元（不够！）</li>
+      <li>一副漂亮的耳机——90元</li>
+      <li>一盒巧克力——35元</li>
+      <li>他的运动鞋已经穿了半年，鞋底有点磨平了——新运动鞋——85元</li>
+      <li>一本他想了很久的科学百科全书——68元</li>
+    </ul>
+    <p>小刚纠结了。他特别特别想要那副耳机（酷！），但运动鞋确实该换了。</p>
+    <p>妈妈没有替他做决定，只是问了一句："你觉得哪些是'必须买的'，哪些是'想买的'？"</p>
+    <p>小刚想了想……</p>
+    <p style="margin-top:10px;font-weight:600;">问问孩子：如果你是小刚，你会怎么分？</p>
+  </div>
+
+  <div class="block concept">
+    <div class="block-title"><span class="icon">💡</span> 概念讲解（5-8分钟）</div>
+    <p><strong>需要（Needs）vs 想要（Wants）</strong></p>
+    <p><span class="highlight">需要 = 没有它，你的生活或健康会受影响</span></p>
+    <p><span class="highlight">想要 = 有了它更好，但没有也没关系</span></p>
+
+    <table style="width:100%;border-collapse:collapse;margin:12px 0;">
+      <tr style="background:#f0f9fe;"><th style="padding:10px;border:1px solid #e2e8f0;">需要 ✅</th><th style="padding:10px;border:1px solid #e2e8f0;">想要 💭</th></tr>
+      <tr><td style="padding:10px;border:1px solid #e2e8f0;">吃饭、喝水</td><td style="padding:10px;border:1px solid #e2e8f0;">吃大餐、喝奶茶</td></tr>
+      <tr><td style="padding:10px;border:1px solid #e2e8f0;">能穿的鞋子</td><td style="padding:10px;border:1px solid #e2e8f0;">限量版球鞋</td></tr>
+      <tr><td style="padding:10px;border:1px solid #e2e8f0;">学习用品</td><td style="padding:10px;border:1px solid #e2e8f0;">最贵的文具盒</td></tr>
+      <tr><td style="padding:10px;border:1px solid #e2e8f0;">遮风挡雨的房子</td><td style="padding:10px;border:1px solid #e2e8f0;">豪华别墅</td></tr>
+      <tr><td style="padding:10px;border:1px solid #e2e8f0;">和朋友玩耍</td><td style="padding:10px;border:1px solid #e2e8f0;">最新的游戏机</td></tr>
+    </table>
+
+    <p><strong>为什么要分清？</strong></p>
+    <p>因为我们的资源（钱、时间）是有限的（还记得第1课吗？），所以<span class="highlight">应该先满足"需要"，再考虑"想要"</span>。</p>
+    <p>这不是说不能买想要的东西——而是要<span class="highlight">有意识地做选择</span>，而不是看到什么就想买什么。</p>
+
+    <p style="margin-top:10px;"><strong>一个有用的规则：72小时法则</strong></p>
+    <p>当你特别想买一样东西的时候，等72小时（3天）。如果3天后你还是很想买，那再买。很多时候，3天后你就不那么想要了。</p>
+  </div>
+
+  <div class="block discuss">
+    <div class="block-title"><span class="icon">💬</span> 亲子讨论（5分钟）</div>
+    <p><strong>讨论1：</strong>有没有什么东西，你曾经特别想买，买了之后却后悔了？</p>
+
+    <p style="margin-top:12px;"><strong>讨论2：</strong>广告是怎么让我们觉得"想要"变成"需要"的？</p>
+    <button class="answer-toggle" onclick="toggle(this)">参考思路</button>
+    <div class="answer-hidden">广告会让产品看起来很酷、很必需、不买就落伍了。比如饮料广告里都是快乐的人，让你觉得买了就快乐。其实那是"想要"，不是"需要"。</div>
+
+    <p style="margin-top:12px;"><strong>讨论3：</strong>有人说"我需要一部新手机"，你觉得这是"需要"还是"想要"？</p>
+    <button class="answer-toggle" onclick="toggle(this)">参考思路</button>
+    <div class="answer-hidden">如果旧手机坏了不能用 → 需要。如果旧手机还能用但想换新款 → 想要。关键看"没有它会不会影响基本生活和学习"。</div>
+  </div>
+
+  <div class="block activity">
+    <div class="block-title"><span class="icon">🎯</span> 动手挑战（5分钟）</div>
+    <p><strong>挑战：愿望分类器</strong></p>
+    <p>在纸上画两列："需要" 和 "想要"。然后把你最近想买的/想做的10样东西分到两列里。</p>
+    <p style="margin-top:6px;">分完之后，看看两列的数量——哪列更多？</p>
+    <p style="margin-top:6px;color:var(--muted);font-size:.9em;">进阶挑战：如果只能满足"需要"列的3项和"想要"列的1项，你会怎么选？</p>
+  </div>
+
+  <div class="block takeaway">
+    <div class="block-title"><span class="icon">⭐</span> 一句话带走</div>
+    <p class="quote">"先分清'需要'和'想要'，再花钱花时间。<br>把有限的资源，先用在最重要的事情上。"</p>
+  </div>
+</div>
+
+</div><!-- /wrap -->
+
+<div class="footer">
+  <p>单元一完成！下一单元：<a href="单元二_交换的秘密.html">单元二：交换的秘密</a></p>
+  <p style="margin-top:8px;">回到目录：<a href="儿童经济学启蒙知识目录.html">儿童经济学启蒙知识目录</a></p>
+</div>
+
+<script>
+function toggle(btn) {
+  const div = btn.nextElementSibling;
+  div.classList.toggle('show');
+  btn.textContent = div.classList.contains('show') ? '收起' : '参考思路';
+}
+</script>
+</body>
+</html>

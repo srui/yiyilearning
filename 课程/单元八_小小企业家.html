@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>单元八：小小企业家 · 小E学院</title>
+<style>
+  :root { --accent:#6c5ce7; --bg:#FAFBFC; --card:#fff; --text:#2D3436; --muted:#636E72; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: -apple-system,"PingFang SC","Noto Sans SC","Microsoft YaHei",sans-serif; background:var(--bg); color:var(--text); line-height:1.8; }
+  .hero { background:linear-gradient(135deg,#6c5ce7,#a29bfe); color:#fff; text-align:center; padding:50px 20px 40px; }
+  .hero h1 { font-size:2em; margin-bottom:8px; }
+  .hero .sub { opacity:.9; font-size:1.05em; }
+  .hero .meta { margin-top:14px; display:flex; justify-content:center; gap:16px; flex-wrap:wrap; }
+  .hero .meta span { background:rgba(255,255,255,.2); padding:4px 14px; border-radius:16px; font-size:.88em; }
+  .wrap { max-width:860px; margin:0 auto; padding:24px 16px 60px; }
+  .lesson-nav { display:flex; gap:10px; margin-bottom:30px; flex-wrap:wrap; }
+  .lesson-nav a { text-decoration:none; padding:10px 20px; border-radius:12px; background:var(--card); box-shadow:0 2px 8px rgba(0,0,0,.06); font-weight:600; color:var(--text); transition:all .2s; border:2px solid transparent; }
+  .lesson-nav a:hover { border-color:var(--accent); transform:translateY(-2px); }
+  .lesson { scroll-margin-top:20px; margin-bottom:50px; }
+  .lesson-head { display:flex; align-items:center; gap:14px; margin-bottom:20px; }
+  .lesson-num { width:48px; height:48px; border-radius:50%; background:var(--accent); color:#fff; display:flex; align-items:center; justify-content:center; font-size:1.3em; font-weight:800; flex-shrink:0; }
+  .lesson-head h2 { font-size:1.35em; }
+  .lesson-head .tag { font-size:.8em; background:#f0f0f0; padding:3px 10px; border-radius:10px; color:var(--muted); }
+  .block { background:var(--card); border-radius:16px; padding:22px 24px; margin-bottom:16px; box-shadow:0 2px 10px rgba(0,0,0,.04); }
+  .block-title { font-weight:700; font-size:.92em; text-transform:uppercase; letter-spacing:1px; margin-bottom:12px; display:flex; align-items:center; gap:8px; }
+  .block-title .icon { font-size:1.2em; }
+  .story { background:linear-gradient(135deg,#f0f0ff,#e8e8ff); }
+  .concept { background:linear-gradient(135deg,#f0f9ff,#e0f2fe); }
+  .discuss { background:linear-gradient(135deg,#fefce8,#fef3c7); }
+  .activity { background:linear-gradient(135deg,#f0fdf4,#dcfce7); }
+  .takeaway { background:linear-gradient(135deg,#fef3c7,#fde68a); text-align:center; padding:20px 30px; }
+  .takeaway .quote { font-size:1.15em; font-weight:700; color:#92400e; }
+  .parent-tip { background:linear-gradient(135deg,#f8f9fa,#e9ecef); border-left:4px solid #adb5bd; padding:14px 18px; border-radius:0 12px 12px 0; margin-bottom:16px; font-size:.9em; color:var(--muted); }
+  .parent-tip strong { color:var(--text); }
+  p { margin-bottom:10px; } ul { padding-left:20px; margin-bottom:10px; } li { margin-bottom:6px; }
+  .highlight { background:#FFF9E6; padding:2px 6px; border-radius:4px; font-weight:600; }
+  .answer-toggle { background:#e2e8f0; border:none; padding:6px 14px; border-radius:8px; cursor:pointer; font-size:.88em; margin-top:6px; }
+  .answer-toggle:hover { background:#cbd5e1; }
+  .answer-hidden { display:none; background:#f1f5f9; padding:12px 16px; border-radius:10px; margin-top:8px; font-size:.93em; }
+  .answer-hidden.show { display:block; }
+  .footer { text-align:center; padding:24px; color:var(--muted); font-size:.85em; border-top:1px solid #eee; }
+  .footer a { color:var(--accent); text-decoration:none; }
+  table { border-collapse:collapse; } td,th { padding:8px; border:1px solid #e2e8f0; }
+  .final-box { background:linear-gradient(135deg,#6c5ce7,#a29bfe); color:#fff; border-radius:20px; padding:40px 30px; text-align:center; margin-top:30px; }
+  .final-box h2 { font-size:1.6em; margin-bottom:12px; }
+  .final-box p { opacity:.9; margin-bottom:8px; }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>单元八：小小企业家</h1>
+  <div class="sub">理解企业如何运作、如何创造价值——培养创业思维</div>
+  <div class="meta"><span>3 节课</span><span>适合 9-10 岁</span><span>每课 20-30 分钟</span></div>
+</div>
+
+<div class="wrap">
+<div class="lesson-nav">
+  <a href="#lesson22">第22课 企业是怎么运转的</a>
+  <a href="#lesson23">第23课 从一个好点子开始</a>
+  <a href="#lesson24">第24课 用经济学看世界</a>
+</div>
+
+<!-- 第22课 -->
+<div class="lesson" id="lesson22">
+  <div class="lesson-head">
+    <div class="lesson-num">22</div>
+    <div><h2>企业是怎么运转的？</h2><span class="tag">核心概念：收入、成本、利润</span></div>
+  </div>
+  <div class="parent-tip"><strong>家长提示：</strong>这节课帮孩子理解"做生意"的基本逻辑。如果孩子将来对创业感兴趣，这是很好的起点。即使不创业，理解企业运作也有助于理解社会。</div>
+
+  <div class="block">
+    <div class="block-title"><span class="icon">🤔</span> 开场提问（3分钟）</div>
+    <ul>
+      <li>"你觉得学校门口的小卖部，一天能赚多少钱？"</li>
+      <li>"开一家奶茶店需要花什么钱？它又靠什么赚钱？"</li>
+      <li>"为什么有的店能开很久，有的店很快就倒闭了？"</li>
+    </ul>
+  </div>
+
+  <div class="block story">
+    <div class="block-title"><span class="icon">📖</span> 情景故事（5-8分钟）</div>
+    <p><strong>《小杰的饼干生意》</strong></p>
+    <p>小杰的饼干做得特别好吃。朋友们都说："你应该拿去卖！"</p>
+    <p>小杰想了想，决定在学校义卖会上卖饼干。但他发现，做生意没那么简单……</p>
+
+    <p style="margin-top:10px;"><strong>先算成本：</strong></p>
+    <ul>
+      <li>面粉、黄油、糖、巧克力 → 50元</li>
+      <li>包装袋 → 15元</li>
+      <li>烤饼干用了3小时电 → 5元</li>
+      <li>小杰劳动了5小时 → （要不要算自己的时间？）</li>
+    </ul>
+    <p>总共花了：<strong>70元</strong>（不算自己的时间）</p>
+
+    <p style="margin-top:10px;"><strong>他能做多少？</strong></p>
+    <p>50块饼干</p>
+
+    <p style="margin-top:10px;"><strong>怎么定价？</strong></p>
+    <ul>
+      <li>如果卖1元一块 → 50元收入，成本70元 → <strong>亏20元</strong> ❌</li>
+      <li>如果卖2元一块 → 100元收入，成本70元 → <strong>赚30元</strong> ✅</li>
+      <li>如果卖5元一块 → 250元收入，成本70元 → <strong>赚180元</strong> ✅✅</li>
+    </ul>
+    <p>但是——卖5元一块，同学们愿意买吗？</p>
+    <p>小杰做了个调查：同学们觉得"2-3元合理"，超过3元就嫌贵了。</p>
+    <p>最后他定价3元，卖了45块（有5块被自己吃了😄）</p>
+    <p>收入：135元，成本：70元，<strong>利润：65元！</strong></p>
+  </div>
+
+  <div class="block concept">
+    <div class="block-title"><span class="icon">💡</span> 概念讲解（5-8分钟）</div>
+    <p><strong>企业的基本公式：</strong></p>
+    <p style="font-size:1.2em;text-align:center;padding:16px;background:#f0f0ff;border-radius:12px;margin:10px 0;">
+      <strong>收入 - 成本 = 利润</strong>
+    </p>
+
+    <table style="width:100%;margin:10px 0;">
+      <tr style="background:#f0f0ff;"><th>概念</th><th>是什么</th><th>小杰饼干的例子</th></tr>
+      <tr><td><strong>收入</strong></td><td>卖出东西得到的钱</td><td>45块 × 3元 = 135元</td></tr>
+      <tr><td><strong>成本</strong></td><td>做东西花掉的钱</td><td>材料50 + 包装15 + 电费5 = 70元</td></tr>
+      <tr><td><strong>利润</strong></td><td>收入减去成本</td><td>135 - 70 = 65元</td></tr>
+    </table>
+
+    <p style="margin-top:10px;"><strong>但成本不只是材料！</strong></p>
+    <table style="width:100%;margin:10px 0;">
+      <tr style="background:#f0f0ff;"><th>成本类型</th><th>例子</th></tr>
+      <tr><td><strong>材料成本</strong></td><td>面粉、黄油、糖</td></tr>
+      <tr><td><strong>人工成本</strong></td><td>给员工（或自己）的工资</td></tr>
+      <tr><td><strong>房租</strong></td><td>开店的场地费用</td></tr>
+      <tr><td><strong>设备</strong></td><td>烤箱、冰箱、收银机</td></tr>
+      <tr><td><strong>营销</strong></td><td>广告、宣传单</td></tr>
+      <tr><td><strong>税费</strong></td><td>交给政府的钱（第12课！）</td></tr>
+    </table>
+
+    <p style="margin-top:10px;"><strong>企业为什么存在？</strong></p>
+    <p>因为企业能<strong>创造价值</strong>——把50元的材料变成消费者愿意花135元买的饼干，这多出来的85元就是"创造的价值"。</p>
+    <p>利润就是对企业创造价值的<strong>奖励</strong>。如果亏损，说明创造的价值还不够（或者方式不对）。</p>
+  </div>
+
+  <div class="block discuss">
+    <div class="block-title"><span class="icon">💬</span> 亲子讨论（5分钟）</div>
+    <p><strong>讨论1：</strong>你觉得小杰应该给自己的劳动时间算钱吗？</p>
+    <button class="answer-toggle" onclick="toggle(this)">参考思路</button>
+    <div class="answer-hidden">应该！如果不算自己的时间成本，看起来赚了65元，但5小时如果去做家教每小时能赚30元=150元。那其实"亏"了。很多创业者忘了算自己的时间，觉得自己赚钱了其实没有。</div>
+    <p style="margin-top:12px;"><strong>讨论2：</strong>如果你开一家店，你想卖什么？</p>
+    <p style="margin-top:12px;"><strong>讨论3：</strong>为什么有的奶茶店排队，有的空无一人？</p>
+  </div>
+
+  <div class="block activity">
+    <div class="block-title"><span class="icon">🎯</span> 动手挑战（5分钟）</div>
+    <p><strong>挑战：迷你商业计划书</strong></p>
+    <p>选一个你想"卖"的东西（饼干、手工作品、旧玩具……），写一份简单的商业计划：</p>
+    <ol>
+      <li><strong>产品</strong>：你要卖什么？</li>
+      <li><strong>目标客户</strong>：卖给谁？（同学？邻居？家人？）</li>
+      <li><strong>成本</strong>：做这个要花多少钱？</li>
+      <li><strong>定价</strong>：卖多少钱一个？为什么定这个价？</li>
+      <li><strong>预计利润</strong>：能赚多少？</li>
+      <li><strong>风险</strong>：什么可能出错？</li>
+    </ol>
+  </div>
+
+  <div class="block takeaway">
+    <div class="block-title"><span class="icon">⭐</span> 一句话带走</div>
+    <p class="quote">"收入减成本等于利润——这个简单的公式，<br>是所有企业（哪怕是小摊贩）的生存法则。"</p>
+  </div>
+</div>
+
+<!-- 第23课 -->
+<div class="lesson" id="lesson23">
+  <div class="lesson-head">
+    <div class="lesson-num">23</div>
+    <div><h2>从一个好点子开始</h2><span class="tag">核心概念：创业思维与解决问题</span></div>
+  </div>
+  <div class="parent-tip"><strong>家长提示：</strong>创业思维不只是"开公司"——它是一种解决问题的能力。这节课鼓励孩子观察生活中的问题，思考"怎么让它更好"。即使不当企业家，这种思维也终身受用。</div>
+
+  <div class="block">
+    <div class="block-title"><span class="icon">🤔</span> 开场提问（3分钟）</div>
+    <ul>
+      <li>"你觉得世界上有什么东西设计得很糟糕、需要改进的？"</li>
+      <li>"你有没有抱怨过'要是有个什么东西就好了'？"</li>
+      <li>"你知道有哪些公司是从一个'小点子'变成大企业的吗？"</li>
+    </ul>
+  </div>
+
+  <div class="block story">
+    <div class="block-title"><span class="icon">📖</span> 情景故事（5-8分钟）</div>
+    <p><strong>《改变世界的小点子》</strong></p>
+
+    <p><strong>故事1：特拉维斯和打车难题</strong></p>
+    <p>2008年的一个冬夜，特拉维斯在巴黎街头打不到出租车。他站在寒风里想："要是有个手机App，按一下就有人来接你，该多好？"</p>
+    <p>这个想法变成了 <strong>Uber（优步）</strong>——现在全球几十个国家的人都在用。</p>
+
+    <p style="margin-top:10px;"><strong>故事2：布莱恩和看家难题</strong></p>
+    <p>布莱恩的两个设计系室友要交房租，但钱不够。他们有个空气床垫，想说"不如租给来旧金山开会的人住？"</p>
+    <p>这个想法变成了 <strong>Airbnb（爱彼迎）</strong>——现在全球有几百万人在上面租房。</p>
+
+    <p style="margin-top:10px;"><strong>故事3：一个9岁男孩的创业</strong></p>
+    <p>美国一个叫Mikaila的4岁女孩被蜜蜂蜇了两次。她开始害怕蜜蜂，但妈妈让她研究蜜蜂为什么重要。</p>
+    <p>她了解到蜜蜂在减少，需要保护。于是她用外婆的配方做柠檬水，在柠檬水里加了蜂蜜，卖柠檬水的钱用来保护蜜蜂。</p>
+    <p>她的品牌叫 <strong>Me & the Bees</strong>，11岁时拿到了投资，现在每年卖几十万瓶！</p>
+
+    <p style="margin-top:10px;"><strong>这些故事的共同点：</strong></p>
+    <ul>
+      <li>都是从一个<strong>生活中的小问题</strong>开始</li>
+      <li>都是用一个<strong>新点子</strong>解决问题</li>
+      <li>都是<strong>从小做起</strong>，慢慢长大</li>
+    </ul>
+  </div>
+
+  <div class="block concept">
+    <div class="block-title"><span class="icon">💡</span> 概念讲解（5-8分钟）</div>
+    <p><strong>什么是创业？</strong></p>
+    <p><span class="highlight">创业 = 发现一个问题，用创新的方式解决它，并创造价值</span></p>
+
+    <p style="margin-top:10px;"><strong>创业者的五个特质：</strong></p>
+    <table style="width:100%;margin:10px 0;">
+      <tr style="background:#f0f0ff;"><th>特质</th><th>是什么</th><th>为什么重要</th></tr>
+      <tr><td><strong>观察力</strong></td><td>发现别人没注意到的问题</td><td>好的点子来自对生活的观察</td></tr>
+      <tr><td><strong>创造力</strong></td><td>想出新的解决办法</td><td>别人看到的只是问题，你看到的是机会</td></tr>
+      <tr><td><strong>行动力</strong></td><td>不只是想，还去做</td><td>99%的人有好点子，1%的人动手做了</td></tr>
+      <tr><td><strong>抗挫折</strong></td><td>失败了不放弃</td><td>每个成功的企业都失败过很多次</td></tr>
+      <tr><td><strong>同理心</strong></td><td>理解别人的需求</td><td>好的产品必须解决真实的需求</td></tr>
+    </table>
+
+    <p style="margin-top:10px;"><strong>创业思维不只是开公司：</strong></p>
+    <ul>
+      <li>在学校组织一个社团 → 创业思维</li>
+      <li>找到一种更好的学习方法 → 创业思维</li>
+      <li>帮邻居遛狗赚零花钱 → 创业思维</li>
+      <li>发现班级管理的漏洞并建议改进 → 创业思维</li>
+    </ul>
+
+    <p style="margin-top:10px;"><strong>怎么练就创业思维？从这三个习惯开始：</strong></p>
+    <ol>
+      <li><strong>每天记录一个"不方便"</strong>——什么东西让你觉得麻烦？</li>
+      <li><strong>问"为什么不能更好？"</strong>——每次不满都可能是机会</li>
+      <li><strong>动手试试</strong>——哪怕只是一个小实验</li>
+    </ol>
+  </div>
+
+  <div class="block discuss">
+    <div class="block-title"><span class="icon">💬</span> 亲子讨论（5分钟）</div>
+    <p><strong>讨论1：</strong>你生活中有什么"不方便"或"小烦恼"？</p>
+    <p style="margin-top:12px;"><strong>讨论2：</strong>如果你有1000元启动资金，你会做什么"生意"来解决一个问题？</p>
+    <p style="margin-top:12px;"><strong>讨论3：</strong>你觉得大人和小孩，谁更容易有好的创业点子？为什么？</p>
+    <button class="answer-toggle" onclick="toggle(this)">参考思路</button>
+    <div class="answer-hidden">小孩往往更有创意——因为不受"常识"限制。大人觉得"不可能"的事，小孩可能觉得"为什么不可以？"。很多伟大的发明都来自"天真的"想法。</div>
+  </div>
+
+  <div class="block activity">
+    <div class="block-title"><span class="icon">🎯</span> 动手挑战（5分钟）</div>
+    <p><strong>挑战：点子工厂</strong></p>
+    <p>在纸上写下3个你观察到的"生活中的小问题"：</p>
+    <table style="width:100%;margin-top:8px;">
+      <tr style="background:#f0f0ff;"><th>问题/不方便</th><th>你的点子（怎么解决）</th><th>谁会需要这个？</th></tr>
+      <tr><td>例如：书包太重</td><td>能自动减轻重量的书包</td><td>所有学生</td></tr>
+      <tr><td>？</td><td>？</td><td>？</td></tr>
+      <tr><td>？</td><td>？</td><td>？</td></tr>
+      <tr><td>？</td><td>？</td><td>？</td></tr>
+    </table>
+    <p>选一个最棒的点子，想想：第一步你能做什么？</p>
+  </div>
+
+  <div class="block takeaway">
+    <div class="block-title"><span class="icon">⭐</span> 一句话带走</div>
+    <p class="quote">"每个伟大的企业都从一个小问题开始。<br>保持好奇心，观察生活，你的点子也可能改变世界。"</p>
+  </div>
+</div>
+
+<!-- 第24课（终课） -->
+<div class="lesson" id="lesson24">
+  <div class="lesson-head">
+    <div class="lesson-num">24</div>
+    <div><h2>用经济学看世界</h2><span class="tag">总结课：经济学是一种思维方式</span></div>
+  </div>
+  <div class="parent-tip"><strong>家长提示：</strong>这是全部课程的最后一课。回顾24节课的核心内容，帮孩子建立一个完整的"经济学思维地图"。最后留一个开放性的思考——用经济学看世界，你会发现什么？</div>
+
+  <div class="block">
+    <div class="block-title"><span class="icon">🤔</span> 开场提问（3分钟）</div>
+    <p>我们已经一起学了23节课了。让我问你几个问题，看看你能用经济学的眼光来回答吗：</p>
+    <ul>
+      <li>"为什么学校门口的早餐店比小区里的生意好？"</li>
+      <li>"为什么暑假去海边比冬天去贵？"</li>
+      <li>"为什么你不能想买什么就买什么？"</li>
+    </ul>
+  </div>
+
+  <div class="block concept">
+    <div class="block-title"><span class="icon">💡</span> 全课程回顾——你的24个新武器（8-10分钟）</div>
+
+    <p>我们一起回顾学过的24个核心道理，它们组成了一张"经济学思维地图"：</p>
+
+    <table style="width:100%;margin:10px 0;">
+      <tr style="background:#f0f0ff;"><th>单元</th><th>核心道理</th><th>一句话总结</th></tr>
+      <tr><td rowspan="3"><strong>一、选择的艺术</strong></td><td>第1课 稀缺性</td><td>资源有限，必须选择</td></tr>
+      <tr><td>第2课 机会成本</td><td>每个选择都有代价</td></tr>
+      <tr><td>第3课 需要与想要</td><td>先满足需要再考虑想要</td></tr>
+      <tr><td rowspan="3"><strong>二、交换的秘密</strong></td><td>第4课 货币</td><td>钱是方便交换的工具</td></tr>
+      <tr><td>第5课 供需</td><td>价格由供需决定</td></tr>
+      <tr><td>第6课 分工</td><td>做自己擅长的事效率最高</td></tr>
+      <tr><td rowspan="3"><strong>三、聪明的决定</strong></td><td>第7课 沉没成本</td><td>别被过去的花费绑架</td></tr>
+      <tr><td>第8课 延迟满足</td><td>等待往往换来更好的</td></tr>
+      <tr><td>第9课 零花钱管理</td><td>消费/储蓄/分享三份法</td></tr>
+      <tr><td rowspan="3"><strong>四、社会如何运转</strong></td><td>第10课 市场机制</td><td>看不见的手自动协调</td></tr>
+      <tr><td>第11课 竞争</td><td>竞争推动进步</td></tr>
+      <tr><td>第12课 公共物品</td><td>好社会需要大家贡献</td></tr>
+      <tr><td rowspan="3"><strong>五、看见更大的世界</strong></td><td>第13课 风险</td><td>为不确定的未来做准备</td></tr>
+      <tr><td>第14课 复利</td><td>越早开始越好</td></tr>
+      <tr><td>第15课 博弈论</td><td>合作往往比单干更好</td></tr>
+      <tr><td rowspan="3"><strong>六、钱的旅行</strong></td><td>第16课 银行</td><td>银行是钱的搬运工</td></tr>
+      <tr><td>第17课 通胀</td><td>钱放着不动会缩水</td></tr>
+      <tr><td>第18课 贸易</td><td>全球化让大家都受益</td></tr>
+      <tr><td rowspan="3"><strong>七、聪明的消费者</strong></td><td>第19课 广告</td><td>看穿广告的套路</td></tr>
+      <tr><td>第20课 消费心理</td><td>了解自己的心理弱点</td></tr>
+      <tr><td>第21课 聪明购物</td><td>购物前过七步清单</td></tr>
+      <tr><td rowspan="3"><strong>八、小小企业家</strong></td><td>第22课 企业</td><td>收入-成本=利润</td></tr>
+      <tr><td>第23课 创业</td><td>每个好点子都从问题开始</td></tr>
+      <tr><td>第24课 总结</td><td>经济学是一种看世界的方式</td></tr>
+    </table>
+  </div>
+
+  <div class="block discuss">
+    <div class="block-title"><span class="icon">💬</span> 最终讨论（5分钟）</div>
+    <p><strong>讨论1：</strong>24节课里你印象最深的是哪一课？为什么？</p>
+    <p style="margin-top:12px;"><strong>讨论2：</strong>学完这些之后，你看待生活的方式有什么变化吗？</p>
+    <p style="margin-top:12px;"><strong>讨论3：</strong>你觉得经济学是什么？用你自己的话说说。</p>
+    <button class="answer-toggle" onclick="toggle(this)">参考思路</button>
+    <div class="answer-hidden">经济学是研究"如何做选择"的学问。它告诉我们：资源有限所以要选择，选择有机会成本，市场通过价格协调大家的行为，合作往往比单干更好……它是一种理解世界运转的方式。</div>
+  </div>
+
+  <div class="block activity">
+    <div class="block-title"><span class="icon">🎯</span> 终极挑战（5分钟）</div>
+    <p><strong>挑战：用经济学解释生活</strong></p>
+    <p>试着用学过的经济学知识，解释以下3个现象：</p>
+    <ol>
+      <li>为什么节假日的机票比平时贵？<br><span style="color:var(--muted);font-size:.9em;">（提示：想想第5课的供需）</span></li>
+      <li>为什么你不应该因为"这部电影票已经买了"就硬看完一部烂片？<br><span style="color:var(--muted);font-size:.9em;">（提示：想想第7课的沉没成本）</span></li>
+      <li>为什么国家之间要互相做生意而不是什么都自己生产？<br><span style="color:var(--muted);font-size:.9em;">（提示：想想第6课的比较优势和第18课的国际贸易）</span></li>
+    </ol>
+    <p>如果你能解释这三个，说明你已经开始用经济学的眼光看世界了！</p>
+  </div>
+
+  <div class="block takeaway">
+    <div class="block-title"><span class="icon">⭐</span> 最后一句话</div>
+    <p class="quote">"经济学不只是关于钱——它是关于选择、关于人性、关于这个世界如何运转。<br>带着这双'经济学的眼睛'，你会看到一个更丰富、更有趣的世界。"</p>
+  </div>
+</div>
+
+<!-- 课程大结局 -->
+<div class="final-box">
+  <h2>全部课程完成！</h2>
+  <p>你已经完成了 <strong>8个单元、24节课</strong> 的经济学之旅！</p>
+  <p style="font-size:1.1em;margin-top:16px;"><strong>24个核心道理，你已经装进了自己的大脑。</strong></p>
+  <p>从今天开始，当你做选择、花钱、看新闻、观察世界的时候——</p>
+  <p>试试用经济学的思维问自己：</p>
+  <p style="font-size:1.2em;margin-top:12px;"><strong>"这个选择的机会成本是什么？"</strong></p>
+  <p><strong>"是什么在影响这个价格？"</strong></p>
+  <p><strong>"我和别人怎么合作更好？"</strong></p>
+  <p style="margin-top:16px;font-size:.95em;opacity:.85;">世界很大，经济学只是理解它的一种方式。<br>但它是非常好的一种。</p>
+  <p style="margin-top:16px;font-size:1.1em;"><strong>继续好奇，继续学习，继续成长！</strong></p>
+</div>
+
+</div>
+
+<div class="footer">
+  <p>全部8单元24课完成！</p>
+  <p style="margin-top:6px;">
+    <a href="单元一_选择的艺术.html">一</a> ｜
+    <a href="单元二_交换的秘密.html">二</a> ｜
+    <a href="单元三_聪明的决定.html">三</a> ｜
+    <a href="单元四_社会如何运转.html">四</a> ｜
+    <a href="单元五_看见更大的世界.html">五</a> ｜
+    <a href="单元六_钱去哪了.html">六</a> ｜
+    <a href="单元七_聪明的消费者.html">七</a> ｜
+    单元八
+  </p>
+  <p style="margin-top:6px;">回到目录：<a href="../儿童经济学启蒙知识目录.html">儿童经济学启蒙知识目录</a></p>
+</div>
+
+<script>
+function toggle(btn) {
+  const div = btn.nextElementSibling;
+  div.classList.toggle('show');
+  btn.textContent = div.classList.contains('show') ? '收起' : '参考思路';
+}
+</script>
+</body>
+</html>

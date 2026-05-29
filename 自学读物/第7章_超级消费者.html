@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第7章 超级消费者 · 小E学院</title>
+<style>
+  :root { --bg:#fdf2f8; --card:#fff; --text:#1a1a2e; --muted:#636e72; --accent:#ec4899; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: -apple-system,"PingFang SC","Noto Sans SC","Microsoft YaHei",sans-serif; background:var(--bg); color:var(--text); line-height:2; font-size:17px; }
+  .wrap { max-width:660px; margin:0 auto; padding:20px 16px 60px; }
+  h1 { font-size:1.6em; margin:20px 0 6px; }
+  .ch-label { font-size:.8em; background:var(--accent); color:#fff; padding:3px 12px; border-radius:8px; font-weight:700; }
+  p { margin-bottom:14px; text-indent:2em; }
+  .no-indent { text-indent:0; }
+  .story { background:var(--card); border-radius:16px; padding:22px 26px; margin:20px 0; box-shadow:0 1px 8px rgba(0,0,0,.04); }
+  .story p { text-indent:2em; }
+  .think-box { background:#fce7f3; border-left:4px solid var(--accent); padding:14px 18px; border-radius:0 12px 12px 0; margin:18px 0; }
+  .think-box .label { font-weight:700; margin-bottom:4px; }
+  .think-box p { text-indent:0; margin-bottom:4px; }
+  .know-box { background:#ecfdf5; border-radius:14px; padding:16px 20px; margin:18px 0; }
+  .know-box .label { font-weight:700; color:#10b981; margin-bottom:6px; }
+  .know-box p { text-indent:0; margin-bottom:6px; }
+  .quote-box { background:linear-gradient(135deg,#fef3c7,#fde68a); border-radius:14px; padding:16px 22px; margin:18px 0; text-align:center; }
+  .quote-box p { text-indent:0; font-weight:700; color:#92400e; font-size:1.05em; }
+  ul,ol { padding-left:2.5em; margin-bottom:14px; }
+  li { margin-bottom:4px; }
+  .nav { display:flex; justify-content:space-between; margin-top:30px; padding-top:16px; border-top:1px solid rgba(0,0,0,.08); }
+  .nav a { text-decoration:none; color:var(--accent); font-weight:600; font-size:.95em; }
+  .nav a:hover { text-decoration:underline; }
+  .dialog { margin:14px 0; }
+  .dialog p { text-indent:0; padding:6px 0; }
+  .dialog .char { font-weight:700; }
+  table { border-collapse:collapse; width:100%; margin:10px 0; } td,th { padding:8px 12px; border:1px solid #e2e8f0; }
+  .ad-box { background:linear-gradient(135deg,#fef3c7,#fde68a); padding:14px 18px; border-radius:12px; margin:12px 0; font-style:italic; border:2px dashed #f59e0b; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<span class="ch-label">第7章</span>
+<h1>超级消费者</h1>
+
+<div class="story">
+<p>小豆正在看动画片，突然弹出一段广告：</p>
+</div>
+
+<div class="ad-box">
+<p>"超级无敌变形战斗机器人！能变成10种形态！会飞会走会说话！</p>
+<p>只要99元！原价399元！最后3天！</p>
+<p>已有10万小朋友拥有！你不买就out了！"</p>
+</div>
+
+<p>小豆的心跳加速了。他想："这也太酷了吧！而且才99元，原价399，省了300块呢！10万人都买了！再不买就来不及了！"</p>
+<p>他立刻跑去找妈妈。</p>
+
+<div class="dialog">
+<p><span class="char">小豆：</span>妈妈！我要买这个机器人！</p>
+<p><span class="char">妈妈：</span>（看了一眼广告）小豆，等一下。我们来拆解一下这个广告。</p>
+</div>
+
+<div class="think-box">
+<div class="label">想一想</div>
+<p>你觉得这个广告里，有没有什么"套路"在骗你？</p>
+</div>
+
+<p>妈妈和小豆一起分析了这个广告。小豆吓了一跳——原来广告里有这么多陷阱！</p>
+
+<div class="know-box">
+<div class="label">知识卡：广告的7大套路</div>
+<table>
+<tr style="background:#fce7f3;"><th>套路</th><th>广告里怎么说</th><th>真相</th></tr>
+<tr><td>限时限购</td><td>"最后3天！"</td><td>很多"限时"永远在倒计时</td></tr>
+<tr><td>虚假打折</td><td>"原价399，现价99！"</td><td>可能从来没卖过399</td></tr>
+<tr><td>从众心理</td><td>"10万小朋友都买了！"</td><td>数字可能是编的</td></tr>
+<tr><td>制造焦虑</td><td>"不买就out了！"</td><td>让你觉得不买就落后</td></tr>
+<tr><td>夸大其词</td><td>"10种形态！会飞！"</td><td>实际上可能只有3种</td></tr>
+<tr><td>快乐联想</td><td>广告里全在笑</td><td>买了不一定那么快乐</td></tr>
+<tr><td>免费陷阱</td><td>"买就送神秘礼物！"</td><td>礼物通常不值钱</td></tr>
+</table>
+</div>
+
+<p>小豆惊呆了："广告里全是套路！那……我怎么知道自己是不是被骗了？"</p>
+
+<div class="story">
+<p>妈妈说："不只是广告。商店里也有很多'陷阱'在等你。"</p>
+<p>她带小豆去了商场。</p>
+<p>在一家奶茶店，小豆看到了价目表：</p>
+</div>
+
+<table>
+<tr style="background:#fce7f3;"><th>大小</th><th>价格</th></tr>
+<tr><td>中杯</td><td>15元</td></tr>
+<tr><td>大杯</td><td>18元</td></tr>
+<tr><td>超大杯</td><td>35元</td></tr>
+</table>
+
+<div class="dialog">
+<p><span class="char">小豆：</span>超大杯也太贵了！我买大杯吧，18块好划算！</p>
+<p><span class="char">妈妈：</span>等一下。如果没有超大杯那个选项，你会买什么？</p>
+<p><span class="char">小豆：</span>嗯……可能会买中杯，15块。</p>
+<p><span class="char">妈妈：</span>看！那个35块的"超大杯"根本不是卖给你的。它是故意放在那里，让你觉得大杯"很划算"——这就是<strong>诱饵效应</strong>。</p>
+</div>
+
+<div class="know-box">
+<div class="label">知识卡：你的大脑在骗你！</div>
+<p>心理学家发现，人的大脑经常犯一些错误，商家很了解这些：</p>
+<ul>
+  <li><strong>锚定效应</strong>：先看到"399"，就觉得"99"很便宜（其实可能就值50）</li>
+  <li><strong>诱饵效应</strong>：放一个不合理的选项，让你觉得另一个"很划算"</li>
+  <li><strong>免费心理</strong>：看到"免费"就丧失了理性——为了一个免费赠品多花了100块</li>
+  <li><strong>从众心理</strong>："10万人都买了"——让你觉得不买就落伍了</li>
+</ul>
+</div>
+
+<div class="think-box">
+<div class="label">想一想</div>
+<p>你有没有因为"打折""限时""免费"而买了后来后悔的东西？</p>
+</div>
+
+<p>小豆决定，以后每次想花钱之前，都问自己三个问题：</p>
+
+<div class="know-box">
+<div class="label">聪明购物三问</div>
+<ol>
+  <li><strong>这是"需要"还是"想要"？</strong>（还记得第1章的稀缺性吗？）</li>
+  <li><strong>我被套路了吗？</strong>（广告和商店在用什么花招？）</li>
+  <li><strong>等72小时还想买吗？</strong>（冷静后再决定！）</li>
+</ol>
+</div>
+
+<div class="quote-box">
+<p>"看穿套路，保持冷静。<br>做自己大脑的主人，而不是被广告操控的木偶。"</p>
+</div>
+
+<div class="know-box">
+<div class="label">本章学到的一个词：消费心理</div>
+<p>consumer psychology</p>
+<p>研究人为什么会买东西、广告怎么影响人的决策的学问。了解它，你就能变成一个"超级消费者"！</p>
+</div>
+
+<p class="no-indent" style="margin-top:20px;">在最后一章，小豆要总结他的全部冒险——他发现，经济学其实是一种"超能力"……</p>
+
+<div class="nav">
+  <a href="第6章_钱的奇妙旅行.html">← 第6章</a>
+  <a href="首页.html">目录</a>
+  <a href="第8章_你的超能力.html">第8章 →</a>
+</div>
+
+</div>
+</body>
+</html>

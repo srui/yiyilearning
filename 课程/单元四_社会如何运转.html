@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>单元四：社会如何运转 · 小E学院</title>
+<style>
+  :root { --accent:#1E90FF; --bg:#FAFBFC; --card:#fff; --text:#2D3436; --muted:#636E72; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: -apple-system,"PingFang SC","Noto Sans SC","Microsoft YaHei",sans-serif; background:var(--bg); color:var(--text); line-height:1.8; }
+  .hero { background:linear-gradient(135deg,#1E90FF,#3b82f6); color:#fff; text-align:center; padding:50px 20px 40px; }
+  .hero h1 { font-size:2em; margin-bottom:8px; }
+  .hero .sub { opacity:.9; font-size:1.05em; }
+  .hero .meta { margin-top:14px; display:flex; justify-content:center; gap:16px; flex-wrap:wrap; }
+  .hero .meta span { background:rgba(255,255,255,.2); padding:4px 14px; border-radius:16px; font-size:.88em; }
+  .wrap { max-width:860px; margin:0 auto; padding:24px 16px 60px; }
+  .lesson-nav { display:flex; gap:10px; margin-bottom:30px; flex-wrap:wrap; }
+  .lesson-nav a { text-decoration:none; padding:10px 20px; border-radius:12px; background:var(--card); box-shadow:0 2px 8px rgba(0,0,0,.06); font-weight:600; color:var(--text); transition:all .2s; border:2px solid transparent; }
+  .lesson-nav a:hover { border-color:var(--accent); transform:translateY(-2px); }
+  .lesson { scroll-margin-top:20px; margin-bottom:50px; }
+  .lesson-head { display:flex; align-items:center; gap:14px; margin-bottom:20px; }
+  .lesson-num { width:48px; height:48px; border-radius:50%; background:var(--accent); color:#fff; display:flex; align-items:center; justify-content:center; font-size:1.3em; font-weight:800; flex-shrink:0; }
+  .lesson-head h2 { font-size:1.35em; }
+  .lesson-head .tag { font-size:.8em; background:#f0f0f0; padding:3px 10px; border-radius:10px; color:var(--muted); }
+  .block { background:var(--card); border-radius:16px; padding:22px 24px; margin-bottom:16px; box-shadow:0 2px 10px rgba(0,0,0,.04); }
+  .block-title { font-weight:700; font-size:.92em; text-transform:uppercase; letter-spacing:1px; margin-bottom:12px; display:flex; align-items:center; gap:8px; }
+  .block-title .icon { font-size:1.2em; }
+  .story { background:linear-gradient(135deg,#eff6ff,#dbeafe); }
+  .concept { background:linear-gradient(135deg,#f0f9ff,#e0f2fe); }
+  .discuss { background:linear-gradient(135deg,#fefce8,#fef3c7); }
+  .activity { background:linear-gradient(135deg,#f0fdf4,#dcfce7); }
+  .takeaway { background:linear-gradient(135deg,#faf5ff,#f3e8ff); text-align:center; padding:20px 30px; }
+  .takeaway .quote { font-size:1.15em; font-weight:700; color:#7c3aed; }
+  .parent-tip { background:linear-gradient(135deg,#f8f9fa,#e9ecef); border-left:4px solid #adb5bd; padding:14px 18px; border-radius:0 12px 12px 0; margin-bottom:16px; font-size:.9em; color:var(--muted); }
+  .parent-tip strong { color:var(--text); }
+  p { margin-bottom:10px; } ul { padding-left:20px; margin-bottom:10px; } li { margin-bottom:6px; }
+  .highlight { background:#FFF9E6; padding:2px 6px; border-radius:4px; font-weight:600; }
+  .answer-toggle { background:#e2e8f0; border:none; padding:6px 14px; border-radius:8px; cursor:pointer; font-size:.88em; margin-top:6px; }
+  .answer-toggle:hover { background:#cbd5e1; }
+  .answer-hidden { display:none; background:#f1f5f9; padding:12px 16px; border-radius:10px; margin-top:8px; font-size:.93em; }
+  .answer-hidden.show { display:block; }
+  .footer { text-align:center; padding:24px; color:var(--muted); font-size:.85em; border-top:1px solid #eee; }
+  .footer a { color:var(--accent); text-decoration:none; }
+  table { border-collapse:collapse; } td,th { padding:8px; border:1px solid #e2e8f0; }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>单元四：社会如何运转</h1>
+  <div class="sub">理解市场、竞争和公共物品——看懂我们身边的社会</div>
+  <div class="meta"><span>3 节课</span><span>适合 9-10 岁</span><span>每课 20-30 分钟</span></div>
+</div>
+
+<div class="wrap">
+<div class="lesson-nav">
+  <a href="#lesson10">第10课 看不见的手</a>
+  <a href="#lesson11">第11课 竞争与创新</a>
+  <a href="#lesson12">第12课 公共物品与税收</a>
+</div>
+
+<!-- 第10课 -->
+<div class="lesson" id="lesson10">
+  <div class="lesson-head">
+    <div class="lesson-num">10</div>
+    <div><h2>谁来定价格？——市场与看不见的手</h2><span class="tag">核心概念：市场机制、看不见的手</span></div>
+  </div>
+  <div class="parent-tip"><strong>家长提示：</strong>这节课是对第5课（供需与价格）的深化。重点是让孩子理解：没有人"命令"市场运转，但它自己就能协调好。这是经济学最精彩的思想之一。</div>
+
+  <div class="block">
+    <div class="block-title"><span class="icon">🤔</span> 开场提问（3分钟）</div>
+    <ul>
+      <li>"你知道一个面包从面粉到面包店，经过了多少人的手吗？"</li>
+      <li>"有没有一个人在指挥所有人：你种麦子、你磨面粉、你烤面包、你来卖？"</li>
+      <li>"如果没有领导指挥，这些人怎么'配合'的？"</li>
+    </ul>
+  </div>
+
+  <div class="block story">
+    <div class="block-title"><span class="icon">📖</span> 情景故事（5-8分钟）</div>
+    <p><strong>《一块面包的旅行》</strong></p>
+    <p>早上你买了一个面包。看起来很简单——走到面包店，付钱，拿到面包。</p>
+    <p>但这个面包背后有很多很多人：</p>
+    <ul>
+      <li>农民种了小麦 → 收割 → 卖给面粉厂</li>
+      <li>面粉厂把小麦磨成面粉 → 卖给面包店</li>
+      <li>面包师傅用面粉 + 鸡蛋 + 糖 + 黄油 → 烤成面包</li>
+      <li>送货司机把面包送到店里</li>
+      <li>店员把面包摆上货架 → 你买到了</li>
+    </ul>
+    <p>农民不知道你喜欢吃什么面包，面包师傅不认识你，送货司机不知道你住哪。</p>
+    <p>但是——<strong>面包就是神奇地出现在了你的面前</strong>。</p>
+    <p>没有人命令农民种小麦，没有人安排面包师傅几点起床。每个人都只是在做自己的工作，为了赚自己的钱。</p>
+    <p>但所有人的行为合在一起，就让你每天能吃到新鲜的面包。</p>
+    <p>这就是经济学家亚当·斯密说的——<strong>"看不见的手"</strong>。</p>
+  </div>
+
+  <div class="block concept">
+    <div class="block-title"><span class="icon">💡</span> 概念讲解（5-8分钟）</div>
+    <p><strong>什么是"看不见的手"？</strong></p>
+    <p><span class="highlight">每个人追求自己的利益，在市场规则下，好像被一只"看不见的手"引导着，最终造福了所有人。</span></p>
+
+    <p style="margin-top:10px;"><strong>它是怎么起作用的？用价格当信号：</strong></p>
+    <ul>
+      <li>苹果丰收了，价格下降 → 农民看到价格低，明年少种苹果 → 苹果又变少了 → 价格回升</li>
+      <li>大家都想学编程，程序员工资高 → 更多孩子学编程 → 程序员变多 → 工资慢慢稳定</li>
+      <li>口罩突然紧缺 → 价格上升 → 工厂加班生产 → 口罩变多 → 价格回落</li>
+    </ul>
+    <p>价格就像一个<strong>信号灯</strong>：价格高 → "大家快来生产这个"；价格低 → "够了够了，去干别的吧"。</p>
+
+    <p style="margin-top:10px;"><strong>市场不是万能的：</strong></p>
+    <p>有时候"看不见的手"也会失灵：</p>
+    <ul>
+      <li>有些工厂为了赚钱污染环境——市场不会自动解决</li>
+      <li>有人卖假药——消费者分不清真假</li>
+      <li>有钱人买得起好教育，穷人买不起——不公平</li>
+    </ul>
+    <p>所以需要<strong>政府</strong>来当"裁判"——制定规则、保护消费者、帮助弱势群体。这就是"看得见的手"。</p>
+  </div>
+
+  <div class="block discuss">
+    <div class="block-title"><span class="icon">💬</span> 亲子讨论（5分钟）</div>
+    <p><strong>讨论1：</strong>你能想到生活中"看不见的手"在起作用的例子吗？</p>
+    <button class="answer-toggle" onclick="toggle(this)">参考思路</button>
+    <div class="answer-hidden">比如外卖——没人命令骑手送餐，但价格机制让骑手愿意跑、餐厅愿意做、你愿意下单。再比如水果的季节性价格变化。</div>
+    <p style="margin-top:12px;"><strong>讨论2：</strong>你觉得什么时候需要政府来管？什么时候让市场自己决定就好？</p>
+    <p style="margin-top:12px;"><strong>讨论3：</strong>如果没有市场（比如以前用粮票、布票的时代），买东西是什么体验？</p>
+  </div>
+
+  <div class="block activity">
+    <div class="block-title"><span class="icon">🎯</span> 动手挑战（5分钟）</div>
+    <p><strong>挑战：追踪一样东西</strong></p>
+    <p>选一样你今天用的东西（一件衣服、一顿午餐、一支笔），试着画一张"旅程图"：</p>
+    <ul>
+      <li>它从哪里来？经过了哪些人？</li>
+      <li>每个人为什么要参与？（他们得到了什么回报？）</li>
+      <li>是谁在"指挥"这个链条运转？</li>
+    </ul>
+  </div>
+
+  <div class="block takeaway">
+    <div class="block-title"><span class="icon">⭐</span> 一句话带走</div>
+    <p class="quote">"市场就像一个不需要指挥的交响乐团——<br>每个人演奏自己的乐器，美妙的音乐就自然产生了。"</p>
+  </div>
+</div>
+
+<!-- 第11课 -->
+<div class="lesson" id="lesson11">
+  <div class="lesson-head">
+    <div class="lesson-num">11</div>
+    <div><h2>为什么要有竞争？</h2><span class="tag">核心概念：竞争、垄断与创新</span></div>
+  </div>
+  <div class="parent-tip"><strong>家长提示：</strong>这节课让孩子理解竞争的好处，以及为什么我们需要保护竞争（反垄断）。可以从孩子熟悉的手机/游戏/零食品牌切入。</div>
+
+  <div class="block">
+    <div class="block-title"><span class="icon">🤔</span> 开场提问（3分钟）</div>
+    <ul>
+      <li>"你知道中国有哪些手机品牌？为什么不只留一家？"</li>
+      <li>"如果世界上只有一家餐厅，你觉得会发生什么？"</li>
+      <li>"你有没有因为两个品牌在竞争而得到实惠的经历？"</li>
+    </ul>
+  </div>
+
+  <div class="block story">
+    <div class="block-title"><span class="icon">📖</span> 情景故事（5-8分钟）</div>
+    <p><strong>《小镇上的面包店》</strong></p>
+    <p>一个小镇上，只有一家面包店。老板叫老王。</p>
+    <p>因为没有竞争，老王的面包：</p>
+    <ul>
+      <li>卖得贵（10元一个）</li>
+      <li>不怎么好吃（反正你也只能买他的）</li>
+      <li>态度不好（爱买不买）</li>
+    </ul>
+    <p>镇上的人虽然不满意，但没办法——<strong>只有这一家</strong>。</p>
+    <p>有一天，一个年轻人小李在对面也开了一家面包店！</p>
+    <ul>
+      <li>小李的面包卖5元（更便宜）</li>
+      <li>口味更好（他研究了新配方）</li>
+      <li>服务态度好（还送小饼干）</li>
+    </ul>
+    <p>镇上的人全跑到小李那里买了。老王急了！他不得不：</p>
+    <ul>
+      <li>降价到5元</li>
+      <li>改进配方，面包更好吃了</li>
+      <li>态度也变好了</li>
+    </ul>
+    <p>结果：镇上的人吃到了又便宜又好吃的面包！两家店都在努力做得更好。</p>
+    <p><strong>这就是竞争的力量。</strong></p>
+  </div>
+
+  <div class="block concept">
+    <div class="block-title"><span class="icon">💡</span> 概念讲解（5-8分钟）</div>
+    <p><strong>竞争为什么好？</strong></p>
+    <ul>
+      <li><strong>价格下降</strong>——抢顾客就得降价</li>
+      <li><strong>质量提升</strong>——做得不好就被淘汰</li>
+      <li><strong>服务变好</strong>——态度不好顾客就走了</li>
+      <li><strong>创新加速</strong>——要赢过对手就要想新办法</li>
+    </ul>
+
+    <p style="margin-top:10px;"><strong>什么是垄断？</strong></p>
+    <p><span class="highlight">垄断 = 市场上只有一个卖家，没有竞争对手</span></p>
+    <p>垄断的坏处：</p>
+    <ul>
+      <li>想卖多贵就卖多贵</li>
+      <li>没有动力改进（反正你也只能买他的）</li>
+      <li>消费者没有选择</li>
+    </ul>
+
+    <p style="margin-top:10px;"><strong>所以政府要保护竞争：</strong></p>
+    <ul>
+      <li>反垄断法——不允许一家公司独大</li>
+      <li>保护专利——鼓励创新（给你一段时间独家权利，作为你发明的奖励）</li>
+      <li>打击不正当竞争——不许用欺骗、抄袭的方式赢</li>
+    </ul>
+
+    <p style="margin-top:10px;"><strong>对个人来说也是一样：</strong></p>
+    <p>学校里的"竞争"也是有益的——有对手才会更努力。关键是<strong>良性的竞争</strong>：大家比谁做得更好，而不是互相使坏。</p>
+  </div>
+
+  <div class="block discuss">
+    <div class="block-title"><span class="icon">💬</span> 亲子讨论（5分钟）</div>
+    <p><strong>讨论1：</strong>你能说出3组"在竞争中变得更好"的品牌吗？</p>
+    <button class="answer-toggle" onclick="toggle(this)">参考思路</button>
+    <div class="answer-hidden">可口可乐 vs 百事可乐、麦当劳 vs 肯德基、华为 vs 苹果、阿里 vs 京东……竞争让它们都越来越好。</div>
+    <p style="margin-top:12px;"><strong>讨论2：</strong>你觉得学校里的"排名"算竞争吗？它是好的竞争还是不好的竞争？</p>
+    <p style="margin-top:12px;"><strong>讨论3：</strong>如果你开一家店，你怕不怕对手来竞争？为什么？</p>
+  </div>
+
+  <div class="block activity">
+    <div class="block-title"><span class="icon">🎯</span> 动手挑战（5分钟）</div>
+    <p><strong>挑战：竞争观察员</strong></p>
+    <p>选一个你熟悉的行业（手机、游戏、饮料、运动鞋……），写下来：</p>
+    <ul>
+      <li>这个行业有哪些品牌在竞争？</li>
+      <li>它们各自靠什么赢？（价格？质量？品牌？创新？）</li>
+      <li>消费者（你）从竞争中得到了什么好处？</li>
+    </ul>
+  </div>
+
+  <div class="block takeaway">
+    <div class="block-title"><span class="icon">⭐</span> 一句话带走</div>
+    <p class="quote">"竞争让商家努力做得更好、更便宜、更新。<br>没有竞争就没有进步，保护竞争就是保护消费者。"</p>
+  </div>
+</div>
+
+<!-- 第12课 -->
+<div class="lesson" id="lesson12">
+  <div class="lesson-head">
+    <div class="lesson-num">12</div>
+    <div><h2>我们共享的东西</h2><span class="tag">核心概念：公共物品与税收</span></div>
+  </div>
+  <div class="parent-tip"><strong>家长提示：</strong>这节课帮助孩子理解"为什么大人要交税"和"我们享受的公共设施从哪来"。也是培养公民意识的好机会。</div>
+
+  <div class="block">
+    <div class="block-title"><span class="icon">🤔</span> 开场提问（3分钟）</div>
+    <ul>
+      <li>"你去公园玩要花钱吗？公园是谁建的？"</li>
+      <li>"马路是谁修的？路灯的电费谁付？"</li>
+      <li>"你家门口的路灯，你会单独付钱用吗？那谁在付钱？"</li>
+    </ul>
+  </div>
+
+  <div class="block story">
+    <div class="block-title"><span class="icon">📖</span> 情景故事（5-8分钟）</div>
+    <p><strong>《两个村庄的故事》</strong></p>
+    <p>有两个相邻的村庄。</p>
+    <p><strong>A村：</strong>村里没有路，下雨天全是泥巴，出不了门。没有学校，孩子们没法上学。晚上一片漆黑，不安全。</p>
+    <p>村里的人各过各的，谁也不想出钱修路——"路修在谁家门口谁出钱？""我孩子还小，不需要学校。"</p>
+    <p>A村越来越穷。</p>
+    <p><strong>B村：</strong>村长提议："我们每家每年出100元，凑在一起修路、建学校、安路灯。"</p>
+    <p>有人不愿意："凭什么我出钱给别人的路？"</p>
+    <p>村长说："路修好了，你的货物能运出去卖；学校建好了，你的孩子能上学；路灯亮了，晚上更安全。每个人都受益。"</p>
+    <p>大家同意了。几年后，B村有了平坦的路、明亮的学校、安全的街道。越来越多企业来投资，村庄富裕了。</p>
+    <p style="margin-top:10px;"><strong>A村的人后来也学B村交了"公共费"，慢慢也好起来了。</strong></p>
+  </div>
+
+  <div class="block concept">
+    <div class="block-title"><span class="icon">💡</span> 概念讲解（5-8分钟）</div>
+    <p><strong>什么是公共物品？</strong></p>
+    <p><span class="highlight">公共物品 = 所有人都能用、一个人用了不影响别人用的东西</span></p>
+    <table style="width:100%;margin:10px 0;">
+      <tr style="background:#eff6ff;"><th>公共物品</th><th>为什么市场不愿提供？</th></tr>
+      <tr><td>马路</td><td>修好了大家都走，怎么收费？</td></tr>
+      <tr><td>路灯</td><td>没法只给交钱的人开灯</td></tr>
+      <tr><td>警察/消防</td><td>不能说"你没交钱就不救火"</td></tr>
+      <tr><td>公园</td><td>修公园要钱，但进公园的人不一定会付钱</td></tr>
+      <tr><td>国防</td><td>保护了全国人，没法只保护交钱的</td></tr>
+    </table>
+
+    <p style="margin-top:10px;"><strong>既然市场不愿提供，那就政府来——用税收！</strong></p>
+    <p><strong>税收是什么？</strong></p>
+    <p>简单说，<span class="highlight">税收就是大家凑钱，由政府统一花在所有人都能用的地方</span>。</p>
+    <ul>
+      <li>大人工资的一部分 → 交给国家</li>
+      <li>企业赚的钱的一部分 → 交给国家</li>
+      <li>买东西时付的钱里 → 也包含了一部分税</li>
+    </ul>
+
+    <p style="margin-top:10px;"><strong>税收用在哪？</strong></p>
+    <ul>
+      <li>公立学校（你上学的学校）📚</li>
+      <li>公路、桥梁、地铁 🛣️</li>
+      <li>警察、消防 🚒</li>
+      <li>医院、疫苗 💉</li>
+      <li>帮助贫困的人 ❤️</li>
+      <li>国防安全 🛡️</li>
+    </ul>
+
+    <p style="margin-top:10px;"><strong>没有税收就没有公共物品，没有公共物品社会就无法正常运转。</strong></p>
+  </div>
+
+  <div class="block discuss">
+    <div class="block-title"><span class="icon">💬</span> 亲子讨论（5分钟）</div>
+    <p><strong>讨论1：</strong>今天你用了哪些"公共物品"？试着列出5个。</p>
+    <button class="answer-toggle" onclick="toggle(this)">参考思路</button>
+    <div class="answer-hidden">走过的路、学校、路灯、图书馆、公园、自来水、公交系统、空气（环保也是一种公共物品）……</div>
+    <p style="margin-top:12px;"><strong>讨论2：</strong>有些人不想交税，觉得"我赚的钱凭什么给别人花"。你怎么看？</p>
+    <p style="margin-top:12px;"><strong>讨论3：</strong>如果你是市长，收到100万税收，你会怎么分配？</p>
+  </div>
+
+  <div class="block activity">
+    <div class="block-title"><span class="icon">🎯</span> 动手挑战（5分钟）</div>
+    <p><strong>挑战：小小市长预算</strong></p>
+    <p>假设你是市长，今年有<strong>100万元</strong>税收可以花。以下是需要花钱的项目：</p>
+    <ul>
+      <li>修路：30万</li>
+      <li>建学校：40万</li>
+      <li>公园维护：15万</li>
+      <li>警察工资：25万</li>
+      <li>帮助贫困家庭：20万</li>
+      <li>环保：10万</li>
+    </ul>
+    <p>总共需要140万，但你只有100万！你会怎么分配？为什么？</p>
+  </div>
+
+  <div class="block takeaway">
+    <div class="block-title"><span class="icon">⭐</span> 一句话带走</div>
+    <p class="quote">"好的社会需要每个人出一份力。<br>税收就是大家凑钱，建设所有人共享的公共物品。"</p>
+  </div>
+</div>
+
+</div>
+
+<div class="footer">
+  <p>单元四完成！上一单元：<a href="单元三_聪明的决定.html">单元三：聪明的决定</a> ｜ 下一单元：<a href="单元五_看见更大的世界.html">单元五：看见更大的世界</a></p>
+</div>
+
+<script>
+function toggle(btn) {
+  const div = btn.nextElementSibling;
+  div.classList.toggle('show');
+  btn.textContent = div.classList.contains('show') ? '收起' : '参考思路';
+}
+</script>
+</body>
+</html>

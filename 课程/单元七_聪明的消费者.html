@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>单元七：聪明的消费者 · 小E学院</title>
+<style>
+  :root { --accent:#00b894; --bg:#FAFBFC; --card:#fff; --text:#2D3436; --muted:#636E72; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: -apple-system,"PingFang SC","Noto Sans SC","Microsoft YaHei",sans-serif; background:var(--bg); color:var(--text); line-height:1.8; }
+  .hero { background:linear-gradient(135deg,#00b894,#00cec9); color:#fff; text-align:center; padding:50px 20px 40px; }
+  .hero h1 { font-size:2em; margin-bottom:8px; }
+  .hero .sub { opacity:.9; font-size:1.05em; }
+  .hero .meta { margin-top:14px; display:flex; justify-content:center; gap:16px; flex-wrap:wrap; }
+  .hero .meta span { background:rgba(255,255,255,.2); padding:4px 14px; border-radius:16px; font-size:.88em; }
+  .wrap { max-width:860px; margin:0 auto; padding:24px 16px 60px; }
+  .lesson-nav { display:flex; gap:10px; margin-bottom:30px; flex-wrap:wrap; }
+  .lesson-nav a { text-decoration:none; padding:10px 20px; border-radius:12px; background:var(--card); box-shadow:0 2px 8px rgba(0,0,0,.06); font-weight:600; color:var(--text); transition:all .2s; border:2px solid transparent; }
+  .lesson-nav a:hover { border-color:var(--accent); transform:translateY(-2px); }
+  .lesson { scroll-margin-top:20px; margin-bottom:50px; }
+  .lesson-head { display:flex; align-items:center; gap:14px; margin-bottom:20px; }
+  .lesson-num { width:48px; height:48px; border-radius:50%; background:var(--accent); color:#fff; display:flex; align-items:center; justify-content:center; font-size:1.3em; font-weight:800; flex-shrink:0; }
+  .lesson-head h2 { font-size:1.35em; }
+  .lesson-head .tag { font-size:.8em; background:#f0f0f0; padding:3px 10px; border-radius:10px; color:var(--muted); }
+  .block { background:var(--card); border-radius:16px; padding:22px 24px; margin-bottom:16px; box-shadow:0 2px 10px rgba(0,0,0,.04); }
+  .block-title { font-weight:700; font-size:.92em; text-transform:uppercase; letter-spacing:1px; margin-bottom:12px; display:flex; align-items:center; gap:8px; }
+  .block-title .icon { font-size:1.2em; }
+  .story { background:linear-gradient(135deg,#ecfdf5,#d1fae5); }
+  .concept { background:linear-gradient(135deg,#f0f9ff,#e0f2fe); }
+  .discuss { background:linear-gradient(135deg,#fefce8,#fef3c7); }
+  .activity { background:linear-gradient(135deg,#fdf2f8,#fce7f3); }
+  .takeaway { background:linear-gradient(135deg,#faf5ff,#f3e8ff); text-align:center; padding:20px 30px; }
+  .takeaway .quote { font-size:1.15em; font-weight:700; color:#7c3aed; }
+  .parent-tip { background:linear-gradient(135deg,#f8f9fa,#e9ecef); border-left:4px solid #adb5bd; padding:14px 18px; border-radius:0 12px 12px 0; margin-bottom:16px; font-size:.9em; color:var(--muted); }
+  .parent-tip strong { color:var(--text); }
+  p { margin-bottom:10px; } ul { padding-left:20px; margin-bottom:10px; } li { margin-bottom:6px; }
+  .highlight { background:#FFF9E6; padding:2px 6px; border-radius:4px; font-weight:600; }
+  .answer-toggle { background:#e2e8f0; border:none; padding:6px 14px; border-radius:8px; cursor:pointer; font-size:.88em; margin-top:6px; }
+  .answer-toggle:hover { background:#cbd5e1; }
+  .answer-hidden { display:none; background:#f1f5f9; padding:12px 16px; border-radius:10px; margin-top:8px; font-size:.93em; }
+  .answer-hidden.show { display:block; }
+  .footer { text-align:center; padding:24px; color:var(--muted); font-size:.85em; border-top:1px solid #eee; }
+  .footer a { color:var(--accent); text-decoration:none; }
+  table { border-collapse:collapse; } td,th { padding:8px; border:1px solid #e2e8f0; }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>单元七：聪明的消费者</h1>
+  <div class="sub">看懂广告、识破陷阱、理性消费——做钱的主人而不是奴隶</div>
+  <div class="meta"><span>3 节课</span><span>适合 9-10 岁</span><span>每课 20-30 分钟</span></div>
+</div>
+
+<div class="wrap">
+<div class="lesson-nav">
+  <a href="#lesson19">第19课 广告的秘密</a>
+  <a href="#lesson20">第20课 消费心理学</a>
+  <a href="#lesson21">第21课 聪明购物指南</a>
+</div>
+
+<!-- 第19课 -->
+<div class="lesson" id="lesson19">
+  <div class="lesson-head">
+    <div class="lesson-num">19</div>
+    <div><h2>广告是怎么"操控"你的？</h2><span class="tag">核心概念：广告原理与媒介素养</span></div>
+  </div>
+  <div class="parent-tip"><strong>家长提示：</strong>这节课最好边看广告边讲。可以打开电视或手机，找几个孩子熟悉的广告一起分析。目标是培养孩子的"免疫力"——不是不看广告，而是看了能独立思考。</div>
+
+  <div class="block">
+    <div class="block-title"><span class="icon">🤔</span> 开场提问（3分钟）</div>
+    <ul>
+      <li>"你能说出3个你记得的广告吗？为什么记得它们？"</li>
+      <li>"你有没有因为看了广告就想买什么东西？"</li>
+      <li>"你觉得广告里说的都是真的吗？"</li>
+    </ul>
+  </div>
+
+  <div class="block story">
+    <div class="block-title"><span class="icon">📖</span> 情景故事（5-8分钟）</div>
+    <p><strong>《小杰被"骗"了》</strong></p>
+    <p>小杰在手机上看到一个广告：</p>
+    <p style="background:#fef3c7;padding:12px 16px;border-radius:10px;margin:10px 0;font-style:italic;">
+    "超级变型机器人！能变成10种形态！会走路、会发光、还能跟你对话！<br>
+    只要99元！限时3天！已售出10万件！<br>
+    小明买了说：'这是我最喜欢的玩具！'⭐⭐⭐⭐⭐"
+    </p>
+    <p>小杰激动坏了，马上缠着妈妈买。</p>
+    <p>快递到了。小杰打开一看：</p>
+    <ul>
+      <li>确实能变形态——但只有3种，不是10种</li>
+      <li>"会走路"——其实只是晃两下就倒了</li>
+      <li>"会发光"——就是一个小LED灯</li>
+      <li>"能对话"——只有3句预录的话反复播放</li>
+      <li>"10万件已售"——谁知道是不是真的？</li>
+      <li>那个"小明"的评论——很可能是编的</li>
+    </ul>
+    <p>小杰很失望。他觉得自己被"操控"了。</p>
+  </div>
+
+  <div class="block concept">
+    <div class="block-title"><span class="icon">💡</span> 概念讲解（5-8分钟）</div>
+    <p><strong>广告的目的是什么？</strong></p>
+    <p><span class="highlight">广告的唯一目的就是让你掏钱</span>。它不是在"告诉你信息"，而是在"说服你购买"。</p>
+
+    <p style="margin-top:10px;"><strong>广告常用的7大套路：</strong></p>
+    <table style="width:100%;margin:10px 0;">
+      <tr style="background:#ecfdf5;"><th>套路</th><th>做法</th><th>例子</th></tr>
+      <tr><td>🤩 <strong>明星代言</strong></td><td>你喜欢的明星用了，你就想用</td><td>明星喝某品牌奶茶</td></tr>
+      <tr><td>⏰ <strong>限时抢购</strong></td><td>让你觉得不买就亏了，来不及想</td><td>"最后3小时！"</td></tr>
+      <tr><td>👥 <strong>从众效应</strong></td><td>让你觉得"大家都在用"</td><td>"已售100万件""你的朋友也在用"</td></tr>
+      <tr><td>😰 <strong>制造焦虑</strong></td><td>让你觉得不用这个产品就有问题</td><td>"你的孩子落后了吗？"</td></tr>
+      <tr><td>🎁 <strong>免费陷阱</strong></td><td>免费送你一点，让你花更多</td><td>"免费试用30天"（之后自动扣费）</td></tr>
+      <tr><td>🏷️ <strong>虚假打折</strong></td><td>先涨价再打折，其实没便宜</td><td>"原价999，现价299！"（从来没有999过）</td></tr>
+      <tr><td>🎮 <strong>快乐联想</strong></td><td>把产品和快乐、成功、友谊绑在一起</td><td>可乐广告里全是一群快乐的朋友</td></tr>
+    </table>
+
+    <p style="margin-top:10px;"><strong>怎么"免疫"广告？三个问题：</strong></p>
+    <ol>
+      <li><strong>"我真的需要这个吗？"</strong>——还是只是广告让我觉得需要？（需要vs想要，第3课）</li>
+      <li><strong>"广告说的哪些可能是夸大的？"</strong>——真的有那么好吗？</li>
+      <li><strong>"如果我等72小时还想买吗？"</strong>——冷静后再决定</li>
+    </ol>
+  </div>
+
+  <div class="block discuss">
+    <div class="block-title"><span class="icon">💬</span> 亲子讨论（5分钟）</div>
+    <p><strong>讨论1：</strong>一起看3个广告（电视/手机），说出它们用了哪些"套路"。</p>
+    <p style="margin-top:12px;"><strong>讨论2：</strong>你有没有因为广告买了后悔的东西？</p>
+    <p style="margin-top:12px;"><strong>讨论3：</strong>如果所有广告都被禁止了，你觉得世界会变得更好还是更糟？</p>
+    <button class="answer-toggle" onclick="toggle(this)">参考思路</button>
+    <div class="answer-hidden">广告也不全是坏事——它帮你了解新产品。但问题在于广告经常夸大、甚至欺骗。关键不是禁止广告，而是让消费者有识别能力。</div>
+  </div>
+
+  <div class="block activity">
+    <div class="block-title"><span class="icon">🎯</span> 动手挑战（5分钟）</div>
+    <p><strong>挑战：广告拆解师</strong></p>
+    <p>找一个你觉得"很有效"的广告，在纸上拆解：</p>
+    <ul>
+      <li>它在卖什么？</li>
+      <li>它用了哪些套路？（从上面的7种里选）</li>
+      <li>它想让你产生什么感觉？（快乐？焦虑？羡慕？）</li>
+      <li>广告里哪些话可能是夸大的？</li>
+      <li>如果去掉所有"套路"，这个产品还值得买吗？</li>
+    </ul>
+  </div>
+
+  <div class="block takeaway">
+    <div class="block-title"><span class="icon">⭐</span> 一句话带走</div>
+    <p class="quote">"广告是精心设计的'说服机器'。<br>看穿它的套路，你就能做出自己的判断，而不是被操控。"</p>
+  </div>
+</div>
+
+<!-- 第20课 -->
+<div class="lesson" id="lesson20">
+  <div class="lesson-head">
+    <div class="lesson-num">20</div>
+    <div><h2>你的大脑在骗你</h2><span class="tag">核心概念：消费心理陷阱</span></div>
+  </div>
+  <div class="parent-tip"><strong>家长提示：</strong>行为经济学是近年来最热门的经济学分支。这节课让孩子认识到人不是完全理性的，了解自己的"心理弱点"才能做出更好的决策。</div>
+
+  <div class="block">
+    <div class="block-title"><span class="icon">🤔</span> 开场提问（3分钟）</div>
+    <ul>
+      <li>"为什么超市把口香糖放在收银台旁边？"</li>
+      <li>"为什么餐厅菜单上有一道特别贵的菜（几乎没人点）？"</li>
+      <li>"为什么'买二送一'感觉比'打六七折'更划算，其实一样？"</li>
+    </ul>
+  </div>
+
+  <div class="block story">
+    <div class="block-title"><span class="icon">📖</span> 情景故事（5-8分钟）</div>
+    <p><strong>《小红的"聪明"消费》</strong></p>
+    <p>小红去商场买书包。她看到三家店：</p>
+    <ul>
+      <li>A店：书包80元</li>
+      <li>B店：同样的书包120元，但写着"<strong>原价200元，限时4折</strong>"</li>
+      <li>C店：同样的书包100元，买就送一个<strong>免费</strong>铅笔盒</li>
+    </ul>
+    <p>小红觉得B店"省了80元"，C店"白得了一个铅笔盒"，A店"什么优惠都没有"。</p>
+    <p>她最后选了B店——因为她觉得自己"赚到了"。</p>
+    <p>但实际上呢？<strong>三个书包一模一样</strong>。她如果选A店，能省40元。</p>
+    <p>她的"聪明"选择，其实是被商家"设计"过的。</p>
+  </div>
+
+  <div class="block concept">
+    <div class="block-title"><span class="icon">💡</span> 概念讲解（5-8分钟）</div>
+    <p><strong>你的大脑有哪些"漏洞"？</strong></p>
+    <p>心理学家发现，人在做决定时经常会犯一些<strong>系统性的错误</strong>。商家很了解这些漏洞，并利用它们来让你消费。</p>
+
+    <table style="width:100%;margin:10px 0;">
+      <tr style="background:#ecfdf5;"><th>心理陷阱</th><th>解释</th><th>商家怎么利用</th></tr>
+      <tr>
+        <td><strong>锚定效应</strong></td>
+        <td>你看到的第一数字会影响你的判断</td>
+        <td>先标高价200元再打折到120元，你觉得120"很便宜"</td>
+      </tr>
+      <tr>
+        <td><strong>损失厌恶</strong></td>
+        <td>失去100元的痛苦 > 得到100元的快乐</td>
+        <td>"不买就没了！""最后一天！"让你害怕错过</td>
+      </tr>
+      <tr>
+        <td><strong>诱饵效应</strong></td>
+        <td>放一个不合理的选项，让你觉得另一个"很划算"</td>
+        <td>中杯15元、大杯18元、超大杯35元——你选大杯（本来你可能买中杯）</td>
+      </tr>
+      <tr>
+        <td><strong>免费心理</strong></td>
+        <td>"免费"两个字让大脑完全丧失理性</td>
+        <td>买满200送一个不值钱的赠品，你为了赠品多花了100</td>
+      </tr>
+      <tr>
+        <td><strong>从众心理</strong></td>
+        <td>看到别人在做什么，就想跟着做</td>
+        <td>"畅销10万件""排队长龙"——不一定是真的</td>
+      </tr>
+      <tr>
+        <td><strong>禀赋效应</strong></td>
+        <td>一旦拥有就觉得它更值钱</td>
+        <td>"免费试用30天"——用惯了就舍不得退了</td>
+      </tr>
+    </table>
+
+    <p style="margin-top:10px;"><strong>怎么防住这些陷阱？</strong></p>
+    <ul>
+      <li>购物前写好清单，不买清单外的东西</li>
+      <li>看到"打折"先问：它本来值多少钱？而不是"省了多少"</li>
+      <li>看到"免费"要警惕：免费的东西往往让你在其他地方花更多</li>
+      <li>等24小时再决定（还记得72小时法则吗？）</li>
+    </ul>
+  </div>
+
+  <div class="block discuss">
+    <div class="block-title"><span class="icon">💬</span> 亲子讨论（5分钟）</div>
+    <p><strong>讨论1：</strong>"买一送一"真的划算吗？什么情况下划算，什么情况下不划算？</p>
+    <button class="answer-toggle" onclick="toggle(this)">参考思路</button>
+    <div class="answer-hidden">如果你本来就需要两个，那确实划算。但如果你只需要一个，第二个是"多出来的"，反而花更多钱（买了一个本来不需要的东西）。商家靠"多出来的"那个赚钱。</div>
+    <p style="margin-top:12px;"><strong>讨论2：</strong>你有没有被"免费"骗过？</p>
+    <p style="margin-top:12px;"><strong>讨论3：</strong>大人也会掉进这些陷阱吗？举几个例子。</p>
+  </div>
+
+  <div class="block activity">
+    <div class="block-title"><span class="icon">🎯</span> 动手挑战（5分钟）</div>
+    <p><strong>挑战：陷阱猎人</strong></p>
+    <p>回忆你最近一次在商场/超市/网购的经历，写下你注意到的3个"心理陷阱"：</p>
+    <table style="width:100%;margin-top:8px;">
+      <tr style="background:#ecfdf5;"><th>你看到的</th><th>这是什么陷阱？</th><th>你中招了吗？</th></tr>
+      <tr><td>例如："限时抢购！"</td><td>损失厌恶</td><td>差一点就买了</td></tr>
+      <tr><td>？</td><td>？</td><td>？</td></tr>
+      <tr><td>？</td><td>？</td><td>？</td></tr>
+    </table>
+  </div>
+
+  <div class="block takeaway">
+    <div class="block-title"><span class="icon">⭐</span> 一句话带走</div>
+    <p class="quote">"你的大脑并不像你以为的那么理性。<br>了解自己的心理弱点，才能做出真正聪明的消费决策。"</p>
+  </div>
+</div>
+
+<!-- 第21课 -->
+<div class="lesson" id="lesson21">
+  <div class="lesson-head">
+    <div class="lesson-num">21</div>
+    <div><h2>聪明购物指南</h2><span class="tag">核心概念：理性消费决策框架</span></div>
+  </div>
+  <div class="parent-tip"><strong>家长提示：</strong>这是消费单元的总结课，把前面学过的所有概念串联起来，形成一个实用的"消费决策清单"。学完后可以把它贴在冰箱上，每次大额消费前一起过一遍。</div>
+
+  <div class="block">
+    <div class="block-title"><span class="icon">🤔</span> 开场提问（3分钟）</div>
+    <p>回顾一下前面学过的内容：</p>
+    <ul>
+      <li>第3课：需要 vs 想要</li>
+      <li>第7课：沉没成本</li>
+      <li>第8课：延迟满足</li>
+      <li>第19课：广告套路</li>
+      <li>第20课：心理陷阱</li>
+    </ul>
+    <p>今天我们要把所有这些武器<strong>整合起来</strong>，变成一套"购物前必过清单"。</p>
+  </div>
+
+  <div class="block story">
+    <div class="block-title"><span class="icon">📖</span> 情景故事（5-8分钟）</div>
+    <p><strong>《小林的购物考验》</strong></p>
+    <p>小林在网上看到了一款限量版运动鞋：</p>
+    <p style="background:#fef3c7;padding:12px 16px;border-radius:10px;margin:10px 0;font-style:italic;">
+    "联名限量款！全球仅500双！<br>
+    原价1299元，首发价799元！<br>
+    已有8万人加入购物车！<br>
+    最后12小时！错过再无！"
+    </p>
+    <p>小林的心跳加速了——他真的好想要！</p>
+    <p>但这次，他没有冲动。他掏出一张"购物清单"，一个一个对照……</p>
+  </div>
+
+  <div class="block concept">
+    <div class="block-title"><span class="icon">💡</span> 概念讲解——聪明购物七步法（5-8分钟）</div>
+
+    <p><strong>每次花钱之前，过一遍这7个问题：</strong></p>
+
+    <table style="width:100%;margin:10px 0;">
+      <tr style="background:#ecfdf5;"><th style="width:40px;">Step</th><th>问题</th><th>对应课</th></tr>
+      <tr><td><strong>1</strong></td><td><strong>这是需要还是想要？</strong>没有它会怎样？</td><td>第3课</td></tr>
+      <tr><td><strong>2</strong></td><td><strong>我有类似的吗？</strong>旧的还能用吗？</td><td>第3课</td></tr>
+      <tr><td><strong>3</strong></td><td><strong>我能找到更便宜的吗？</strong>比过价吗？</td><td>第5课</td></tr>
+      <tr><td><strong>4</strong></td><td><strong>买了它的机会成本是什么？</strong>这笔钱还能做什么？</td><td>第2课</td></tr>
+      <tr><td><strong>5</strong></td><td><strong>广告/优惠在套路我吗？</strong>"限时""限量""免费"是真的吗？</td><td>第19-20课</td></tr>
+      <tr><td><strong>6</strong></td><td><strong>等72小时还想买吗？</strong></td><td>第8课</td></tr>
+      <tr><td><strong>7</strong></td><td><strong>我买得起吗？</strong>这在我的预算内吗？</td><td>第9课</td></tr>
+    </table>
+
+    <p style="margin-top:10px;"><strong>小林用七步法分析了运动鞋：</strong></p>
+    <ol>
+      <li>想要，不是需要 ✅（不是必须买，但也不排除）</li>
+      <li>有两双运动鞋还能穿 ✅（但确实没有这个款式）</li>
+      <li>其他平台同样的鞋699元 ✅（找到了更便宜的）</li>
+      <li>799元 = 一个月的零花钱 + 放弃了买新耳机 ✅（值得考虑）</li>
+      <li>"限量500双"但8万人加购？数据可疑 ✅（有套路嫌疑）</li>
+      <li>等了3天还是想要 ✅（确认了真实需求）</li>
+      <li>799元超过本月消费预算 ❌（买不起，除非动用储蓄）</li>
+    </ol>
+    <p>小林决定：<strong>等下个月再用储蓄罐的钱在更便宜的平台买</strong>。</p>
+
+    <p style="margin-top:10px;"><strong>重要提醒：</strong></p>
+    <p>这个清单不是让你<strong>不花钱</strong>！而是让你<strong>花得更聪明</strong>。有时候经过7步检查，你还是决定买——那就开心地买，因为那是一个<strong>清醒的决定</strong>，而不是冲动。</p>
+  </div>
+
+  <div class="block discuss">
+    <div class="block-title"><span class="icon">💬</span> 亲子讨论（5分钟）</div>
+    <p><strong>讨论1：</strong>你觉得7个问题里，哪个最容易忘掉？</p>
+    <p style="margin-top:12px;"><strong>讨论2：</strong>如果一个人每次购物都过这个清单，会不会太累？</p>
+    <button class="answer-toggle" onclick="toggle(this)">参考思路</button>
+    <div class="answer-hidden">小钱不用过——买瓶水不用想。但大额消费（超过你零花钱一定比例的）应该过一遍。养成习惯后，几秒钟就能过完。</div>
+    <p style="margin-top:12px;"><strong>讨论3：</strong>你能不能把这个清单简化成3条？哪3条最重要？</p>
+  </div>
+
+  <div class="block activity">
+    <div class="block-title"><span class="icon">🎯</span> 动手挑战（5分钟）</div>
+    <p><strong>挑战：制作你的"聪明购物卡"</strong></p>
+    <p>把七步法写在一张卡片上（或画在纸上），贴在房间门上或放进钱包：</p>
+    <div style="background:#fef3c7;padding:16px 20px;border-radius:12px;margin:10px 0;border:2px dashed #f59e0b;">
+      <p style="text-align:center;font-weight:700;margin-bottom:8px;">我的聪明购物卡</p>
+      <ol style="font-size:.92em;">
+        <li>需要还是想要？</li>
+        <li>有了类似的吗？</li>
+        <li>比过价了吗？</li>
+        <li>买了它，放弃什么？</li>
+        <li>有没有被套路？</li>
+        <li>等72小时还想买吗？</li>
+        <li>买得起吗？</li>
+      </ol>
+    </div>
+    <p>下次想买东西之前，拿出来对照一下！</p>
+  </div>
+
+  <div class="block takeaway">
+    <div class="block-title"><span class="icon">⭐</span> 一句话带走</div>
+    <p class="quote">"不是不花钱，而是清醒地花钱。<br>花钱之前过一遍清单，让每一分钱都花得心甘情愿。"</p>
+  </div>
+</div>
+
+</div>
+
+<div class="footer">
+  <p>单元七完成！上一单元：<a href="单元六_钱去哪了.html">单元六：钱的旅行</a> ｜ 下一单元：<a href="单元八_小小企业家.html">单元八：小小企业家</a></p>
+</div>
+
+<script>
+function toggle(btn) {
+  const div = btn.nextElementSibling;
+  div.classList.toggle('show');
+  btn.textContent = div.classList.contains('show') ? '收起' : '参考思路';
+}
+</script>
+</body>
+</html>
